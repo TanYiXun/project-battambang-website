@@ -47,7 +47,7 @@
   "who_we_are": {
     "title": "WHO WE ARE",
     "description": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore.",
-    "image": "images/logo.png"
+    "image": "images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg"
   },
   "roots": {
     "title": "Our Roots",
@@ -89,19 +89,19 @@
     {
       "title": "Health Screening",
       "description": "Comprehensive clinical triage, doctor consultations, chronic disease monitoring, and pharmacy dispensary.",
-      "image": "images/logo.png",
+      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
       "link": "support-services.html"
     },
     {
       "title": "Door-to-Door Surveys",
       "description": "Collecting household epidemiological data to guide healthcare strategies and identify urgent community needs.",
-      "image": "images/logo.png",
+      "image": "images/fd6b4f_15287e8cd6bd4ba79672e30a81f51f7e~mv2_d_4845_3230_s_4_2.jpg",
       "link": "development.html"
     },
     {
       "title": "Education & Outreach",
       "description": "Hygiene workshops, preventive health modules, school outreach, and student scholarships.",
-      "image": "images/logo.png",
+      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
       "link": "education-outreach.html"
     }
   ]
