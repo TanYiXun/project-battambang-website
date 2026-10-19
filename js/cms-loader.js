@@ -33,60 +33,60 @@ document.addEventListener('DOMContentLoaded', function () {
   const DEFAULT_IMAGE_MAP = {
     // Pages / Hero Defaults (home has no hero background image)
     'home': null,
-    'team': 'images/team-hero-banner.jpg',
-    'support': 'images/health-screening-poipet.jpg',
-    'education': 'images/education-outreach-hero.jpeg',
-    'development': 'images/door-to-door-household-surveys.jpg',
-    'reports': 'images/post-trip-reports-banner.jpg',
-    'paynow': 'images/paynow-qr-code.jpg',
+    'team': 'images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg',
+    'support': 'images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg',
+    'education': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
+    'development': 'images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg',
+    'reports': 'images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png',
+    'paynow': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
 
     // Home Pillars (using authentic field photos from target pages)
-    'Health Screening': 'images/health-screening-poipet.jpg',
-    'Education Outreach': 'images/education-outreach-hero.jpeg',
-    'Education Development': 'images/education-outreach-hero.jpeg',
-    'Post-Trip Reports': 'images/post-trip-reports-banner.jpg',
+    'Health Screening': 'images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg',
+    'Education Outreach': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
+    'Education Development': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
+    'Post-Trip Reports': 'images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png',
 
     // Education Modules
-    'Light A Dream Scholarship (LADS)': 'images/light-a-dream-scholarship.jpg',
-    'Light-A-Dream Scholarship (LADS)': 'images/light-a-dream-scholarship.jpg',
-    'School Support Programme': 'images/school-support-programme.jpg',
-    'Post-Screening Health Education': 'images/post-screening-health-education.jpg',
-    'Primary School Hygiene & Health Modules': 'images/light-a-dream-scholarship.jpg',
-    'Community Engagement & Cultural Exchange': 'images/post-screening-health-education.jpg',
+    'Light A Dream Scholarship (LADS)': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    'Light-A-Dream Scholarship (LADS)': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    'School Support Programme': 'images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg',
+    'Post-Screening Health Education': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
+    'Primary School Hygiene & Health Modules': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    'Community Engagement & Cultural Exchange': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
 
     // Development Projects
-    'VEASNA Mobile Screening System': 'images/veasna-mobile-screening-system.jpg',
-    'VEASNA': 'images/veasna-mobile-screening-system.jpg',
-    'Door-To-Door Household Surveys': 'images/door-to-door-household-surveys.jpg',
-    'Door To Door Surveys': 'images/door-to-door-household-surveys.jpg',
-    'School Upgrading & Infrastructure': 'images/school-upgrading-infrastructure.jpg',
-    'School Upgrading Initiatives': 'images/school-upgrading-infrastructure.jpg',
-    'Stories of Poipet': 'images/field-photo-community-2.jpg',
-    'Water Pump Initiative': 'images/cambodia-fieldwork-carousel-5.jpg',
-    'Koh Dach Island & Groundwork': 'images/koh-dach-island-groundwork.jpg',
-    'Koh Dach Island Development': 'images/door-to-door-household-surveys.jpg',
-    'Health-Seeking Behavior Research': 'images/school-upgrading-infrastructure.jpg',
+    'VEASNA Mobile Screening System': 'images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg',
+    'VEASNA': 'images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg',
+    'Door-To-Door Household Surveys': 'images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg',
+    'Door To Door Surveys': 'images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg',
+    'School Upgrading & Infrastructure': 'images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2.jpg',
+    'School Upgrading Initiatives': 'images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2.jpg',
+    'Stories of Poipet': 'images/fd6b4f_f5098a2716504d348ed7ab707eb524b1~mv2.jpg',
+    'Water Pump Initiative': 'images/fd6b4f_cbbb014d5e194215995eb20575abc765~mv2.jpg',
+    'Koh Dach Island & Groundwork': 'images/fd6b4f_84b6d1a77b1e465aac99a4b851c1cc04~mv2.jpg',
+    'Koh Dach Island Development': 'images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg',
+    'Health-Seeking Behavior Research': 'images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2.jpg',
 
     // Support Services Areas
-    'Mass Village & Door-to-Door Clinics': 'images/health-screening-poipet.jpg',
-    'Subsidised Referrals & Follow-Up Care': 'images/subsidised-hospital-referrals.jpg',
-    'Multidisciplinary Healthcare Team': 'images/multidisciplinary-healthcare-team.jpg',
-    'Future Plans & Groundwork': 'images/phnom-penh-groundwork.jpg',
+    'Mass Village & Door-to-Door Clinics': 'images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg',
+    'Subsidised Referrals & Follow-Up Care': 'images/fd6b4f_06cdfddfa152491c957e8bdd253a05cf~mv2.jpg',
+    'Multidisciplinary Healthcare Team': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
+    'Future Plans & Groundwork': 'images/fd6b4f_84b6d1a77b1e465aac99a4b851c1cc04~mv2.jpg',
 
     // Reports
-    '2026 May Recce Post Trip Report': 'images/post-trip-reports-banner.jpg',
-    '2024 Post Trip Report': 'images/post-trip-report-2024.jpg',
-    '2023 Post Trip Report': 'images/post-trip-report-2023.jpg',
-    '2022 Post Trip Report': 'images/post-trip-report-2022.png',
+    '2026 May Recce Post Trip Report': 'images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png',
+    '2024 Post Trip Report': 'images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg',
+    '2023 Post Trip Report': 'images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg',
+    '2022 Post Trip Report': 'images/fd6b4f_3b0ba32b0a554b9ca942eb73b99be359~mv2.jpg',
 
     // Team Members
-    'Dr Ong Yew Jin': 'images/dr-ong-yew-jin.jpg',
-    'Project Directors': 'images/project-directors.jpg',
-    'Medical Screening Committee': 'images/medical-screening-committee.jpg',
-    'Education Committee': 'images/education-committee.jpg',
-    'Development Committee': 'images/development-committee.jpg',
-    'Logistics Committee': 'images/logistics-committee.jpg',
-    'Sponsorship & Finance Committee': 'images/sponsorship-finance-committee.jpg'
+    'Dr Ong Yew Jin': 'images/fd6b4f_a267da23773748d38e35ce9b45c92861~mv2.jpg',
+    'Project Directors': 'images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg',
+    'Medical Screening Committee': 'images/fd6b4f_4555530b69524664bdc3d69690a47a9d~mv2.jpeg',
+    'Education Committee': 'images/fd6b4f_7bb2f20282fd4068b430353b2793a168~mv2.jpg',
+    'Development Committee': 'images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg',
+    'Logistics Committee': 'images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg',
+    'Sponsorship & Finance Committee': 'images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg'
   };
 
   // Helper to convert Sanity image asset object, URL string, or title fallback to valid image URL
@@ -207,18 +207,18 @@ document.addEventListener('DOMContentLoaded', function () {
           buttonText: data.hero.button_text || data.hero.buttonText
         });
       }
-      if (data.roots) {
-        data.sections.push({
-          _type: 'rootsBlock',
-          title: data.roots.title,
-          story: data.roots.story
-        });
-      }
       if (data.vision_mission) {
         data.sections.push({
           _type: 'visionMissionBlock',
           vision: data.vision_mission.vision,
           mission: data.vision_mission.mission
+        });
+      }
+      if (data.roots) {
+        data.sections.push({
+          _type: 'rootsBlock',
+          title: data.roots.title,
+          story: data.roots.story
         });
       }
       if (data.values) {
