@@ -409,21 +409,33 @@
 <style id="compCssMappers_w3um7">/*** VSM_CSS ***/ #w3um7{width:auto;min-height:40px;}#pageBackground_w3um7{--bg-position:absolute;--fill-layer-background-overlay-color:transparent;--fill-layer-background-overlay-position:absolute;--bg-overlay-color:rgb(var(--color_11));--bg-gradient:none;}#comp-l8152hwp{--bg-overlay-color:transparent;--bg-gradient:none;min-width:980px;}#comp-jj60t4lc{--bg-overlay-color:transparent;--bg-gradient:none;--padding:0px;--margin:0px;min-width:980px;--direction:ltr;}#comp-jj60t4lc1{--bg-overlay-color:rgb(226, 246, 253);--bg-gradient:none;width:100%;--column-width:980px;--column-flex:980;}#comp-jj60t4lc2{--text-direction:var(--wix-opt-in-direction);}#comp-m0cqhsdb{--height:300px;--width:674px;--mask-image:url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' data-bbox='20 20 160 160' viewBox='20 20 160 160' height='200' width='200' xmlns='http://www.w3.org/2000/svg' data-type='shape'%3E%3Cg%3E%3Cpath d='M180 20v160H20V20h160z'/%3E%3C/g%3E%3C/svg%3E%0A");--mask-position:0% 0%;--mask-size:100% 100%;--mask-repeat:no-repeat;}#comp-jyza20xp{--direction:var(--wix-opt-in-direction);--justify-content:start;--item-margin:0px 0px;--margin-top:0px;--margin-bottom:0px;--margin-inline-start:0px;--margin-inline-end:0px;}.comp-jyza20yg{--bg-overlay-color:rgb(255, 255, 255);--bg-gradient:none;border-width:0 0 0 0;border-style:solid solid solid solid;border-color:rgba(176, 169, 134, 1) rgba(176, 169, 134, 1) rgba(176, 169, 134, 1) rgba(176, 169, 134, 1);border-radius:0 0 0 0;overflow:clip !important;transform:translateZ(0);margin:-0px;}.comp-jyza20z0{--height:341px;--width:536px;--mask-image:url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' data-bbox='20 20 160 160' viewBox='20 20 160 160' height='200' width='200' xmlns='http://www.w3.org/2000/svg' data-type='shape'%3E%3Cg%3E%3Cpath d='M180 20v160H20V20h160z'/%3E%3C/g%3E%3C/svg%3E%0A");--mask-position:0% 0%;--mask-size:100% 100%;--mask-repeat:no-repeat;}.comp-jyza20z0__item-j9wn309i{--height:341px;--width:536px;}.comp-jyza20z0__item-j9wn2zim{--height:341px;--width:536px;}.comp-jyza20z0__item-j9wn2yvi{--height:341px;--width:536px;}.comp-jyza20z0__item-jz29hna0{--height:341px;--width:536px;}.comp-jyza20z0__item-jz29hnz2{--height:341px;--width:536px;}.comp-jyza20zd{--text-direction:var(--wix-opt-in-direction);}.comp-jyza2106{--min-height:106px;--text-direction:var(--wix-opt-in-direction);}</style>
 
 
-<!-- Fix Horizontal Scrollbar -->
-<style id="fix-horizontal-scrollbar">
-  html, body {
+
+
+<!-- Fix Scrollbars (Single Main Vertical Scrollbar Only) -->
+<style id="fix-scrollbars">
+  html {
     overflow-x: hidden !important;
+    overflow-y: auto !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  #site-root, #SITE_CONTAINER, #masterPage, .wixui-section, header, footer, main {
+  body {
     overflow-x: hidden !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
+    overflow-y: visible !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+  #site-root, #SITE_CONTAINER, #masterPage, .wixui-section, header, footer, main, section, div {
+    overflow-y: visible !important;
+  }
+  #site-root, #SITE_CONTAINER, #masterPage {
+    overflow-x: visible !important;
+    max-width: 100% !important;
   }
 </style>
-
 </head>
 <body class='' >
 <script type="text/javascript">
