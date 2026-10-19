@@ -2,11 +2,12 @@
   "page_title": "Health Screening",
   "intro_text": "Access to affordable healthcare remains a key concern for many of the communities Project Battambang serves. Over the years, our health screening initiatives have aimed to bring basic healthcare closer to villagers through mass village screenings, door-to-door screenings, health education and follow-up referrals.",
   "hero_image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+  "stats_title": "SCREENING STATISTICS 2024",
   "stats": [
-    { "label": "DAYS", "value": "4" },
-    { "label": "LOCATIONS", "value": "3" },
-    { "label": "VILLAGERS SCREENED", "value": "1068" },
-    { "label": "REFERRALS", "value": "25" }
+    { "label": "DAYS", "value": "4", "icon": "calendar" },
+    { "label": "LOCATIONS", "value": "3", "icon": "location" },
+    { "label": "VILLAGERS SCREENED", "value": "1068", "icon": "people" },
+    { "label": "REFERRALS", "value": "284", "icon": "bandage" }
   ],
   "areas": [
     {

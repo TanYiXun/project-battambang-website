@@ -122,15 +122,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
         if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
+        if (data.stats_title && document.querySelector('.stats-banner-title')) document.querySelector('.stats-banner-title').textContent = data.stats_title;
 
         const statsGrid = document.querySelector('.stats-grid');
         if (statsGrid && Array.isArray(data.stats) && data.stats.length > 0) {
-          statsGrid.innerHTML = data.stats.map(s => `
-            <div class="stat-card">
-              <div class="stat-value">${s.value || ''}</div>
-              <div class="stat-label">${s.label || ''}</div>
-            </div>
-          `).join('');
+          const iconSvgs = {
+            calendar: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
+            location: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+            people: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+            bandage: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"></path></svg>'
+          };
+          const iconBgColors = { calendar: '#a8e6cf', location: '#fdb8c0', people: '#fbe285', bandage: '#78c6fb' };
+
+          statsGrid.innerHTML = data.stats.map(s => {
+            const iconKey = s.icon || 'calendar';
+            const svg = iconSvgs[iconKey] || iconSvgs.calendar;
+            const bg = iconBgColors[iconKey] || '#78c6fb';
+            return `
+              <div class="stat-card">
+                <div class="stat-icon" style="background: ${bg}; color: #1e293b;">
+                  ${svg}
+                </div>
+                <div class="stat-value">${s.value || ''}</div>
+                <div class="stat-label">${s.label || ''}</div>
+              </div>
+            `;
+          }).join('');
         }
 
         const areasGrid = document.querySelector('.areas-grid');

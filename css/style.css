@@ -286,36 +286,75 @@ body {
   flex-grow: 1;
 }
 
-/* Statistics Grid */
+/* Statistics Banner & Grid */
+.stats-banner {
+  background-color: #35455e;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.stats-banner-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 3rem;
 }
 
-.stat-box {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
 }
 
 .stat-value {
   font-size: 2.25rem;
   font-weight: 800;
-  color: var(--color-accent);
+  color: #ffffff;
   line-height: 1.1;
-  margin-bottom: 0.25rem;
 }
 
 .stat-label {
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
+  font-weight: 700;
+  color: #cbd5e1;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  margin-top: 0.35rem;
 }
 
 /* Donation Layout */
