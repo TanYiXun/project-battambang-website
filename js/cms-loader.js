@@ -28,6 +28,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
+  // Helper to convert Sanity image asset object or URL string to valid CDN image URL
+  function getSanityImageUrl(img) {
+    if (!img) return 'images/logo_exact.png';
+    if (typeof img === 'string') return img;
+    if (img.asset && img.asset._ref) {
+      const ref = img.asset._ref;
+      const parts = ref.split('-');
+      if (parts.length >= 4) {
+        const id = parts[1];
+        const dimensions = parts[2];
+        const format = parts[3];
+        return `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${id}-${dimensions}.${format}`;
+      }
+    }
+    if (img.asset && img.asset.url) return img.asset.url;
+    return 'images/logo_exact.png';
+  }
+
   // Helper to fetch content JSON from Sanity CDN (fetching drafts first for live preview) or fallback to local JSON
   function fetchContent(filename, slug) {
     if (slug && SANITY_PROJECT_ID) {
@@ -62,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!data) return;
 
       const brandLogo = document.querySelector('.brand-logo');
-      if (brandLogo && data.logo_image) brandLogo.src = data.logo_image;
+      if (brandLogo && data.logo_image) brandLogo.src = getSanityImageUrl(data.logo_image);
 
       const brandTitle = document.querySelector('.brand-title');
       if (brandTitle && data.site_title) brandTitle.textContent = data.site_title;
@@ -84,6 +102,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to re-append DOM sections in the exact dynamic order specified by Sanity sections array
   function applyModularSections(data) {
     if (!data) return;
+
+    // Update top-level page title & intro if present
+    if (data.title && document.querySelector('.page-title')) {
+      document.querySelector('.page-title').textContent = data.title;
+    }
+    if (data.introText && document.querySelector('.page-intro')) {
+      document.querySelector('.page-intro').textContent = data.introText;
+    }
 
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
@@ -170,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (gridEl && Array.isArray(cardsList) && cardsList.length > 0) {
               gridEl.innerHTML = cardsList.map(item => `
                 <div class="card">
-                  <img src="${item.image || 'images/logo_exact.png'}" alt="${item.title || ''}" class="card-image" />
+                  <img src="${getSanityImageUrl(item.image)}" alt="${item.title || ''}" class="card-image" />
                   <div class="card-body">
                     <h3 class="card-title">${item.title || ''}</h3>
                     <p class="card-text">${item.description || ''}</p>
@@ -192,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
               const iconSvgs = {
                 calendar: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
                 location: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
-                people: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+                people: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 1 0 7.75"></path></svg>',
                 bandage: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"></path></svg>'
               };
               const iconBgColors = { calendar: '#a8e6cf', location: '#fdb8c0', people: '#fbe285', bandage: '#78c6fb' };
@@ -224,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (teamGrid && Array.isArray(block.members) && block.members.length > 0) {
               teamGrid.innerHTML = block.members.map(m => `
                 <div class="card">
-                  <img src="${m.image || 'images/logo_exact.png'}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
+                  <img src="${getSanityImageUrl(m.image)}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
                   <div class="card-body">
                     <h3 class="card-title">${m.name || ''}</h3>
                     <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; display: block;">${m.role || ''}</span>
@@ -245,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (reportsGrid && Array.isArray(block.reports) && block.reports.length > 0) {
               reportsGrid.innerHTML = block.reports.map(r => `
                 <div class="card">
-                  <img src="${r.image || 'images/logo_exact.png'}" alt="${r.title || ''}" class="card-image" />
+                  <img src="${getSanityImageUrl(r.image)}" alt="${r.title || ''}" class="card-image" />
                   <div class="card-body">
                     <h3 class="card-title">${r.title || ''}</h3>
                     <p class="card-text">${r.summary || ''}</p>
@@ -269,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (block.qrCodeImage) {
               const qr = el.querySelector('.qr-image') || el.querySelector('.qr-code-img');
-              if (qr) qr.src = block.qrCodeImage;
+              if (qr) qr.src = getSanityImageUrl(block.qrCodeImage);
             }
           }
         }
