@@ -3,106 +3,216 @@ media:
   output: /images
 
 content:
-  # Structured GUI Form Editors
-  - name: carousel
-    label: 🖼️ Homepage Gallery Carousel
+  - name: header_footer
+    label: 📌 Header & Footer (Global)
     type: file
-    path: data/carousel.json
-    list: true
+    path: content/header_footer.json
     fields:
-      - name: title
-        label: Slide Title / Caption
+      - name: site_name
+        label: Site Name / Title
         type: string
-      - name: image
-        label: Slide Photo (Drag & Drop)
+      - name: logo_image
+        label: Header Logo Photo (Drag & Drop)
         type: image
-
-  - name: team_data
-    label: 👥 Meet the Team Data
-    type: file
-    path: data/team.json
-    list: true
-    fields:
-      - name: name
-        label: Committee / Member Title
-        type: string
-      - name: members
-        label: Member Names (e.g. Ritesh, David)
-        type: string
-      - name: photo
-        label: Photo (Drag & Drop)
-        type: image
-      - name: bio
-        label: Description / Bio
-        type: text
-
-  - name: reports_data
-    label: 📰 Post-Trip Reports Data
-    type: file
-    path: data/reports.json
-    list: true
-    fields:
-      - name: title
-        label: Report Title
-        type: string
-      - name: year
-        label: Year / Date
-        type: string
-      - name: cover
-        label: Cover Photo (Drag & Drop)
-        type: image
-      - name: pdf_link
-        label: PDF Link or Document
-        type: string
-      - name: description
-        label: Summary / Details
-        type: text
-
-  - name: site_info
-    label: ⚙️ Website Details & Contact
-    type: file
-    path: data/site_info.json
-    fields:
-      - name: site_title
-        label: Site Title
+      - name: instagram_url
+        label: Instagram Profile URL
         type: string
       - name: contact_email
-        label: Contact Email
+        label: Contact Email Address
         type: string
-      - name: instagram_handle
-        label: Instagram Handle
-        type: string
-      - name: footer_copyright
+      - name: footer_text
         label: Footer Copyright Text
         type: string
 
-  # Full Site HTML Pages
   - name: home_page
-    label: 📄 Home Page (index.html)
+    label: 🏠 Home Page Content
     type: file
-    path: index.html
+    path: content/home.json
+    fields:
+      - name: hero_slides
+        label: 🖼️ Hero Slideshow Photos (Drag & Drop)
+        type: list
+        fields:
+          - name: title
+            label: Slide Title / Caption
+            type: string
+          - name: image
+            label: Slide Photo (Drag & Drop)
+            type: image
+
+      - name: who_we_are_title
+        label: Who We Are - Section Title
+        type: string
+
+      - name: who_we_are_text
+        label: Who We Are - Description Text
+        type: text
+
+      - name: initiatives
+        label: Key Initiatives / Feature Cards
+        type: list
+        fields:
+          - name: title
+            label: Card Title
+            type: string
+          - name: photo
+            label: Card Photo (Drag & Drop)
+            type: image
+          - name: text
+            label: Card Description
+            type: text
+          - name: link
+            label: Button Link URL (e.g. meet-the-team.html)
+            type: string
 
   - name: team_page
-    label: 📄 Meet the Team (meet-the-team.html)
+    label: 👥 Meet the Team Page
     type: file
-    path: meet-the-team.html
+    path: content/team.json
+    fields:
+      - name: page_title
+        label: Page Title
+        type: string
+
+      - name: intro_text
+        label: Page Intro Description
+        type: text
+
+      - name: committees
+        label: Committees & Student Team Members
+        type: list
+        fields:
+          - name: name
+            label: Committee / Team Name
+            type: string
+          - name: members
+            label: Member Names (e.g. Ritesh, David)
+            type: string
+          - name: photo
+            label: Team Group Photo (Drag & Drop)
+            type: image
+          - name: description
+            label: Role & Responsibilities Summary
+            type: text
 
   - name: donation_page
-    label: 📄 Donation Page (services-4.html)
+    label: 💙 Donation Page
     type: file
-    path: services-4.html
+    path: content/donation.json
+    fields:
+      - name: page_title
+        label: Page Title
+        type: string
+
+      - name: intro_text
+        label: Page Intro Description
+        type: text
+
+      - name: qr_code_image
+        label: PayNow / Bank Transfer QR Code (Drag & Drop)
+        type: image
+
+      - name: bank_details
+        label: Bank Transfer Account Details
+        type: text
+
+      - name: impact_points
+        label: How Donations Help (Impact Cards)
+        type: list
+        fields:
+          - name: title
+            label: Impact Point Title
+            type: string
+          - name: photo
+            label: Impact Photo (Drag & Drop)
+            type: image
+          - name: text
+            label: Description Text
+            type: text
 
   - name: reports_page
-    label: 📄 Post-Trip Reports (post-trip-reports.html)
+    label: 📰 Post-Trip Reports Page
     type: file
-    path: post-trip-reports.html
+    path: content/reports.json
+    fields:
+      - name: page_title
+        label: Page Title
+        type: string
+
+      - name: intro_text
+        label: Page Intro Description
+        type: text
+
+      - name: reports
+        label: Post-Trip Reports List
+        type: list
+        fields:
+          - name: title
+            label: Trip Report Title
+            type: string
+          - name: year
+            label: Mission Year / Date
+            type: string
+          - name: cover_photo
+            label: Report Cover Photo (Drag & Drop)
+            type: image
+          - name: pdf_link
+            label: PDF Document Link
+            type: string
+          - name: summary
+            label: Report Summary Text
+            type: text
 
   - name: education_page
-    label: 📄 Education Outreach (education-outreach.html)
+    label: 📚 Education Outreach Page
     type: file
-    path: education-outreach.html
+    path: content/education.json
+    fields:
+      - name: page_title
+        label: Page Title
+        type: string
+
+      - name: intro_text
+        label: Page Intro Description
+        type: text
+
+      - name: programs
+        label: Education Workshops & Modules
+        type: list
+        fields:
+          - name: title
+            label: Module Title
+            type: string
+          - name: photo
+            label: Module Photo (Drag & Drop)
+            type: image
+          - name: description
+            label: Module Description
+            type: text
 
   - name: support_page
-    label: 📄 Support Services (support-services.html)
+    label: 🩺 Support Services Page
     type: file
-    path: support-services.html
+    path: content/support.json
+    fields:
+      - name: page_title
+        label: Page Title
+        type: string
+
+      - name: intro_text
+        label: Page Intro Description
+        type: text
+
+      - name: services
+        label: Healthcare Support Services List
+        type: list
+        fields:
+          - name: title
+            label: Service Title
+            type: string
+          - name: photo
+            label: Service Photo (Drag & Drop)
+            type: image
+          - name: description
+            label: Service Description
+            type: text

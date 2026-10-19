@@ -1,0 +1,20 @@
+{
+  "page_title": "Post-Trip Reports",
+  "intro_text": "Read our comprehensive post-trip reports detailing patient stats, health screening findings, and community impact.",
+  "reports": [
+    {
+      "title": "May 2026 Koh Dach & Stung Meanchey Outreach Report",
+      "year": "2026",
+      "cover_photo": "images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg",
+      "pdf_link": "#",
+      "summary": "Detailed door-to-door healthcare needs assessment across Stung Meanchey and Koh Dach Island."
+    },
+    {
+      "title": "December 2023 Poipet Screening Report",
+      "year": "2023",
+      "cover_photo": "images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg",
+      "pdf_link": "#",
+      "summary": "Annual trip summary of over 1,200 patient consultations and vision screenings."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "page_title": "Support Services",
+  "intro_text": "Our primary healthcare support services bring doctors, nurses, and medical students to underserved rural areas.",
+  "services": [
+    {
+      "title": "Primary Health Screening",
+      "photo": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
+      "description": "Comprehensive health checkups, blood pressure measurements, blood glucose tests, and consultations."
+    },
+    {
+      "title": "Vision & Optometry Screening",
+      "photo": "images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg",
+      "description": "Custom prescription glasses distribution and referrals for cataract surgeries."
+    }
+  ]
+}

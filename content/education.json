@@ -1,0 +1,16 @@
+{
+  "page_title": "Education Outreach",
+  "intro_text": "Empowering communities through accessible health education workshops, hygiene kits, and nutrition awareness.",
+  "programs": [
+    {
+      "title": "Dental & Oral Hygiene",
+      "photo": "images/fd6b4f_1b6393589efd403ea6aaa2675ab2f891~mv2_d_3456_2304_s_2.jpg",
+      "description": "Teaching children proper toothbrushing techniques and providing toothpaste and toothbrush kits."
+    },
+    {
+      "title": "Nutrition & Chronic Disease Awareness",
+      "photo": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg",
+      "description": "Educating villagers on managing hypertension, diabetes, and dietary nutrition."
+    }
+  ]
+}

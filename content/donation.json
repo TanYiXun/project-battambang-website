@@ -1,0 +1,18 @@
+{
+  "page_title": "Donations & Support",
+  "intro_text": "Your generous contributions directly fund medical supplies, consultations, and health education for rural communities in Cambodia.",
+  "qr_code_image": "images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg",
+  "bank_details": "Bank Name: DBS Bank Singapore\nAccount Number: 120-901234-5\nUEN / PayNow: T12SS0012A\nReference: Project Battambang",
+  "impact_points": [
+    {
+      "title": "Medical Supplies & Medications",
+      "photo": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg",
+      "text": "$50 provides essential primary healthcare prescription drugs and vitamin supplements for 10 families."
+    },
+    {
+      "title": "Eye Vision Screenings & Glasses",
+      "photo": "images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg",
+      "text": "$100 funds custom prescription reading glasses for elderly villagers suffering from uncorrected refractive errors."
+    }
+  ]
+}
