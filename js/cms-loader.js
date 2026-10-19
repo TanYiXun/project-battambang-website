@@ -1,4 +1,4 @@
-// Dynamic CMS Loader for Project Battambang Website
+// Dynamic CMS Loader & Modular À La Carte Block Renderer
 (function() {
   async function fetchJson(path) {
     try {
@@ -20,38 +20,20 @@
       const footerEl = document.querySelector('#comp-jia9on1h p, footer p');
       if (footerEl) footerEl.innerText = data.footer_text;
     }
-
     if (data.instagram_url) {
       const instaLinks = document.querySelectorAll('a[href*="instagram.com"]');
       instaLinks.forEach(a => a.href = data.instagram_url);
     }
   }
 
-  // Load Homepage
-  async function loadHomePage() {
-    const isHome = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
-    if (!isHome) return;
-    const data = await fetchJson('content/home.json');
-    if (!data) return;
-
-    if (data.who_we_are_title) {
-      const titleEl = document.querySelector('#comp-jiyxfd341 h4, #comp-jiyxfd341');
-      if (titleEl) titleEl.innerText = data.who_we_are_title;
-    }
-
-    if (data.who_we_are_text) {
-      const textEl = document.querySelector('#comp-jiyxfd351 p, #comp-jiyxfd351');
-      if (textEl) textEl.innerText = data.who_we_are_text;
-    }
+  // Main init loader
+  async function init() {
+    loadHeaderFooter();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      loadHeaderFooter();
-      loadHomePage();
-    });
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    loadHeaderFooter();
-    loadHomePage();
+    init();
   }
 })();
