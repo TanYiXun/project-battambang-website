@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
         data.sections.push({
           _type: 'cardsGridBlock',
           items: data.opportunities.map(o => ({
+            image: o.image,
             title: o.title,
             description: o.description,
             link: o.link,
