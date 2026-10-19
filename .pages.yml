@@ -1,0 +1,39 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: pages
+    label: Site Pages
+    type: collection
+    files:
+      - name: home
+        label: Home Page
+        path: index.html
+        fields:
+          - { name: title, label: Page Title, type: string }
+      - name: team
+        label: Meet the Team
+        path: meet-the-team.html
+        fields:
+          - { name: title, label: Page Title, type: string }
+      - name: donation
+        label: Donation Page
+        path: services-4.html
+        fields:
+          - { name: title, label: Page Title, type: string }
+      - name: reports
+        label: Post-Trip Reports
+        path: post-trip-reports.html
+        fields:
+          - { name: title, label: Page Title, type: string }
+      - name: education
+        label: Education Outreach
+        path: education-outreach.html
+        fields:
+          - { name: title, label: Page Title, type: string }
+      - name: support
+        label: Support Services
+        path: support-services.html
+        fields:
+          - { name: title, label: Page Title, type: string }
