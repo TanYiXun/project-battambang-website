@@ -422,7 +422,9 @@ body {
 
 .footer-links {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.5rem;
+  max-width: 650px;
   list-style: none;
 }
 
