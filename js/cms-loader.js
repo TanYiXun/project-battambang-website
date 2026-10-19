@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Initialize Sanity Visual Editing if embedded in Sanity Studio iframe
-  if (window.parent !== window) {
+  const isEmbeddedInStudio = (window.parent !== window);
+  if (isEmbeddedInStudio) {
     const css = document.createElement('link');
     css.rel = 'stylesheet';
     css.href = 'https://esm.sh/@sanity/visual-editing-standalone@2/styles.css';
@@ -68,73 +69,20 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(err => console.log('[Sanity] Visual Editing standalone script load:', err));
   }
 
-  const CMS_ENABLED = true; // Enabled Sanity CMS dynamic loading and visual editing
-
+  const CMS_ENABLED = true;
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
-  const DEFAULT_IMAGE_MAP = {
-    // Pages / Hero Defaults
-    'home': 'images/fd6b4f_06cdfddfa152491c957e8bdd253a05cf~mv2.jpg',
-    'team': 'images/logo.png',
-    'support': 'images/logo.png',
-    'education': 'images/logo.png',
-    'development': 'images/logo.png',
-    'reports': 'images/logo.png',
+  const EXPLICIT_DEFAULTS = {
     'paynow': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
-
-    // Home Pillars (using authentic field photos from target pages)
-    'Health Screening': 'images/logo.png',
-    'Education Outreach': 'images/logo.png',
-    'Education Development': 'images/logo.png',
-    'Post-Trip Reports': 'images/logo.png',
-
-    // Education Modules
-    'Light A Dream Scholarship (LADS)': 'images/logo.png',
-    'Light-A-Dream Scholarship (LADS)': 'images/logo.png',
-    'School Support Programme': 'images/logo.png',
-    'Post-Screening Health Education': 'images/logo.png',
-    'Primary School Hygiene & Health Modules': 'images/logo.png',
-    'Community Engagement & Cultural Exchange': 'images/logo.png',
-
-    // Development Projects
-    'VEASNA Mobile Screening System': 'images/logo.png',
-    'VEASNA': 'images/logo.png',
-    'Door-To-Door Household Surveys': 'images/logo.png',
-    'Door To Door Surveys': 'images/logo.png',
-    'School Upgrading & Infrastructure': 'images/logo.png',
-    'School Upgrading Initiatives': 'images/logo.png',
-    'Stories of Poipet': 'images/logo.png',
-    'Water Pump Initiative': 'images/logo.png',
-    'Koh Dach Island & Groundwork': 'images/logo.png',
-    'Koh Dach Island Development': 'images/logo.png',
-    'Health-Seeking Behavior Research': 'images/logo.png',
-
-    // Support Services Areas
-    'Mass Village & Door-to-Door Clinics': 'images/logo.png',
-    'Subsidised Referrals & Follow-Up Care': 'images/logo.png',
-    'Multidisciplinary Healthcare Team': 'images/logo.png',
-    'Future Plans & Groundwork': 'images/logo.png',
-
-    // Reports
     '2026 May Recce Post Trip Report': 'images/report_2026.jpg',
     '2024 Post Trip Report': 'images/report_2024.jpg',
     '2023 Post Trip Report': 'images/report_2023.jpg',
-    '2022 Post Trip Report': 'images/report_2022.jpg',
-
-    // Team Members
-    'Dr Ong Yew Jin': 'images/logo.png',
-    'Project Directors': 'images/logo.png',
-    'Medical Screening Committee': 'images/logo.png',
-    'Education Committee': 'images/logo.png',
-    'Development Committee': 'images/logo.png',
-    'Logistics Committee': 'images/logo.png',
-    'Sponsorship & Finance Committee': 'images/logo.png'
+    '2022 Post Trip Report': 'images/report_2022.jpg'
   };
 
-  // Helper to convert Sanity image asset object, URL string, or title fallback to valid image URL
+  // Helper to convert Sanity image asset object or URL string to valid image URL
   function getSanityImageUrl(img, titleOrFallback) {
-    // 1. Check explicit img object / URL string FIRST (never let DEFAULT_IMAGE_MAP override valid img)
     if (img) {
       if (typeof img === 'string' && img.trim() !== '') return img;
       if (img.asset && img.asset._ref) {
@@ -150,43 +98,40 @@ document.addEventListener('DOMContentLoaded', function () {
       if (img.asset && img.asset.url) return img.asset.url;
     }
 
-    // 2. Check if titleOrFallback itself is an image URL/path
     if (typeof titleOrFallback === 'string' && (titleOrFallback.startsWith('images/') || titleOrFallback.startsWith('http'))) {
       return titleOrFallback;
     }
 
-    // 3. Fallback to DEFAULT_IMAGE_MAP by title key
-    if (titleOrFallback && DEFAULT_IMAGE_MAP[titleOrFallback] !== undefined) {
-      return DEFAULT_IMAGE_MAP[titleOrFallback];
+    if (titleOrFallback && EXPLICIT_DEFAULTS[titleOrFallback]) {
+      return EXPLICIT_DEFAULTS[titleOrFallback];
     }
 
     return null;
   }
 
-  // Helper to fetch content JSON from Sanity CDN (fetching drafts first for live preview in Sanity Studio) or fallback to local JSON
+  // Helper to fetch content JSON from Sanity CDN or fallback to local JSON
   function fetchContent(filename, slug) {
-    const isEmbeddedInStudio = (window.parent !== window);
     if (isEmbeddedInStudio && slug && SANITY_PROJECT_ID) {
-      // Query draft first if exists in Studio, otherwise published
       const groqQuery = `*[_type == "page" && slug.current == "${slug}"] | order(_updatedAt desc)[0]`;
       const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groqQuery)}`;
       return fetch(sanityUrl)
         .then(res => res.ok ? res.json() : null)
         .then(sanityRes => {
           if (sanityRes && sanityRes.result) {
+            sanityRes.result._fromSanity = true;
             return sanityRes.result;
           }
           return fetchLocal(filename);
         })
         .catch(() => fetchLocal(filename));
     } else if (CMS_ENABLED && slug && SANITY_PROJECT_ID) {
-      // Query published document from Sanity CDN
       const groqQuery = `*[_type == "page" && slug.current == "${slug}"][0]`;
       const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groqQuery)}`;
       return fetch(sanityUrl)
         .then(res => res.ok ? res.json() : null)
         .then(sanityRes => {
           if (sanityRes && sanityRes.result) {
+            sanityRes.result._fromSanity = true;
             return sanityRes.result;
           }
           return fetchLocal(filename);
@@ -199,10 +144,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function fetchLocal(filename) {
     return fetch('content/pages/' + filename)
       .then(res => res.ok ? res.json() : fetch('content/' + filename).then(r => r.ok ? r.json() : null))
+      .then(data => {
+        if (data) data._fromSanity = false;
+        return data;
+      })
       .catch(() => fetch('content/' + filename).then(r => r.ok ? r.json() : null));
   }
 
-  // Determine current page JSON path and slug
   const path = window.location.pathname.split('/').pop() || 'index.html';
 
   // Load Header / Footer Content
@@ -211,7 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!data) return;
 
       const brandLogo = document.querySelector('.brand-logo');
-      if (brandLogo && data.logo_image) brandLogo.src = getSanityImageUrl(data.logo_image);
+      if (brandLogo && data.logo_image) {
+        const logoUrl = getSanityImageUrl(data.logo_image);
+        if (logoUrl) brandLogo.src = logoUrl;
+      }
 
       const brandTitle = document.querySelector('.brand-title');
       if (brandTitle && data.site_title) brandTitle.textContent = data.site_title;
@@ -230,11 +181,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(err => console.log('Header/Footer JSON load:', err));
 
-  // Function to re-append DOM sections in the exact dynamic order specified by Sanity sections array
+  // Function to apply Sanity updates cleanly without destroying static HTML layout/images
   function applyModularSections(data) {
     if (!data) return;
 
-    // Update top-level page title & intro if present
     if (data.title && document.querySelector('.page-title')) {
       document.querySelector('.page-title').textContent = data.title;
     }
@@ -244,123 +194,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (data.introText && document.querySelector('.page-intro')) {
       document.querySelector('.page-intro').textContent = data.introText;
     }
-    if (data.intro_text && document.querySelector('.page-intro')) {
-      document.querySelector('.page-intro').textContent = data.intro_text;
-    }
 
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
 
-    // If sections array is missing or empty (e.g. from flat local JSON files), synthesize section blocks
-    if (!data.sections || !Array.isArray(data.sections) || data.sections.length === 0) {
-      data.sections = [];
-      if (data.hero) {
-        data.sections.push({
-          _type: 'heroBlock',
-          title: data.hero.title,
-          subtitle: data.hero.subtitle,
-          description: data.hero.description,
-          buttonText: data.hero.button_text || data.hero.buttonText
-        });
-      }
-      if (data.vision_mission) {
-        data.sections.push({
-          _type: 'visionMissionBlock',
-          vision: data.vision_mission.vision,
-          mission: data.vision_mission.mission
-        });
-      }
-      if (data.roots) {
-        data.sections.push({
-          _type: 'rootsBlock',
-          title: data.roots.title,
-          story: data.roots.story
-        });
-      }
-      if (data.values) {
-        data.sections.push({
-          _type: 'valuesBlock',
-          title: 'OUR VALUES (LIBRA)',
-          items: data.values
-        });
-      }
-      if (data.initiatives) {
-        data.sections.push({
-          _type: 'cardsGridBlock',
-          title: 'Our Key Initiatives',
-          items: data.initiatives
-        });
-      }
-      if (data.stats) {
-        data.sections.push({
-          _type: 'statsBannerBlock',
-          title: data.stats_title || 'SCREENING STATISTICS 2024',
-          stats: data.stats
-        });
-      }
-      if (data.areas) {
-        data.sections.push({
-          _type: 'cardsGridBlock',
-          items: data.areas
-        });
-      }
-      if (data.programmes) {
-        data.sections.push({
-          _type: 'cardsGridBlock',
-          items: data.programmes
-        });
-      }
-      if (data.projects) {
-        data.sections.push({
-          _type: 'cardsGridBlock',
-          items: data.projects
-        });
-      }
-      if (data.reports) {
-        data.sections.push({
-          _type: 'reportsGridBlock',
-          reports: data.reports
-        });
-      }
-      if (data.opportunities) {
-        data.sections.push({
-          _type: 'cardsGridBlock',
-          items: data.opportunities.map(o => ({
-            image: o.image,
-            title: o.title,
-            description: o.description,
-            link: o.link,
-            buttonText: o.button_text || o.buttonText
-          }))
-        });
-      }
-      if (data.members) {
-        data.sections.push({
-          _type: 'teamGridBlock',
-          members: data.members
-        });
-      }
-      if (data.paynow || data.cheque) {
-        data.sections.push({
-          _type: 'donationBlock',
-          paynowTitle: data.paynow ? data.paynow.title : null,
-          paynowInstructions: data.paynow ? data.paynow.instructions : null,
-          qrCodeImage: data.paynow ? data.paynow.qr_code_image : null,
-          chequeTitle: data.cheque ? data.cheque.title : null,
-          chequeInstructions: data.cheque ? data.cheque.instructions : null,
-          contactEmail: data.contact_email
-        });
-      }
-      if (data.future_outlook) {
-        data.sections.push({
-          _type: 'futureOutlookBlock',
-          title: data.future_outlook.title,
-          description: data.future_outlook.description,
-          images: data.future_outlook.images
-        });
-      }
-    }
-
+    // Only process dynamic section blocks if explicitly present in Sanity
     if (Array.isArray(data.sections) && data.sections.length > 0) {
       const sectionElements = [];
 
@@ -387,12 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
               const btn = el.querySelector('.hero-btn');
               if (btn) btn.textContent = block.buttonText;
             }
-            const slugKey = data.slug ? data.slug.current : null;
-            const bgImg = getSanityImageUrl(block.heroImage, slugKey);
+            // Only update background image if an explicit image is set in Sanity
+            const bgImg = getSanityImageUrl(block.heroImage);
             if (bgImg) {
               el.style.backgroundImage = `url('${bgImg}')`;
-            } else {
-              el.style.backgroundImage = '';
             }
           }
         } else if (type === 'rootsBlock') {
@@ -406,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (block.story) {
               const s = el.querySelector('.who-text');
               if (s) {
-                // Do not overwrite with legacy short 2-sentence snippet from initial Sanity seed
                 const isLegacyShortSnippet = block.story.length < 300 && block.story.includes('At the heart of Project Battambang');
                 if (!isLegacyShortSnippet) {
                   s.textContent = block.story;
@@ -430,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'valuesBlock') {
           const valGrid = document.querySelector('.values-grid');
           if (valGrid) el = valGrid.closest('section');
-          if (el) {
+          if (el && data._fromSanity) {
             if (block.title && !block.title.toLowerCase().includes('core values')) {
               const vt = el.querySelector('.values-title');
               if (vt) vt.textContent = block.title;
@@ -452,15 +287,22 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'cardsGridBlock') {
           const gridEl = document.querySelector('.initiatives-grid') || document.querySelector('.areas-grid') || document.querySelector('.programmes-grid') || document.querySelector('.projects-grid') || document.querySelector('.opportunities-grid');
           if (gridEl) el = gridEl.closest('section');
-          if (el) {
+          if (el && data._fromSanity) {
             if (block.title) {
               const st = el.querySelector('.section-title') || el.querySelector('.initiatives-title') || el.querySelector('.future-title');
               if (st) st.textContent = block.title;
             }
             const cardsList = block.items || block.cards;
+            const existingCards = gridEl.querySelectorAll('.card');
+
             if (gridEl && Array.isArray(cardsList) && cardsList.length > 0) {
-              gridEl.innerHTML = cardsList.map(item => {
-                const imgSrc = getSanityImageUrl(item.image, item.title);
+              gridEl.innerHTML = cardsList.map((item, idx) => {
+                let imgSrc = getSanityImageUrl(item.image, item.title);
+                // Preserve existing static HTML card image if Sanity image is undefined
+                if (!imgSrc && existingCards[idx]) {
+                  const existingImg = existingCards[idx].querySelector('img');
+                  if (existingImg) imgSrc = existingImg.getAttribute('src');
+                }
                 return `
                   <div class="card">
                     ${imgSrc ? `<img src="${imgSrc}" alt="${item.title || ''}" class="card-image" />` : ''}
@@ -477,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'statsBannerBlock') {
           const statsGrid = document.querySelector('.stats-grid');
           if (statsGrid) el = statsGrid.closest('section');
-          if (el) {
+          if (el && data._fromSanity) {
             if (block.title) {
               const sbt = el.querySelector('.stats-banner-title');
               if (sbt) sbt.textContent = block.title;
@@ -510,19 +352,24 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'teamGridBlock') {
           const teamGrid = document.querySelector('.team-grid');
           if (teamGrid) el = teamGrid.closest('section');
-          if (el) {
+          if (el && data._fromSanity) {
             if (block.title) {
               const st = el.querySelector('.section-title');
               if (st) st.textContent = block.title;
             }
             if (block.heroImage) {
               const heroImg = document.getElementById('team-hero-img') || el.querySelector('.team-hero-img');
-              const hSrc = getSanityImageUrl(block.heroImage, 'team');
+              const hSrc = getSanityImageUrl(block.heroImage);
               if (heroImg && hSrc) heroImg.src = hSrc;
             }
             if (teamGrid && Array.isArray(block.members) && block.members.length > 0) {
-              teamGrid.innerHTML = block.members.map(m => {
-                const mImg = getSanityImageUrl(m.image, m.name);
+              const existingTeamCards = teamGrid.querySelectorAll('.card');
+              teamGrid.innerHTML = block.members.map((m, idx) => {
+                let mImg = getSanityImageUrl(m.image, m.name);
+                if (!mImg && existingTeamCards[idx]) {
+                  const existingImg = existingTeamCards[idx].querySelector('img');
+                  if (existingImg) mImg = existingImg.getAttribute('src');
+                }
                 return `
                   <div class="card">
                     ${mImg ? `<img src="${mImg}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />` : ''}
@@ -539,14 +386,19 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'reportsGridBlock') {
           const reportsGrid = document.querySelector('.reports-grid');
           if (reportsGrid) el = reportsGrid.closest('section');
-          if (el) {
+          if (el && data._fromSanity) {
             if (block.title) {
               const st = el.querySelector('.section-title');
               if (st) st.textContent = block.title;
             }
             if (reportsGrid && Array.isArray(block.reports) && block.reports.length > 0) {
-              reportsGrid.innerHTML = block.reports.map(r => {
-                const rImg = getSanityImageUrl(r.image, r.title);
+              const existingReportCards = reportsGrid.querySelectorAll('.card');
+              reportsGrid.innerHTML = block.reports.map((r, idx) => {
+                let rImg = getSanityImageUrl(r.image, r.title);
+                if (!rImg && existingReportCards[idx]) {
+                  const existingImg = existingReportCards[idx].querySelector('img');
+                  if (existingImg) rImg = existingImg.getAttribute('src');
+                }
                 return `
                   <div class="card">
                     ${rImg ? `<img src="${rImg}" alt="${r.title || ''}" class="card-image" />` : ''}
@@ -572,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function () {
               const pi = el.querySelector('.paynow-instructions');
               if (pi) pi.textContent = block.paynowInstructions;
             }
-            if (block.qrCodeImage || true) {
+            if (block.qrCodeImage) {
               const qr = el.querySelector('.qr-image') || el.querySelector('.qr-code-img');
               const qrSrc = getSanityImageUrl(block.qrCodeImage, 'paynow');
               if (qr && qrSrc) qr.src = qrSrc;
@@ -596,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (type === 'futureOutlookBlock') {
           const futureEl = document.querySelector('.future-box');
           if (futureEl) el = futureEl;
-          if (futureEl) {
+          if (futureEl && data._fromSanity) {
             if (block.title) {
               const ft = futureEl.querySelector('.future-title');
               if (ft) ft.textContent = block.title;
@@ -626,10 +478,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Re-append DOM section elements in exact array order from Sanity
-      sectionElements.forEach(secEl => {
-        footer.parentNode.insertBefore(secEl, footer);
-      });
+      // ONLY re-append DOM section elements if running inside Sanity Studio Presentation iframe
+      if (isEmbeddedInStudio && data._fromSanity && sectionElements.length > 0) {
+        sectionElements.forEach(secEl => {
+          footer.parentNode.insertBefore(secEl, footer);
+        });
+      }
     }
   }
 
@@ -683,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadPageData();
 
   // If running inside Sanity Studio Presentation iframe, poll every 2 seconds for real-time draft reorder updates
-  if (window.parent !== window) {
+  if (isEmbeddedInStudio) {
     setInterval(loadPageData, 2000);
   }
 });
