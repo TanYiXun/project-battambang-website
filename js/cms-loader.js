@@ -1,5 +1,48 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Mobile Nav Toggle
+  // Dynamic Component Loader for Header & Footer
+  loadComponents();
+
+  function loadComponents() {
+    const headerElem = document.querySelector('header.site-header');
+    const footerElem = document.querySelector('footer');
+
+    if (headerElem) {
+      fetch('components/header.html')
+        .then(res => res.text())
+        .then(html => {
+          headerElem.innerHTML = html;
+          const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+          const navLinks = headerElem.querySelectorAll('.nav-link');
+          navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+              link.classList.add('active');
+            } else if (href !== 'services-4.html') {
+              link.classList.remove('active');
+            }
+          });
+          const toggleBtn = headerElem.querySelector('.mobile-menu-toggle');
+          const navMenu = headerElem.querySelector('.nav-menu');
+          if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function () {
+              navMenu.classList.toggle('active');
+            });
+          }
+        })
+        .catch(err => console.error('Failed to load header component:', err));
+    }
+
+    if (footerElem) {
+      fetch('components/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          footerElem.innerHTML = html;
+        })
+        .catch(err => console.error('Failed to load footer component:', err));
+    }
+  }
+
+  // Mobile Nav Toggle Fallback
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   if (toggleBtn && navMenu) {

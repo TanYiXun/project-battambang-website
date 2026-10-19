@@ -5,3 +5,6 @@ scratch/**
 .DS_Store
 node_modules
 node_modules/**
+images_backup.zip
+pdfs/originals_backup
+pdfs/originals_backup/**
