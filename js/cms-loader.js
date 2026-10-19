@@ -83,11 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Helper to convert Sanity image asset object, URL string, or title fallback to valid image URL
   function getSanityImageUrl(img, titleOrFallback) {
-    if (titleOrFallback && DEFAULT_IMAGE_MAP[titleOrFallback] !== undefined) {
-      return DEFAULT_IMAGE_MAP[titleOrFallback];
-    }
-
+    // 1. Check explicit img object / URL string FIRST (never let DEFAULT_IMAGE_MAP override valid img)
     if (img) {
+      if (typeof img === 'string' && img.trim() !== '') return img;
       if (img.asset && img.asset._ref) {
         const ref = img.asset._ref;
         const parts = ref.split('-');
@@ -99,11 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       if (img.asset && img.asset.url) return img.asset.url;
-      if (typeof img === 'string' && img.trim() !== '') return img;
     }
 
+    // 2. Check if titleOrFallback itself is an image URL/path
     if (typeof titleOrFallback === 'string' && (titleOrFallback.startsWith('images/') || titleOrFallback.startsWith('http'))) {
       return titleOrFallback;
+    }
+
+    // 3. Fallback to DEFAULT_IMAGE_MAP by title key
+    if (titleOrFallback && DEFAULT_IMAGE_MAP[titleOrFallback] !== undefined) {
+      return DEFAULT_IMAGE_MAP[titleOrFallback];
     }
 
     return null;
