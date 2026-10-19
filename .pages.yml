@@ -3,6 +3,7 @@ media:
   output: /images
 
 content:
+  # Structured GUI Form Editors
   - name: carousel
     label: 🖼️ Homepage Gallery Carousel
     type: file
@@ -16,8 +17,8 @@ content:
         label: Slide Photo (Drag & Drop)
         type: image
 
-  - name: team
-    label: 👥 Meet the Team
+  - name: team_data
+    label: 👥 Meet the Team Data
     type: file
     path: data/team.json
     list: true
@@ -35,8 +36,8 @@ content:
         label: Description / Bio
         type: text
 
-  - name: reports
-    label: 📰 Post-Trip Reports
+  - name: reports_data
+    label: 📰 Post-Trip Reports Data
     type: file
     path: data/reports.json
     list: true
@@ -74,3 +75,34 @@ content:
       - name: footer_copyright
         label: Footer Copyright Text
         type: string
+
+  # Full Site HTML Pages
+  - name: home_page
+    label: 📄 Home Page (index.html)
+    type: file
+    path: index.html
+
+  - name: team_page
+    label: 📄 Meet the Team (meet-the-team.html)
+    type: file
+    path: meet-the-team.html
+
+  - name: donation_page
+    label: 📄 Donation Page (services-4.html)
+    type: file
+    path: services-4.html
+
+  - name: reports_page
+    label: 📄 Post-Trip Reports (post-trip-reports.html)
+    type: file
+    path: post-trip-reports.html
+
+  - name: education_page
+    label: 📄 Education Outreach (education-outreach.html)
+    type: file
+    path: education-outreach.html
+
+  - name: support_page
+    label: 📄 Support Services (support-services.html)
+    type: file
+    path: support-services.html
