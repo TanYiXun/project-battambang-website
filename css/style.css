@@ -466,14 +466,14 @@ body {
 }
 
 .education-hero-wrapper {
-  max-height: 560px;
+  max-height: 680px;
 }
 
 #education-hero-img {
   width: 100%;
-  height: 560px;
+  height: 680px;
   object-fit: cover;
-  object-position: bottom center; /* Anchor to bottom: 100% of bottom visible, hide top ceiling/wall */
+  object-position: center 58%;
   display: block;
 }
 
@@ -538,14 +538,14 @@ body {
     object-fit: contain !important;
   }
 
-  /* On mobile: anchor education image to bottom */
+  /* On mobile: frame education image around girls and paint tray */
   .education-hero-wrapper {
-    max-height: 460px !important;
+    max-height: 520px !important;
   }
   #education-hero-img {
-    height: 460px !important;
+    height: 520px !important;
     object-fit: cover !important;
-    object-position: bottom center !important;
+    object-position: center 58% !important;
   }
 }
 
