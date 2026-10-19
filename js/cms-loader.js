@@ -140,6 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
               const btn = el.querySelector('.hero-btn');
               if (btn) btn.textContent = block.buttonText;
             }
+            if (block.heroImage) {
+              el.style.backgroundImage = `url('${getSanityImageUrl(block.heroImage)}')`;
+            }
           }
         } else if (type === 'rootsBlock') {
           const titleEl = document.querySelector('.who-title');
@@ -200,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <div class="card-body">
                     <h3 class="card-title">${item.title || ''}</h3>
                     <p class="card-text">${item.description || ''}</p>
-                    ${item.link ? `<a href="${item.link}" class="btn btn-outline" style="align-self: start;">Learn More</a>` : ''}
+                    ${item.link ? `<a href="${item.link}" class="btn btn-outline" style="align-self: start;">${item.buttonText || 'Learn More'}</a>` : ''}
                   </div>
                 </div>
               `).join('');
@@ -218,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
               const iconSvgs = {
                 calendar: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
                 location: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
-                people: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 1 0 7.75"></path></svg>',
+                people: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
                 bandage: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"></path></svg>'
               };
               const iconBgColors = { calendar: '#a8e6cf', location: '#fdb8c0', people: '#fbe285', bandage: '#78c6fb' };
@@ -246,6 +249,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (block.title) {
               const st = el.querySelector('.section-title');
               if (st) st.textContent = block.title;
+            }
+            if (block.heroImage) {
+              const heroImg = document.getElementById('team-hero-img') || el.querySelector('.team-hero-img');
+              if (heroImg) heroImg.src = getSanityImageUrl(block.heroImage);
             }
             if (teamGrid && Array.isArray(block.members) && block.members.length > 0) {
               teamGrid.innerHTML = block.members.map(m => `
@@ -296,6 +303,21 @@ document.addEventListener('DOMContentLoaded', function () {
             if (block.qrCodeImage) {
               const qr = el.querySelector('.qr-image') || el.querySelector('.qr-code-img');
               if (qr) qr.src = getSanityImageUrl(block.qrCodeImage);
+            }
+            if (block.chequeTitle) {
+              const ct = el.querySelector('.cheque-title');
+              if (ct) ct.textContent = block.chequeTitle;
+            }
+            if (block.chequeInstructions) {
+              const ci = el.querySelector('.cheque-instructions');
+              if (ci) ci.textContent = block.chequeInstructions;
+            }
+            if (block.contactEmail) {
+              const em = el.querySelector('.contact-email') || el.querySelector('.donation-email');
+              if (em) {
+                em.href = 'mailto:' + block.contactEmail;
+                em.textContent = block.contactEmail;
+              }
             }
           }
         }
