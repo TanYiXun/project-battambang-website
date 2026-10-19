@@ -38,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     'reports': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
     'paynow': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
 
-    // Home Pillars
-    'Health Screening': 'images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg',
-    'Education Outreach': 'images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg',
+    // Home Pillars (using authentic field photos from target pages)
+    'Health Screening': 'images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg',
+    'Education Outreach': 'images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg',
+    'Education Development': 'images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg',
     'Post-Trip Reports': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
 
     // Education Modules
@@ -82,8 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Helper to convert Sanity image asset object, URL string, or title fallback to valid image URL
   function getSanityImageUrl(img, titleOrFallback) {
+    if (titleOrFallback && DEFAULT_IMAGE_MAP[titleOrFallback] !== undefined) {
+      return DEFAULT_IMAGE_MAP[titleOrFallback];
+    }
+
     if (img) {
-      if (typeof img === 'string' && img.trim() !== '') return img;
       if (img.asset && img.asset._ref) {
         const ref = img.asset._ref;
         const parts = ref.split('-');
@@ -95,15 +99,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       if (img.asset && img.asset.url) return img.asset.url;
+      if (typeof img === 'string' && img.trim() !== '') return img;
     }
 
-    if (titleOrFallback) {
-      if (DEFAULT_IMAGE_MAP[titleOrFallback] !== undefined) {
-        return DEFAULT_IMAGE_MAP[titleOrFallback];
-      }
-      if (typeof titleOrFallback === 'string' && (titleOrFallback.startsWith('images/') || titleOrFallback.startsWith('http'))) {
-        return titleOrFallback;
-      }
+    if (typeof titleOrFallback === 'string' && (titleOrFallback.startsWith('images/') || titleOrFallback.startsWith('http'))) {
+      return titleOrFallback;
     }
 
     return null;
