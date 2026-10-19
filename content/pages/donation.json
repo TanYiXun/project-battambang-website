@@ -8,7 +8,8 @@
   },
   "cheque": {
     "title": "Cheque & General Inquiries",
-    "instructions": "If you would like to make a cheque donation, corporate sponsorship, or have questions about how your donation helps, please reach out to us!"
+    "instructions": "If you would like to make a cheque donation, corporate sponsorship, or have questions about how your donation helps, please reach out to us!",
+    "button_text": "Contact Us"
   },
   "contact_email": "med.battambang@gmail.com"
 }
