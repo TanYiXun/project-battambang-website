@@ -1,21 +1,13 @@
 {
   "page_title": "Education & Outreach",
   "intro_text": "Delivering sustainable, year-round aid through our structured education and community development programmes.",
-  "initiatives": [
-    {
-      "title": "LIGHT A DREAM SCHOLARSHIP",
-      "description": "The Light-A-Dream Scholarship (LADS) is a long-standing initiative that invests in the education of selected students (Grades 7 through university) with financial need, empowering them to contribute back to their community.",
-      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg"
-    },
-    {
-      "title": "SCHOOL SUPPORT PROGRAMME",
-      "description": "Implemented at Santipheap Primary School to improve learning environments directly. Project Battambang funded clean water wells and sanitation facilities, alongside health education curricula.",
-      "image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg"
-    },
-    {
-      "title": "POST-SCREENING EDUCATION",
-      "description": "Delivering targeted health lessons during screenings on topics including personal hygiene, dental care, nutrition, vector-borne bites, hair lice prevention, and chronic disease management.",
-      "image": "images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png"
-    }
-  ]
+  "prog1_title": "LIGHT A DREAM SCHOLARSHIP",
+  "prog1_description": "The Light-A-Dream Scholarship (LADS) is a long-standing initiative that invests in the education of selected students (Grades 7 through university) with financial need, empowering them to contribute back to their community.",
+  "prog1_image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
+  "prog2_title": "SCHOOL SUPPORT PROGRAMME",
+  "prog2_description": "Implemented at Santipheap Primary School to improve learning environments directly. Project Battambang funded clean water wells and sanitation facilities, alongside health education curricula.",
+  "prog2_image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
+  "prog3_title": "POST-SCREENING EDUCATION",
+  "prog3_description": "Delivering targeted health lessons during screenings on topics including personal hygiene, dental care, nutrition, vector-borne bites, hair lice prevention, and chronic disease management.",
+  "prog3_image": "images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png"
 }

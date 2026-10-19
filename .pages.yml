@@ -3,406 +3,143 @@ media:
   output: /images
 
 content:
-  - name: home_page
-    label: 🏠 Home Page (À La Carte Builder)
+  - name: home
+    label: Home Page
     type: file
     path: content/home.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: hero_banner
-            label: 🖼️ Hero Slideshow / Banner
-            fields:
-              - name: title
-                label: Banner Title
-                type: string
-              - name: slides
-                label: Slide Photos (Drag & Drop)
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Slide Title
-                    type: string
-                  - name: image
-                    label: Photo (Drag & Drop)
-                    type: image
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: hero_subtitle, label: Hero Subtitle, type: string }
+      - { name: hero_description, label: Hero Description, type: text }
+      - { name: hero_button_text, label: Hero Button Text, type: string }
+      - { name: who_we_are_title, label: Who We Are Section Title, type: string }
+      - { name: who_we_are_text, label: Who We Are Text, type: text }
+      - { name: card1_title, label: Initiative 1 Title, type: string }
+      - { name: card1_description, label: Initiative 1 Description, type: text }
+      - { name: card1_image, label: Initiative 1 Image, type: image }
+      - { name: card2_title, label: Initiative 2 Title, type: string }
+      - { name: card2_description, label: Initiative 2 Description, type: text }
+      - { name: card2_image, label: Initiative 2 Image, type: image }
+      - { name: card3_title, label: Initiative 3 Title, type: string }
+      - { name: card3_description, label: Initiative 3 Description, type: text }
+      - { name: card3_image, label: Initiative 3 Image, type: image }
 
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
-
-          - name: cards_grid
-            label: 📇 Feature Cards Grid (2 or 3 Columns)
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Cards List
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Card Title
-                    type: string
-                  - name: photo
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Description
-                    type: text
-                  - name: link
-                    label: Button Link URL
-                    type: string
-
-          - name: image_gallery
-            label: 📷 Photo Gallery Block
-            fields:
-              - name: section_title
-                label: Gallery Title
-                type: string
-              - name: photos
-                label: Photos List
-                type: object
-                list: true
-                fields:
-                  - name: image
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: caption
-                    label: Caption
-                    type: string
-
-          - name: call_to_action
-            label: 💙 Call-to-Action / Donation Block
-            fields:
-              - name: title
-                label: Title
-                type: string
-              - name: text
-                label: Text Description
-                type: text
-              - name: button_text
-                label: Button Text
-                type: string
-              - name: button_link
-                label: Button Link URL
-                type: string
-              - name: qr_image
-                label: PayNow / QR Photo (Drag & Drop)
-                type: image
-
-          - name: faq_accordion
-            label: ❓ FAQ / Accordion
-            fields:
-              - name: section_title
-                label: FAQ Heading
-                type: string
-              - name: items
-                label: Q&A List
-                type: object
-                list: true
-                fields:
-                  - name: question
-                    label: Question
-                    type: string
-                  - name: answer
-                    label: Answer
-                    type: text
-
-  - name: team_page
-    label: 👥 Meet the Team Page (À La Carte Builder)
+  - name: team
+    label: Meet the Team Page
     type: file
     path: content/team.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: member1_name, label: Member 1 Title / Name, type: string }
+      - { name: member1_role, label: Member 1 Role, type: string }
+      - { name: member1_bio, label: Member 1 Bio, type: text }
+      - { name: member1_image, label: Member 1 Photo, type: image }
+      - { name: member2_name, label: Member 2 Title / Name, type: string }
+      - { name: member2_role, label: Member 2 Role, type: string }
+      - { name: member2_bio, label: Member 2 Bio, type: text }
+      - { name: member2_image, label: Member 2 Photo, type: image }
+      - { name: member3_name, label: Member 3 Title / Name, type: string }
+      - { name: member3_role, label: Member 3 Role, type: string }
+      - { name: member3_bio, label: Member 3 Bio, type: text }
+      - { name: member3_image, label: Member 3 Photo, type: image }
+      - { name: member4_name, label: Member 4 Title / Name, type: string }
+      - { name: member4_role, label: Member 4 Role, type: string }
+      - { name: member4_bio, label: Member 4 Bio, type: text }
+      - { name: member4_image, label: Member 4 Photo, type: image }
 
-          - name: cards_grid
-            label: 📇 Member / Committee Grid
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Cards / Members
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Name / Committee
-                    type: string
-                  - name: photo
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Description / Members
-                    type: text
-                  - name: link
-                    label: Button Link URL
-                    type: string
-
-          - name: image_gallery
-            label: 📷 Photo Gallery Block
-            fields:
-              - name: section_title
-                label: Gallery Title
-                type: string
-              - name: photos
-                label: Photos List
-                type: object
-                list: true
-                fields:
-                  - name: image
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: caption
-                    label: Caption
-                    type: string
-
-  - name: donation_page
-    label: 💙 Donation Page (À La Carte Builder)
+  - name: donation
+    label: Donations Page
     type: file
     path: content/donation.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: call_to_action
-            label: 💙 Call-to-Action / Donation Block
-            fields:
-              - name: title
-                label: Title
-                type: string
-              - name: text
-                label: Text Description
-                type: text
-              - name: button_text
-                label: Button Text
-                type: string
-              - name: button_link
-                label: Button Link URL
-                type: string
-              - name: qr_image
-                label: PayNow / QR Photo (Drag & Drop)
-                type: image
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: paynow_title, label: Payment Box Title, type: string }
+      - { name: qr_code_image, label: PayNow QR Code Image, type: image }
+      - { name: bank_details, label: Bank & UEN Details, type: text }
+      - { name: tier1_title, label: Tier 1 Amount, type: string }
+      - { name: tier1_description, label: Tier 1 Description, type: text }
+      - { name: tier2_title, label: Tier 2 Amount, type: string }
+      - { name: tier2_description, label: Tier 2 Description, type: text }
+      - { name: tier3_title, label: Tier 3 Amount, type: string }
+      - { name: tier3_description, label: Tier 3 Description, type: text }
+      - { name: tier4_title, label: Tier 4 Amount, type: string }
+      - { name: tier4_description, label: Tier 4 Description, type: text }
 
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
-
-          - name: cards_grid
-            label: 📇 Impact Cards Grid
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Impact Cards
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Impact Title
-                    type: string
-                  - name: photo
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Description
-                    type: text
-
-  - name: reports_page
-    label: 📰 Post-Trip Reports Page (À La Carte Builder)
+  - name: reports
+    label: Post-Trip Reports Page
     type: file
     path: content/reports.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: report1_title, label: Report 1 Title, type: string }
+      - { name: report1_image, label: Report 1 Cover Image, type: image }
+      - { name: report1_pdf, label: Report 1 PDF Link, type: string }
+      - { name: report1_description, label: Report 1 Summary, type: text }
+      - { name: report2_title, label: Report 2 Title, type: string }
+      - { name: report2_image, label: Report 2 Cover Image, type: image }
+      - { name: report2_pdf, label: Report 2 PDF Link, type: string }
+      - { name: report2_description, label: Report 2 Summary, type: text }
+      - { name: report3_title, label: Report 3 Title, type: string }
+      - { name: report3_image, label: Report 3 Cover Image, type: image }
+      - { name: report3_pdf, label: Report 3 PDF Link, type: string }
+      - { name: report3_description, label: Report 3 Summary, type: text }
+      - { name: report4_title, label: Report 4 Title, type: string }
+      - { name: report4_image, label: Report 4 Cover Image, type: image }
+      - { name: report4_pdf, label: Report 4 PDF Link, type: string }
+      - { name: report4_description, label: Report 4 Summary, type: text }
 
-          - name: cards_grid
-            label: 📇 Reports Cards Grid
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Report Items
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Report Title
-                    type: string
-                  - name: photo
-                    label: Cover Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Summary
-                    type: text
-                  - name: link
-                    label: PDF / Report Link
-                    type: string
-
-  - name: education_page
-    label: 📚 Education Outreach Page (À La Carte Builder)
+  - name: education
+    label: Education Outreach Page
     type: file
     path: content/education.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: prog1_title, label: Programme 1 Title, type: string }
+      - { name: prog1_description, label: Programme 1 Description, type: text }
+      - { name: prog1_image, label: Programme 1 Image, type: image }
+      - { name: prog2_title, label: Programme 2 Title, type: string }
+      - { name: prog2_description, label: Programme 2 Description, type: text }
+      - { name: prog2_image, label: Programme 2 Image, type: image }
+      - { name: prog3_title, label: Programme 3 Title, type: string }
+      - { name: prog3_description, label: Programme 3 Description, type: text }
+      - { name: prog3_image, label: Programme 3 Image, type: image }
 
-          - name: cards_grid
-            label: 📇 Program Modules Grid
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Modules
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Module Title
-                    type: string
-                  - name: photo
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Description
-                    type: text
-
-  - name: support_page
-    label: 🩺 Support Services Page (À La Carte Builder)
+  - name: support
+    label: Health Screening Page
     type: file
     path: content/support.json
     fields:
-      - name: page_title
-        label: Page Title
-        type: string
-      - name: sections
-        label: 🧩 Page Sections (Add & Re-order À La Carte Blocks)
-        type: block
-        list: true
-        blocks:
-          - name: text_block
-            label: 📝 Text & Paragraph Block
-            fields:
-              - name: title
-                label: Heading
-                type: string
-              - name: text
-                label: Description / Body Text
-                type: text
-
-          - name: cards_grid
-            label: 📇 Services Cards Grid
-            fields:
-              - name: section_title
-                label: Section Heading
-                type: string
-              - name: items
-                label: Services
-                type: object
-                list: true
-                fields:
-                  - name: title
-                    label: Service Title
-                    type: string
-                  - name: photo
-                    label: Photo (Drag & Drop)
-                    type: image
-                  - name: text
-                    label: Description
-                    type: text
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: stat1_label, label: Stat 1 Label, type: string }
+      - { name: stat1_value, label: Stat 1 Value, type: string }
+      - { name: stat2_label, label: Stat 2 Label, type: string }
+      - { name: stat2_value, label: Stat 2 Value, type: string }
+      - { name: stat3_label, label: Stat 3 Label, type: string }
+      - { name: stat3_value, label: Stat 3 Value, type: string }
+      - { name: stat4_label, label: Stat 4 Label, type: string }
+      - { name: stat4_value, label: Stat 4 Value, type: string }
+      - { name: area1_title, label: Area 1 Title, type: string }
+      - { name: area1_description, label: Area 1 Description, type: text }
+      - { name: area1_image, label: Area 1 Image, type: image }
+      - { name: area2_title, label: Area 2 Title, type: string }
+      - { name: area2_description, label: Area 2 Description, type: text }
+      - { name: area2_image, label: Area 2 Image, type: image }
+      - { name: area3_title, label: Area 3 Title, type: string }
+      - { name: area3_description, label: Area 3 Description, type: text }
+      - { name: area3_image, label: Area 3 Image, type: image }
 
   - name: header_footer
-    label: 📌 Header & Footer (Global)
+    label: Header & Footer
     type: file
     path: content/header_footer.json
     fields:
-      - name: site_name
-        label: Site Name / Title
-        type: string
-      - name: logo_image
-        label: Header Logo Photo (Drag & Drop)
-        type: image
-      - name: instagram_url
-        label: Instagram Profile URL
-        type: string
-      - name: contact_email
-        label: Contact Email Address
-        type: string
-      - name: footer_text
-        label: Footer Copyright Text
-        type: string
+      - { name: site_title, label: Site Title, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: logo_image, label: Logo Image, type: image }
+      - { name: contact_email, label: Contact Email, type: string }
+      - { name: copyright_text, label: Copyright Text, type: string }

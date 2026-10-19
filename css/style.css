@@ -99,6 +99,7 @@ body {
   padding: 0.5rem 0.25rem;
   transition: var(--transition);
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {

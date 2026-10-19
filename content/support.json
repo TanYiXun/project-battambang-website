@@ -1,27 +1,21 @@
 {
   "page_title": "Health Screening",
   "intro_text": "Our Commitment to Healthcare: Bringing accessible medical screening, chronic disease management, and hospital referrals closer to underserved communities in Cambodia.",
-  "stats": [
-    { "label": "CLINIC DAYS", "value": "4 DAYS" },
-    { "label": "LOCATIONS", "value": "3 LOCATIONS" },
-    { "label": "VILLAGERS SCREENED", "value": "1,068" },
-    { "label": "HOSPITAL REFERRALS", "value": "284" }
-  ],
-  "sections": [
-    {
-      "title": "Poipet Village Health Clinics",
-      "description": "Conducted mass health clinics across Kbal Koh, Tum Nub Kor Phram, and Mother of Peace Kindergarten. Screened 1,068 villagers for acute illnesses, chronic hypertension, diabetes, skin infections, and hair lice.",
-      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg"
-    },
-    {
-      "title": "Referral Pathways & Continuity of Care",
-      "description": "Ensuring care extends beyond screening sites by connecting villagers with chronic conditions to local healthcare institutions, providing follow-up assessments and subsidized medication.",
-      "image": "images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg"
-    },
-    {
-      "title": "Groundwork & Stakeholder Engagement",
-      "description": "Engaging Cambodian counterparts, local hospitals, and pharmacies during recce trips to establish sustainable, locally grounded healthcare partnerships.",
-      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg"
-    }
-  ]
+  "stat1_label": "CLINIC DAYS",
+  "stat1_value": "4 DAYS",
+  "stat2_label": "LOCATIONS",
+  "stat2_value": "3 LOCATIONS",
+  "stat3_label": "VILLAGERS SCREENED",
+  "stat3_value": "1,068",
+  "stat4_label": "HOSPITAL REFERRALS",
+  "stat4_value": "284",
+  "area1_title": "Poipet Village Health Clinics",
+  "area1_description": "Conducted mass health clinics across Kbal Koh, Tum Nub Kor Phram, and Mother of Peace Kindergarten. Screened 1,068 villagers for acute illnesses, chronic hypertension, diabetes, skin infections, and hair lice.",
+  "area1_image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+  "area2_title": "Referral Pathways & Continuity of Care",
+  "area2_description": "Ensuring care extends beyond screening sites by connecting villagers with chronic conditions to local healthcare institutions, providing follow-up assessments and subsidized medication.",
+  "area2_image": "images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg",
+  "area3_title": "Groundwork & Stakeholder Engagement",
+  "area3_description": "Engaging Cambodian counterparts, local hospitals, and pharmacies during recce trips to establish sustainable, locally grounded healthcare partnerships.",
+  "area3_image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg"
 }

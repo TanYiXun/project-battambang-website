@@ -1,31 +1,20 @@
 {
   "page_title": "Meet the Team",
   "intro_text": "Our committee comprises passionate medical students from NUS Yong Loo Lin School of Medicine, supported by healthcare advisors, doctors, and community partners.",
-  "executive_title": "EXECUTIVE COMMITTEE 2024/2025",
-  "members": [
-    {
-      "name": "Project Directors",
-      "role": "Executive Leadership",
-      "bio": "Leading overall strategy, international partnerships, and logistical execution for Project Battambang.",
-      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
-    },
-    {
-      "name": "Medical Screening Committee",
-      "role": "Clinical Operations",
-      "bio": "Designing clinical protocols, triage procedures, pharmacy management, and volunteer physician coordination.",
-      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
-    },
-    {
-      "name": "Education Committee",
-      "role": "Community Education",
-      "bio": "Overseeing the Light-A-Dream Scholarship, school water and sanitation projects, and health education modules.",
-      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
-    },
-    {
-      "name": "Logistics & Finance Committee",
-      "role": "Operations & Sponsorship",
-      "bio": "Managing supply chain, medication logistics, budgeting, transparency, and donation distribution.",
-      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
-    }
-  ]
+  "member1_name": "Project Directors",
+  "member1_role": "Executive Leadership",
+  "member1_bio": "Leading overall strategy, international partnerships, and logistical execution for Project Battambang.",
+  "member1_image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png",
+  "member2_name": "Medical Screening Committee",
+  "member2_role": "Clinical Operations",
+  "member2_bio": "Designing clinical protocols, triage procedures, pharmacy management, and volunteer physician coordination.",
+  "member2_image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png",
+  "member3_name": "Education Committee",
+  "member3_role": "Community Education",
+  "member3_bio": "Overseeing the Light-A-Dream Scholarship, school water and sanitation projects, and health education modules.",
+  "member3_image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png",
+  "member4_name": "Logistics & Finance Committee",
+  "member4_role": "Operations & Sponsorship",
+  "member4_bio": "Managing supply chain, medication logistics, budgeting, transparency, and donation distribution.",
+  "member4_image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
 }

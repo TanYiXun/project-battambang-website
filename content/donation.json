@@ -4,22 +4,12 @@
   "paynow_title": "Donate via PayNow / Bank Transfer",
   "qr_code_image": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
   "bank_details": "Bank: DBS Bank Ltd\nAccount Name: NUS Medical Society - Project Battambang\nAccount Number: 003-902144-8\nUEN: S87SS0064J\n(Please indicate 'PB Donation' in the reference field)",
-  "impact_points": [
-    {
-      "title": "$20 Contribution",
-      "description": "Provides essential acute and chronic medications for 5 villagers during mass screening clinics."
-    },
-    {
-      "title": "$50 Contribution",
-      "description": "Supplies hygiene kits, toothbrushes, and school learning materials for 1 primary school student for a year."
-    },
-    {
-      "title": "$150 Contribution",
-      "description": "Sponsors 1 full year of the Light-A-Dream Scholarship for a secondary school student in Battambang."
-    },
-    {
-      "title": "$500 Contribution",
-      "description": "Funds vital hospital diagnostic referrals and subsidized follow-up treatments for patients in need."
-    }
-  ]
+  "tier1_title": "$20 Contribution",
+  "tier1_description": "Provides essential acute and chronic medications for 5 villagers during mass screening clinics.",
+  "tier2_title": "$50 Contribution",
+  "tier2_description": "Supplies hygiene kits, toothbrushes, and school learning materials for 1 primary school student for a year.",
+  "tier3_title": "$150 Contribution",
+  "tier3_description": "Sponsors 1 full year of the Light-A-Dream Scholarship for a secondary school student in Battambang.",
+  "tier4_title": "$500 Contribution",
+  "tier4_description": "Funds vital hospital diagnostic referrals and subsidized follow-up treatments for patients in need."
 }

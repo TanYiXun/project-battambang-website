@@ -1,7 +1,7 @@
 {
-  "site_name": "Project Battambang",
+  "site_title": "Project Battambang",
+  "tagline": "Love Above All Else",
   "logo_image": "images/81af6121f84c41a5b4391d7d37fce12a.png",
-  "instagram_url": "https://www.instagram.com/projectbattambang/",
   "contact_email": "projectbattambang@gmail.com",
-  "footer_text": "©2026 Proudly by Project Battambang | Love Above All Else"
+  "copyright_text": "© 2026 Project Battambang. All Rights Reserved."
 }

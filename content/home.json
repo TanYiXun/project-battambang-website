@@ -3,28 +3,15 @@
   "hero_subtitle": "~ love above all else ~",
   "hero_description": "An overseas community service project organized by medical students from the Yong Loo Lin School of Medicine, National University of Singapore.",
   "hero_button_text": "Our Initiatives",
-  "hero_button_link": "#initiatives",
   "who_we_are_title": "WHO WE ARE",
   "who_we_are_text": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore. Since 2012, our team has been dedicated to improving healthcare access, providing health education, and supporting education initiatives for underserved communities in Battambang and Poipet, Cambodia.",
-  "initiatives_title": "OUR KEY INITIATIVES",
-  "initiatives": [
-    {
-      "title": "Health Screening",
-      "description": "Providing mass village health clinics, door-to-door screenings, chronic disease monitoring, and hospital referrals.",
-      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
-      "link": "support-services.html"
-    },
-    {
-      "title": "Education Development",
-      "description": "Investing in youth through the Light-A-Dream Scholarship, School Support Programme, and community hygiene education.",
-      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
-      "link": "education-outreach.html"
-    },
-    {
-      "title": "Post-Trip Reports",
-      "description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
-      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg",
-      "link": "post-trip-reports.html"
-    }
-  ]
+  "card1_title": "Health Screening",
+  "card1_description": "Providing mass village health clinics, door-to-door screenings, chronic disease monitoring, and hospital referrals in Poipet.",
+  "card1_image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+  "card2_title": "Education Development",
+  "card2_description": "Investing in youth through the Light-A-Dream Scholarship, School Support Programme, and community hygiene education.",
+  "card2_image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
+  "card3_title": "Post-Trip Reports",
+  "card3_description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
+  "card3_image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg"
 }
