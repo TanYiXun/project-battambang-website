@@ -6,54 +6,54 @@
     "description": "An overseas community service project organized by medical students from the Yong Loo Lin School of Medicine, National University of Singapore.",
     "cta_banner": "CALLING ALL DOCTORS AND HEALTHCARE PROFESSIONALS — JOIN US IN DEC 2026",
     "cta_link": "get-involved.html",
-    "bg_image": "images/home-hero-community.jpg"
+    "bg_image": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg"
   },
   "carousel": [
     {
-      "image": "images/home-carousel-1.jpg",
+      "image": "images/fd6b4f_9e2e0f0c452640fcaa56b18c7c1dea93~mv2.jpg",
       "caption": "Medical Screenings & Consultations in Poipet"
     },
     {
-      "image": "images/home-carousel-2.jpg",
+      "image": "images/fd6b4f_0e25b34a33974225af6de5c4e51fd909~mv2_d_3456_2304_s_2.jpg",
       "caption": "Doctor & Student Volunteer Triage Operations"
     },
     {
-      "image": "images/home-carousel-3.jpg",
+      "image": "images/fd6b4f_5e9e5d4f01f744cc8b977e82531512bf~mv2.jpg",
       "caption": "Community Health Screenings & Consultations"
     },
     {
-      "image": "images/home-carousel-4.jpg",
+      "image": "images/fd6b4f_9c288b02abaf44fe95fcc3ee29d3cf7f~mv2_d_6000_4000_s_4_2.jpg",
       "caption": "Door-to-Door Household Epidemiological Surveys"
     },
     {
-      "image": "images/home-carousel-5.jpg",
+      "image": "images/fd6b4f_dcb218380ec04c57bccd3f5fd14fa09d~mv2.jpg",
       "caption": "Health Education & Hygiene Engagement for Children"
     },
     {
-      "image": "images/home-carousel-6.jpg",
+      "image": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg",
       "caption": "Multidisciplinary Healthcare & Student Team"
     },
     {
-      "image": "images/home-carousel-7.jpg",
+      "image": "images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg",
       "caption": "School Engagement & Primary Education Outreach"
     },
     {
-      "image": "images/home-carousel-8.jpg",
+      "image": "images/fd6b4f_9e2e0f0c452640fcaa56b18c7c1dea93~mv2.jpg",
       "caption": "Hospital Referral Pathways & Patient Follow-Up"
     },
     {
-      "image": "images/home-carousel-9.jpg",
+      "image": "images/fd6b4f_0e25b34a33974225af6de5c4e51fd909~mv2_d_3456_2304_s_2.jpg",
       "caption": "On-Ground Research & Community Assessment"
     },
     {
-      "image": "images/home-carousel-10.jpg",
+      "image": "images/fd6b4f_5e9e5d4f01f744cc8b977e82531512bf~mv2.jpg",
       "caption": "Light-A-Dream Scholarship & Educational Support"
     }
   ],
   "who_we_are": {
     "title": "WHO WE ARE",
     "description": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore.",
-    "image": "images/community-fieldwork-overview.jpg"
+    "image": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg"
   },
   "roots": {
     "title": "Our Roots",
@@ -95,19 +95,19 @@
     {
       "title": "Health Screening",
       "description": "Comprehensive clinical triage, doctor consultations, chronic disease monitoring, and pharmacy dispensary.",
-      "image": "images/home-hero-screening.jpg",
+      "image": "images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg",
       "link": "support-services.html"
     },
     {
       "title": "Door-to-Door Surveys",
       "description": "Collecting household epidemiological data to guide healthcare strategies and identify urgent community needs.",
-      "image": "images/home-hero-groundwork.jpg",
+      "image": "images/fd6b4f_5e9e5d4f01f744cc8b977e82531512bf~mv2.jpg",
       "link": "development.html"
     },
     {
       "title": "Education & Outreach",
       "description": "Hygiene workshops, preventive health modules, school outreach, and student scholarships.",
-      "image": "images/education-outreach-hero.jpeg",
+      "image": "images/fd6b4f_5e9e5d4f01f744cc8b977e82531512bf~mv2.jpg",
       "link": "education-outreach.html"
     }
   ],

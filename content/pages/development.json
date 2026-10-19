@@ -1,32 +1,32 @@
 {
   "page_title": "Development",
   "intro_text": "Project Battambang conducts surveys alongside screenings to collect epidemiological data so as to better understand the needs of the villagers we serve.\n\nOur Development Committee oversees the collection and analysis of data regarding the individuals we serve, utilising this information to strategically guide the direction of our project. Additionally, we are responsible for coming up with and bringing to life new and inventive ideas to further the project’s goals.",
-  "hero_image": "images/door-to-door-household-surveys.jpg",
+  "hero_image": "images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg",
   "projects": [
     {
       "title": "VEASNA Mobile Screening System",
       "description": "Our team trialled a mobile screening initiative, 'Veasna,' shifting away from physically written medical reports. This system allows for seamless data collection and management without the need for internet connectivity, and enables the automatic generation of referral forms, streamlining patient data management and minimising errors, to meet the needs of villagers' healthcare and wellbeing more efficiently.",
-      "image": "images/veasna-mobile-screening-system.jpg"
+      "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg"
     },
     {
       "title": "Door-To-Door Household Surveys",
       "description": "Our team conducts door-to-door interviews to speak to villagers and gain a first hand understanding of their needs. Such an approach not only gives us valuable insight into the villagers' way of life, but also allows us to obtain a more comprehensive visual understanding of the village community. This year, we revamped our door-to-door surveys, transitioning to a fully digital system utilizing offline Google Sheets with dropdown menus to streamline quantitative data collection and analysis.",
-      "image": "images/door-to-door-household-surveys.jpg"
+      "image": "images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg"
     },
     {
       "title": "Stories of Poipet",
       "description": "Recognizing the limitations of purely statistical methods, we embraced freeform home interviews to understand villagers as individuals rather than just patients. Each team was equipped with a film camera, encouraging intentional photography that captured the essence of the villagers and their homes—spaces both personal and profoundly different from our own. This initiative culminated in the creation of the Stories of Poipet book.",
-      "image": "images/field-photo-community-2.jpg"
+      "image": "images/fd6b4f_f5098a2716504d348ed7ab707eb524b1~mv2.jpg"
     },
     {
       "title": "Water Pump Initiative",
       "description": "In May, our epidemiological studies revealed a high prevalence of gastrointestinal illnesses, linked to poor water quality. In response, we partnered with Water for Cambodia to install a water pump at the Love Without Boundaries (LWB) Rangsei School. The pump, officially inaugurated during a ceremony attended by the village chief, now serves the children of the school as well as the residents of Toul Pang Ro Village, a nearby landfill community.",
-      "image": "images/cambodia-fieldwork-carousel-5.jpg"
+      "image": "images/fd6b4f_cbbb014d5e194215995eb20575abc765~mv2.jpg"
     },
     {
       "title": "School Upgrading Initiatives",
       "description": "To complement Education's programme at the Love Without Boundaries School, we introduced a creative educational soap-making activity to reinforce hand hygiene practices while sparking joy and creativity among the children. At Tum Nub Kor V School, we provided administrative laptops to encourage digital learning and donated sports equipment for volleyball, badminton, and soccer.",
-      "image": "images/school-upgrading-infrastructure.jpg"
+      "image": "images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2.jpg"
     }
   ],
   "future_outlook": {
