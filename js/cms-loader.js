@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(err => console.log('[Sanity] Visual Editing standalone script load:', err));
   }
 
+  const CMS_ENABLED = false; // Set to false to disable CMS overwrites during manual image review
+
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
@@ -542,6 +544,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Load Page Data based on active route
   function loadPageData() {
+    if (!CMS_ENABLED) return;
     if (path === '' || path === 'index.html') {
       fetchContent('home.json', 'home').then(data => {
         if (!data) return;
