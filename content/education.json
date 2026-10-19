@@ -1,16 +1,21 @@
 {
-  "page_title": "Education Outreach",
-  "intro_text": "Empowering communities through accessible health education workshops, hygiene kits, and nutrition awareness.",
-  "programs": [
+  "page_title": "Education & Outreach",
+  "intro_text": "Delivering sustainable, year-round aid through our structured education and community development programmes.",
+  "initiatives": [
     {
-      "title": "Dental & Oral Hygiene",
-      "photo": "images/fd6b4f_1b6393589efd403ea6aaa2675ab2f891~mv2_d_3456_2304_s_2.jpg",
-      "description": "Teaching children proper toothbrushing techniques and providing toothpaste and toothbrush kits."
+      "title": "LIGHT A DREAM SCHOLARSHIP",
+      "description": "The Light-A-Dream Scholarship (LADS) is a long-standing initiative that invests in the education of selected students (Grades 7 through university) with financial need, empowering them to contribute back to their community.",
+      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg"
     },
     {
-      "title": "Nutrition & Chronic Disease Awareness",
-      "photo": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg",
-      "description": "Educating villagers on managing hypertension, diabetes, and dietary nutrition."
+      "title": "SCHOOL SUPPORT PROGRAMME",
+      "description": "Implemented at Santipheap Primary School to improve learning environments directly. Project Battambang funded clean water wells and sanitation facilities, alongside health education curricula.",
+      "image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg"
+    },
+    {
+      "title": "POST-SCREENING EDUCATION",
+      "description": "Delivering targeted health lessons during screenings on topics including personal hygiene, dental care, nutrition, vector-borne bites, hair lice prevention, and chronic disease management.",
+      "image": "images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png"
     }
   ]
 }

@@ -1,16 +1,27 @@
 {
-  "page_title": "Support Services",
-  "intro_text": "Our primary healthcare support services bring doctors, nurses, and medical students to underserved rural areas.",
-  "services": [
+  "page_title": "Health Screening",
+  "intro_text": "Our Commitment to Healthcare: Bringing accessible medical screening, chronic disease management, and hospital referrals closer to underserved communities in Cambodia.",
+  "stats": [
+    { "label": "CLINIC DAYS", "value": "4 DAYS" },
+    { "label": "LOCATIONS", "value": "3 LOCATIONS" },
+    { "label": "VILLAGERS SCREENED", "value": "1,068" },
+    { "label": "HOSPITAL REFERRALS", "value": "284" }
+  ],
+  "sections": [
     {
-      "title": "Primary Health Screening",
-      "photo": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
-      "description": "Comprehensive health checkups, blood pressure measurements, blood glucose tests, and consultations."
+      "title": "Poipet Village Health Clinics",
+      "description": "Conducted mass health clinics across Kbal Koh, Tum Nub Kor Phram, and Mother of Peace Kindergarten. Screened 1,068 villagers for acute illnesses, chronic hypertension, diabetes, skin infections, and hair lice.",
+      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg"
     },
     {
-      "title": "Vision & Optometry Screening",
-      "photo": "images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg",
-      "description": "Custom prescription glasses distribution and referrals for cataract surgeries."
+      "title": "Referral Pathways & Continuity of Care",
+      "description": "Ensuring care extends beyond screening sites by connecting villagers with chronic conditions to local healthcare institutions, providing follow-up assessments and subsidized medication.",
+      "image": "images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg"
+    },
+    {
+      "title": "Groundwork & Stakeholder Engagement",
+      "description": "Engaging Cambodian counterparts, local hospitals, and pharmacies during recce trips to establish sustainable, locally grounded healthcare partnerships.",
+      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg"
     }
   ]
 }

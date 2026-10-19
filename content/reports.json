@@ -1,20 +1,30 @@
 {
   "page_title": "Post-Trip Reports",
-  "intro_text": "Read our comprehensive post-trip reports detailing patient stats, health screening findings, and community impact.",
+  "intro_text": "In the spirit of transparency and accountability, we publish annual post-trip reports detailing screening metrics, financial distributions, and project evaluations.",
   "reports": [
     {
-      "title": "May 2026 Koh Dach & Stung Meanchey Outreach Report",
-      "year": "2026",
-      "cover_photo": "images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg",
-      "pdf_link": "#",
-      "summary": "Detailed door-to-door healthcare needs assessment across Stung Meanchey and Koh Dach Island."
+      "year": "2026 May Recce Post Trip Report",
+      "cover_image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg",
+      "pdf_link": "pdfs/fd6b4f_18e6bb92276f464584c59fd8c1ed4200.pdf",
+      "description": "Recce report detailing groundwork, hospital stakeholder visits, and pharmacy assessments in Phnom Penh and surrounding areas."
     },
     {
-      "title": "December 2023 Poipet Screening Report",
-      "year": "2023",
-      "cover_photo": "images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg",
-      "pdf_link": "#",
-      "summary": "Annual trip summary of over 1,200 patient consultations and vision screenings."
+      "year": "2024 Post Trip Report",
+      "cover_image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
+      "pdf_link": "pdfs/fd6b4f_066da01cc2784cd5868e540e95cc5d05.pdf",
+      "description": "Comprehensive documentation of mass health clinics in Poipet, screening 1,068 villagers and completing 284 clinical referrals."
+    },
+    {
+      "year": "2023 Post Trip Report",
+      "cover_image": "images/fd6b4f_7bb2f20282fd4068b430353b2793a168~mv2.jpg",
+      "pdf_link": "pdfs/fd6b4f_270b844ac1df45858eb3583dc198bb93.pdf",
+      "description": "Detailed evaluation of village health screenings, dental education, and scholarship distribution."
+    },
+    {
+      "year": "2022 Post Trip Report",
+      "cover_image": "images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png",
+      "pdf_link": "pdfs/fd6b4f_6104c20839d142699857beb3588998dc.pdf",
+      "description": "Summary of post-pandemic trip resumption, partner institution meetings, and initial referral pathway setups."
     }
   ]
 }

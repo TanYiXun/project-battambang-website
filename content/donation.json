@@ -1,18 +1,25 @@
 {
-  "page_title": "Donations & Support",
-  "intro_text": "Your generous contributions directly fund medical supplies, consultations, and health education for rural communities in Cambodia.",
-  "qr_code_image": "images/fd6b4f_042871e11db7438a9b58b69627b6ca53~mv2.jpg",
-  "bank_details": "Bank Name: DBS Bank Singapore\nAccount Number: 120-901234-5\nUEN / PayNow: T12SS0012A\nReference: Project Battambang",
+  "page_title": "Donation & Support",
+  "intro_text": "Your generous donations directly fund medical supplies, village health clinics, referral subsidies, and student scholarships in Cambodia.",
+  "paynow_title": "Donate via PayNow / Bank Transfer",
+  "qr_code_image": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
+  "bank_details": "Bank: DBS Bank Ltd\nAccount Name: NUS Medical Society - Project Battambang\nAccount Number: 003-902144-8\nUEN: S87SS0064J\n(Please indicate 'PB Donation' in the reference field)",
   "impact_points": [
     {
-      "title": "Medical Supplies & Medications",
-      "photo": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg",
-      "text": "$50 provides essential primary healthcare prescription drugs and vitamin supplements for 10 families."
+      "title": "$20 Contribution",
+      "description": "Provides essential acute and chronic medications for 5 villagers during mass screening clinics."
     },
     {
-      "title": "Eye Vision Screenings & Glasses",
-      "photo": "images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg",
-      "text": "$100 funds custom prescription reading glasses for elderly villagers suffering from uncorrected refractive errors."
+      "title": "$50 Contribution",
+      "description": "Supplies hygiene kits, toothbrushes, and school learning materials for 1 primary school student for a year."
+    },
+    {
+      "title": "$150 Contribution",
+      "description": "Sponsors 1 full year of the Light-A-Dream Scholarship for a secondary school student in Battambang."
+    },
+    {
+      "title": "$500 Contribution",
+      "description": "Funds vital hospital diagnostic referrals and subsidized follow-up treatments for patients in need."
     }
   ]
 }

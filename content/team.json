@@ -1,18 +1,31 @@
 {
   "page_title": "Meet the Team",
-  "intro_text": "Meet the passionate medical students and committees behind Project Battambang.",
-  "committees": [
+  "intro_text": "Our committee comprises passionate medical students from NUS Yong Loo Lin School of Medicine, supported by healthcare advisors, doctors, and community partners.",
+  "executive_title": "EXECUTIVE COMMITTEE 2024/2025",
+  "members": [
     {
-      "name": "Logistics Committee",
-      "members": "Ritesh, David",
-      "photo": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
-      "description": "The Logistics Committee's work revolves around the management and booking of facilities, transport, and most importantly, the operation of the pharmacy."
+      "name": "Project Directors",
+      "role": "Executive Leadership",
+      "bio": "Leading overall strategy, international partnerships, and logistical execution for Project Battambang.",
+      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
     },
     {
-      "name": "Sponsorship Committee",
-      "members": "Chinh, Bianca, Chloe",
-      "photo": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
-      "description": "Sponsorships focus on maintaining relations with our sponsors, fundraising, safe-keeping project funds and publicity, including this website!"
+      "name": "Medical Screening Committee",
+      "role": "Clinical Operations",
+      "bio": "Designing clinical protocols, triage procedures, pharmacy management, and volunteer physician coordination.",
+      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
+    },
+    {
+      "name": "Education Committee",
+      "role": "Community Education",
+      "bio": "Overseeing the Light-A-Dream Scholarship, school water and sanitation projects, and health education modules.",
+      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
+    },
+    {
+      "name": "Logistics & Finance Committee",
+      "role": "Operations & Sponsorship",
+      "bio": "Managing supply chain, medication logistics, budgeting, transparency, and donation distribution.",
+      "image": "images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png"
     }
   ]
 }

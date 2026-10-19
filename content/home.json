@@ -1,56 +1,30 @@
 {
-  "page_title": "Project Battambang",
-  "sections": [
+  "hero_title": "PROJECT BATTAMBANG",
+  "hero_subtitle": "~ love above all else ~",
+  "hero_description": "An overseas community service project organized by medical students from the Yong Loo Lin School of Medicine, National University of Singapore.",
+  "hero_button_text": "Our Initiatives",
+  "hero_button_link": "#initiatives",
+  "who_we_are_title": "WHO WE ARE",
+  "who_we_are_text": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore. Since 2012, our team has been dedicated to improving healthcare access, providing health education, and supporting education initiatives for underserved communities in Battambang and Poipet, Cambodia.",
+  "initiatives_title": "OUR KEY INITIATIVES",
+  "initiatives": [
     {
-      "type": "hero_banner",
-      "title": "Project Battambang Medical Mission",
-      "slides": [
-        {
-          "title": "Project Battambang Vision Screening",
-          "image": "images/fd6b4f_0b9bdbfe1d4b4fe1b05814a8ea1734ed~mv2.jpg"
-        },
-        {
-          "title": "Project Battambang Community Service",
-          "image": "images/fd6b4f_5e9e5d4f01f744cc8b977e82531512bf~mv2.jpg"
-        },
-        {
-          "title": "Medical Screening Team",
-          "image": "images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg"
-        },
-        {
-          "title": "Health Education",
-          "image": "images/fd6b4f_b13a871a979d4c6da35779a8a4ef75c2~mv2.jpg"
-        }
-      ]
+      "title": "Health Screening",
+      "description": "Providing mass village health clinics, door-to-door screenings, chronic disease monitoring, and hospital referrals.",
+      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+      "link": "support-services.html"
     },
     {
-      "type": "text_block",
-      "title": "WHO WE ARE",
-      "text": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore. The project was created in response to the ongoing struggles of the people in Cambodia.\n\nThis project is dedicated to providing free, comprehensive health screenings and education to the underprivileged in Koh Dach Island, Cambodia."
+      "title": "Education Development",
+      "description": "Investing in youth through the Light-A-Dream Scholarship, School Support Programme, and community hygiene education.",
+      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
+      "link": "education-outreach.html"
     },
     {
-      "type": "cards_grid",
-      "section_title": "OUR KEY INITIATIVES",
-      "items": [
-        {
-          "title": "MEET THE TEAM",
-          "photo": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
-          "text": "Meet our dedicated student volunteers, committee heads, and medical mentors.",
-          "link": "meet-the-team.html"
-        },
-        {
-          "title": "SUPPORT SERVICES",
-          "photo": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
-          "text": "Providing sustainable healthcare, primary consultations, and essential medication.",
-          "link": "support-services.html"
-        },
-        {
-          "title": "EDUCATION OUTREACH",
-          "photo": "images/fd6b4f_1b6393589efd403ea6aaa2675ab2f891~mv2_d_3456_2304_s_2.jpg",
-          "text": "Empowering local communities with hygiene, nutrition, and preventive health knowledge.",
-          "link": "education-outreach.html"
-        }
-      ]
+      "title": "Post-Trip Reports",
+      "description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
+      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg",
+      "link": "post-trip-reports.html"
     }
   ]
 }
