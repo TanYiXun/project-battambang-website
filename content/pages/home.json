@@ -1,10 +1,39 @@
 {
-  "page_title": "Project Battambang",
+  "page_title": "Project Battambang | NUS Medicine Overseas Community Project",
   "hero": {
     "title": "PROJECT BATTAMBANG",
     "subtitle": "~ love above all else ~",
     "description": "An overseas community service project organized by medical students from the Yong Loo Lin School of Medicine, National University of Singapore.",
-    "button_text": "Our Initiatives"
+    "cta_banner": "CALLING ALL DOCTORS AND HEALTHCARE PROFESSIONALS — JOIN US IN DEC 2026",
+    "cta_link": "get-involved.html",
+    "bg_image": "images/home-hero-community.jpg"
+  },
+  "carousel": [
+    {
+      "image": "images/cambodia-fieldwork-carousel-1.jpg",
+      "caption": "Medical Screenings & Consultations in Poipet"
+    },
+    {
+      "image": "images/cambodia-fieldwork-carousel-2.jpg",
+      "caption": "Door-to-Door Community Health Surveys"
+    },
+    {
+      "image": "images/cambodia-fieldwork-carousel-3.jpg",
+      "caption": "Preventive Health & Hygiene Education for Children"
+    },
+    {
+      "image": "images/cambodia-fieldwork-carousel-4.jpg",
+      "caption": "Multidisciplinary Healthcare & Student Volunteer Team"
+    },
+    {
+      "image": "images/cambodia-fieldwork-carousel-5.jpg",
+      "caption": "Long-standing Partnerships in Cambodia"
+    }
+  ],
+  "who_we_are": {
+    "title": "WHO WE ARE",
+    "description": "Project Battambang is an overseas community service project organized by students from the Yong Loo Lin School of Medicine, National University of Singapore.",
+    "image": "images/community-fieldwork-overview.jpg"
   },
   "roots": {
     "title": "Our Roots",
@@ -50,20 +79,20 @@
     {
       "title": "Health Screening",
       "description": "Comprehensive clinical triage, doctor consultations, chronic disease monitoring, and pharmacy dispensary.",
-      "image": "images/health-screening-poipet.jpg",
+      "image": "images/home-hero-screening.jpg",
       "link": "support-services.html"
     },
     {
-      "title": "Education Outreach",
+      "title": "Door-to-Door Surveys",
+      "description": "Collecting household epidemiological data to guide healthcare strategies and identify urgent community needs.",
+      "image": "images/home-hero-groundwork.jpg",
+      "link": "development.html"
+    },
+    {
+      "title": "Education & Outreach",
       "description": "Hygiene workshops, preventive health modules, school outreach, and student scholarships.",
       "image": "images/education-outreach-hero.jpeg",
       "link": "education-outreach.html"
-    },
-    {
-      "title": "Post-Trip Reports",
-      "description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
-      "image": "images/post-trip-reports-banner.jpg",
-      "link": "post-trip-reports.html"
     }
   ]
 }
