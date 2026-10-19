@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (data.paynow) {
           const paynowTitle = document.querySelector('.paynow-title');
           const paynowInst = document.querySelector('.paynow-instructions');
-          const qrCodeImg = document.querySelector('.qr-code-img');
+          const qrCodeImg = document.querySelector('.qr-image') || document.querySelector('.qr-code-img');
           if (paynowTitle && data.paynow.title) paynowTitle.textContent = data.paynow.title;
           if (paynowInst && data.paynow.instructions) paynowInst.textContent = data.paynow.instructions;
           if (qrCodeImg && data.paynow.qr_code_image) qrCodeImg.src = data.paynow.qr_code_image;
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (data.contact_email) {
-          const donationEmail = document.querySelector('.donation-email');
+          const donationEmail = document.querySelector('.contact-email') || document.querySelector('.donation-email');
           if (donationEmail) {
             donationEmail.href = 'mailto:' + data.contact_email;
             donationEmail.textContent = data.contact_email;

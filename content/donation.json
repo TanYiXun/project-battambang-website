@@ -1,14 +1,14 @@
 {
-  "page_title": "Make a Donation",
-  "intro_text": "100% of your contributions go directly toward patient medications, health screening supplies, and educational scholarships.",
+  "page_title": "Donations",
+  "intro_text": "As Project Battambang ventures further, the project requires funding for our different initiatives. These initiatives are essential in allowing us to better serve the Cambodian Community. We would appreciate any amount of donations that would go to the project!",
   "paynow": {
-    "title": "Donate via PayNow",
-    "instructions": "Scan the PayNow QR code or enter UEN/Entity name. Please include 'Project Battambang' in the reference field.",
+    "title": "PayNow",
+    "instructions": "For a quick donation, you may Paynow using the QR code below! Do help to indicate 'BTB2026'",
     "qr_code_image": "images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg"
   },
   "cheque": {
-    "title": "Donate via Cheque",
-    "instructions": "Cross cheques payable to 'National University of Singapore'. On the reverse, write 'Project Battambang' along with your contact details."
+    "title": "Cheque",
+    "instructions": "If you would like to make a cheque donation, do reach out to us for further arrangements!"
   },
   "contact_email": "med.battambang@gmail.com"
 }

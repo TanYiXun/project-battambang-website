@@ -1,31 +1,26 @@
 {
   "page_title": "Development",
-  "intro_text": "Driving sustainable infrastructure, community health research, and long-term capacity building in Battambang.",
-  "hero_image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg",
+  "intro_text": "Driving sustainable infrastructure, community health research, and long-term capacity building through listening, evidence, and local partnership.",
+  "hero_image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg",
   "projects": [
     {
-      "title": "Community Health Research",
-      "description": "Conducting health-seeking behavior surveys to better understand rural healthcare access and barriers.",
-      "image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg"
+      "title": "Door-To-Door Household Surveys",
+      "description": "Conducting structured household surveys in Poipet and Phnom Penh to assess healthcare access, health-seeking behaviors, and family financial burdens.",
+      "image": "images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg"
     },
     {
-      "title": "Sanitation & Clean Water",
-      "description": "Evaluating local water supply safety and supporting sustainable sanitation infrastructure.",
-      "image": "images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg"
+      "title": "School Upgrading & Infrastructure",
+      "description": "Introducing hygiene soap-making at Love Without Boundaries School, and providing administrative laptops and physical education equipment (volleyball, badminton, soccer) at Tum Nub Kor V School.",
+      "image": "images/fd6b4f_222c083e2f0b4325849397f703c4d5ef~mv2_d_4779_3186_s_4_2.jpg"
     },
     {
-      "title": "Local Partner Capacity Building",
-      "description": "Working closely with local Cambodian medical staff and community health centers.",
-      "image": "images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg"
-    },
-    {
-      "title": "Long-Term Impact Evaluation",
-      "description": "Systematically measuring healthcare outcomes year-over-year to refine project interventions.",
-      "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg"
+      "title": "Koh Dach Island & Groundwork",
+      "description": "Exploring Koh Dach Island as a potential site for long-term health, education, and community initiatives following our May 2026 recce trip.",
+      "image": "images/fd6b4f_f12cb94f31f04171a39bcead24bfa1e1~mv2_d_5560_3707_s_4_2.jpg"
     }
   ],
   "future_outlook": {
     "title": "Future Directions",
-    "description": "Expanding telemetry tracking, local healthcare worker training, and sustainable educational sponsorships."
+    "description": "As Project Battambang enters a new phase, the Development Committee will guide initiatives through careful needs assessment, engaging residents, village chiefs, and involving Cambodian counterparts early in survey planning so project direction is guided by evidence and partnership."
   }
 }
