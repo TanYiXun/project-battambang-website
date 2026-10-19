@@ -28,21 +28,84 @@ document.addEventListener('DOMContentLoaded', function () {
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
-  // Helper to convert Sanity image asset object or URL string to valid CDN image URL
-  function getSanityImageUrl(img) {
-    if (!img) return 'images/logo_exact.png';
-    if (typeof img === 'string') return img;
-    if (img.asset && img.asset._ref) {
-      const ref = img.asset._ref;
-      const parts = ref.split('-');
-      if (parts.length >= 4) {
-        const id = parts[1];
-        const dimensions = parts[2];
-        const format = parts[3];
-        return `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${id}-${dimensions}.${format}`;
+  const DEFAULT_IMAGE_MAP = {
+    // Pages / Hero Defaults
+    'home': 'images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg',
+    'team': 'images/fd6b4f_cbbb014d5e194215995eb20575abc765~mv2.jpg',
+    'support': 'images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg',
+    'education': 'images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg',
+    'development': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    'reports': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
+    'paynow': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
+
+    // Home Pillars
+    'Health Screening': 'images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg',
+    'Education Outreach': 'images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg',
+    'Post-Trip Reports': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
+
+    // Team Members & Committees
+    'Dr Ong Yew Jin': 'images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg',
+    'Project Directors': 'images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg',
+    'Medical Screening Committee': 'images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg',
+    'Education Committee': 'images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg',
+    'Development Committee': 'images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg',
+    'Logistics Committee': 'images/fd6b4f_3b0ba32b0a554b9ca942eb73b99be359~mv2.jpg',
+    'Sponsorship & Finance Committee': 'images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg',
+
+    // Support Services Areas
+    'Mass Village & Door-to-Door Clinics': 'images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg',
+    'Subsidised Referrals & Follow-Up Care': 'images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg',
+    'Multidisciplinary Healthcare Team': 'images/fd6b4f_1b6393589efd403ea6aaa2675ab2f891~mv2_d_3456_2304_s_2.jpg',
+    'Future Plans & Groundwork': 'images/fd6b4f_735810e1693447399f05d7c631c221ed~mv2_d_6000_4000_s_4_2.jpg',
+
+    // Education Modules
+    'Primary School Hygiene & Health Modules': 'images/fd6b4f_4872a2e679904d8e9de5e684ce3a7401~mv2.jpg',
+    'Light-A-Dream Scholarship (LADS)': 'images/fd6b4f_1c6ad1f3db174abc82341c487f0dcb61~mv2_d_5184_3456_s_4_2.jpg',
+    'Community Engagement & Cultural Exchange': 'images/fd6b4f_4edbb130a76a4658af25845fd8ae4210~mv2_d_6000_4000_s_4_2.jpg',
+
+    // Development Projects
+    'Koh Dach Island Development': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    'Health-Seeking Behavior Research': 'images/fd6b4f_222c083e2f0b4325849397f703c4d5ef~mv2_d_4779_3186_s_4_2.jpg',
+    'On-Ground Capacity Building': 'images/fd6b4f_f12cb94f31f04171a39bcead24bfa1e1~mv2_d_5560_3707_s_4_2.jpg',
+
+    // Reports
+    '2026 May Recce Post Trip Report': 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg',
+    '2024 Post Trip Report': 'images/fd6b4f_2420aedd929d41a8be5cdedf9a57baae~mv2.jpg',
+    '2023 Post Trip Report': 'images/fd6b4f_7bb2f20282fd4068b430353b2793a168~mv2.jpg',
+    '2022 Post Trip Report': 'images/fd6b4f_67959562b029412fb822bb5358a3e9c9~mv2.png',
+
+    // Opportunities / Get Involved
+    'Calling All Doctors & Healthcare Professionals': 'images/fd6b4f_b395341d430a4416aafa3efec20912d3~mv2.jpg',
+    'Make a Donation': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
+    'Partner with Us': 'images/fd6b4f_222c083e2f0b4325849397f703c4d5ef~mv2_d_4779_3186_s_4_2.jpg'
+  };
+
+  // Helper to convert Sanity image asset object, URL string, or title fallback to valid image URL
+  function getSanityImageUrl(img, titleOrFallback) {
+    if (img) {
+      if (typeof img === 'string' && img.trim() !== '') return img;
+      if (img.asset && img.asset._ref) {
+        const ref = img.asset._ref;
+        const parts = ref.split('-');
+        if (parts.length >= 4) {
+          const id = parts[1];
+          const dimensions = parts[2];
+          const format = parts[3];
+          return `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${id}-${dimensions}.${format}`;
+        }
+      }
+      if (img.asset && img.asset.url) return img.asset.url;
+    }
+
+    if (titleOrFallback) {
+      if (DEFAULT_IMAGE_MAP[titleOrFallback]) {
+        return DEFAULT_IMAGE_MAP[titleOrFallback];
+      }
+      if (typeof titleOrFallback === 'string' && (titleOrFallback.startsWith('images/') || titleOrFallback.startsWith('http'))) {
+        return titleOrFallback;
       }
     }
-    if (img.asset && img.asset.url) return img.asset.url;
+
     return 'images/logo_exact.png';
   }
 
@@ -140,8 +203,9 @@ document.addEventListener('DOMContentLoaded', function () {
               const btn = el.querySelector('.hero-btn');
               if (btn) btn.textContent = block.buttonText;
             }
-            if (block.heroImage) {
-              el.style.backgroundImage = `url('${getSanityImageUrl(block.heroImage)}')`;
+            if (block.heroImage || true) {
+              const bgImg = getSanityImageUrl(block.heroImage, data.slug ? data.slug.current : 'home');
+              if (bgImg) el.style.backgroundImage = `url('${bgImg}')`;
             }
           }
         } else if (type === 'rootsBlock') {
@@ -199,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (gridEl && Array.isArray(cardsList) && cardsList.length > 0) {
               gridEl.innerHTML = cardsList.map(item => `
                 <div class="card">
-                  <img src="${getSanityImageUrl(item.image)}" alt="${item.title || ''}" class="card-image" />
+                  <img src="${getSanityImageUrl(item.image, item.title)}" alt="${item.title || ''}" class="card-image" />
                   <div class="card-body">
                     <h3 class="card-title">${item.title || ''}</h3>
                     <p class="card-text">${item.description || ''}</p>
@@ -250,14 +314,14 @@ document.addEventListener('DOMContentLoaded', function () {
               const st = el.querySelector('.section-title');
               if (st) st.textContent = block.title;
             }
-            if (block.heroImage) {
+            if (block.heroImage || true) {
               const heroImg = document.getElementById('team-hero-img') || el.querySelector('.team-hero-img');
-              if (heroImg) heroImg.src = getSanityImageUrl(block.heroImage);
+              if (heroImg) heroImg.src = getSanityImageUrl(block.heroImage, 'team');
             }
             if (teamGrid && Array.isArray(block.members) && block.members.length > 0) {
               teamGrid.innerHTML = block.members.map(m => `
                 <div class="card">
-                  <img src="${getSanityImageUrl(m.image)}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
+                  <img src="${getSanityImageUrl(m.image, m.name)}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
                   <div class="card-body">
                     <h3 class="card-title">${m.name || ''}</h3>
                     <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; display: block;">${m.role || ''}</span>
@@ -278,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (reportsGrid && Array.isArray(block.reports) && block.reports.length > 0) {
               reportsGrid.innerHTML = block.reports.map(r => `
                 <div class="card">
-                  <img src="${getSanityImageUrl(r.image)}" alt="${r.title || ''}" class="card-image" />
+                  <img src="${getSanityImageUrl(r.image, r.title)}" alt="${r.title || ''}" class="card-image" />
                   <div class="card-body">
                     <h3 class="card-title">${r.title || ''}</h3>
                     <p class="card-text">${r.summary || ''}</p>
@@ -300,9 +364,9 @@ document.addEventListener('DOMContentLoaded', function () {
               const pi = el.querySelector('.paynow-instructions');
               if (pi) pi.textContent = block.paynowInstructions;
             }
-            if (block.qrCodeImage) {
+            if (block.qrCodeImage || true) {
               const qr = el.querySelector('.qr-image') || el.querySelector('.qr-code-img');
-              if (qr) qr.src = getSanityImageUrl(block.qrCodeImage);
+              if (qr) qr.src = getSanityImageUrl(block.qrCodeImage, 'paynow');
             }
             if (block.chequeTitle) {
               const ct = el.querySelector('.cheque-title');
