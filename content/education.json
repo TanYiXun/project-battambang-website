@@ -1,22 +1,22 @@
 {
   "page_title": "Education & Outreach",
   "intro_text": "Project Battambang stands by the wholehearted belief that education is a lifelong process, and a major cornerstone of improving universal standards of living. Quality education enables individuals to acquire the knowledge and proficiencies needed for higher-skilled occupations that provide better income and self-sufficiency.\n\nEvery child deserves the opportunity to receive quality education. The ability to read and write will lay a foundation for a future without poverty or hunger. Education equips children with fundamental knowledge and skills to better provide for themselves and empowers the community to improve health and prevent diseases like HIV.",
-  "hero_image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
+  "hero_image": "images/education-outreach-hero.jpeg",
   "programmes": [
     {
       "title": "Light A Dream Scholarship (LADS)",
       "description": "The Light-A-Dream Scholarship (LADS) is a long standing initiative that invests in the education of a group of selected students with the hope that these individuals will someday contribute back to the community and its betterment. Each year, approximately 30 scholars ranging from Grades 7 through 12 and even up to university, are carefully selected by the sisters of the MSSHJ based on their personal and financial needs, and are financially supported via the scholarship.",
-      "image": "images/fd6b4f_4872a2e679904d8e9de5e684ce3a7401~mv2.jpg"
+      "image": "images/light-a-dream-scholarship.jpg"
     },
     {
       "title": "School Support Programme",
       "description": "Implemented to channel funds towards improving the school's environment directly, providing a more conducive environment for education. We selected Santipheap Primary School and Love Without Boundaries (LWB) in Cambodia as beneficiaries, funding the construction of wells, toilets, simple first aid measures, personal hygiene, and administrative laptops, with long-term objectives to support a health education curriculum focusing on physical, emotional and psychological health.",
-      "image": "images/fd6b4f_1c6ad1f3db174abc82341c487f0dcb61~mv2_d_5184_3456_s_4_2.jpg"
+      "image": "images/school-support-programme.jpg"
     },
     {
       "title": "Post-Screening Health Education",
       "description": "Post Screening Education has been a key part of our screenings since Project Battambang's inception. This programme aims to inculcate education as part of our screenings, by ensuring that people are properly educated on the ways to improve their health and fitness. Cambodian volunteers use custom prepared posters to conduct lessons with villagers on topics including Bites, Dental Care, Nutrition, Hair Lice, diabetes, hypertension, and first aid skills.",
-      "image": "images/fd6b4f_4edbb130a76a4658af25845fd8ae4210~mv2_d_6000_4000_s_4_2.jpg"
+      "image": "images/post-screening-health-education.jpg"
     }
   ]
 }

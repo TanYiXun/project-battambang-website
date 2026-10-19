@@ -50,19 +50,19 @@
     {
       "title": "Health Screening",
       "description": "Comprehensive clinical triage, doctor consultations, chronic disease monitoring, and pharmacy dispensary.",
-      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+      "image": "images/health-screening-poipet.jpg",
       "link": "support-services.html"
     },
     {
       "title": "Education Outreach",
       "description": "Hygiene workshops, preventive health modules, school outreach, and student scholarships.",
-      "image": "images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg",
+      "image": "images/education-outreach-hero.jpeg",
       "link": "education-outreach.html"
     },
     {
       "title": "Post-Trip Reports",
       "description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
-      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg",
+      "image": "images/post-trip-reports-banner.jpg",
       "link": "post-trip-reports.html"
     }
   ]
