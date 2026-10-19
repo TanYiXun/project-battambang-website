@@ -3,6 +3,12 @@
   "name": "project-battambang-website",
   "compatibility_date": "2026-10-19",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "exclude": [
+      ".git/**",
+      "scratch/**",
+      ".DS_Store",
+      "node_modules/**"
+    ]
   }
 }

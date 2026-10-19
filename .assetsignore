@@ -1,0 +1,7 @@
+.git
+.git/**
+scratch
+scratch/**
+.DS_Store
+node_modules
+node_modules/**
