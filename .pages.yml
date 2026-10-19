@@ -8,38 +8,41 @@ content:
     type: file
     path: content/home.json
     fields:
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: hero_subtitle, label: Hero Subtitle, type: string }
-      - { name: hero_description, label: Hero Description, type: text }
-      - { name: hero_button_text, label: Hero Button Text, type: string }
-      - { name: who_we_are_title, label: Section Title (Our Roots), type: string }
-      - { name: who_we_are_text, label: Our Roots Story, type: text }
-      - { name: vision_title, label: Vision Title, type: string }
-      - { name: vision_text, label: Vision Text, type: text }
-      - { name: mission_title, label: Mission Title, type: string }
-      - { name: mission_text, label: Mission Text, type: text }
-      - { name: values_title, label: Values Section Title, type: string }
-      - { name: value1_name, label: Value 1 Name, type: string }
-      - { name: value1_desc, label: Value 1 Description, type: text }
-      - { name: value2_name, label: Value 2 Name, type: string }
-      - { name: value2_desc, label: Value 2 Description, type: text }
-      - { name: value3_name, label: Value 3 Name, type: string }
-      - { name: value3_desc, label: Value 3 Description, type: text }
-      - { name: value4_name, label: Value 4 Name, type: string }
-      - { name: value4_desc, label: Value 4 Description, type: text }
-      - { name: value5_name, label: Value 5 Name, type: string }
-      - { name: value5_desc, label: Value 5 Description, type: text }
-      - { name: value6_name, label: Value 6 Name, type: string }
-      - { name: value6_desc, label: Value 6 Description, type: text }
-      - { name: card1_title, label: Initiative 1 Title, type: string }
-      - { name: card1_description, label: Initiative 1 Description, type: text }
-      - { name: card1_image, label: Initiative 1 Image, type: image }
-      - { name: card2_title, label: Initiative 2 Title, type: string }
-      - { name: card2_description, label: Initiative 2 Description, type: text }
-      - { name: card2_image, label: Initiative 2 Image, type: image }
-      - { name: card3_title, label: Initiative 3 Title, type: string }
-      - { name: card3_description, label: Initiative 3 Description, type: text }
-      - { name: card3_image, label: Initiative 3 Image, type: image }
+      - { name: page_title, label: Page Title, type: string }
+      - name: hero
+        label: Hero Banner
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: button_text, label: Button Text, type: string }
+      - name: roots
+        label: Our Roots Section
+        type: object
+        fields:
+          - { name: title, label: Section Title, type: string }
+          - { name: story, label: Our Story, type: text }
+      - name: vision_mission
+        label: Vision & Mission Section
+        type: object
+        fields:
+          - { name: vision, label: Our Vision, type: text }
+          - { name: mission, label: Our Mission, type: text }
+      - name: values
+        label: Core Values (LIBRAS)
+        type: list
+        fields:
+          - { name: name, label: Value Name, type: string }
+          - { name: description, label: Description, type: text }
+      - name: initiatives
+        label: Featured Initiatives Cards
+        type: list
+        fields:
+          - { name: title, label: Initiative Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Cover Image, type: image }
+          - { name: link, label: Target Page Link, type: string }
 
   - name: team
     label: Meet the Team Page
@@ -48,118 +51,15 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: hero_image, label: Main Committee Photo (Hero Banner), type: image }
-      - name: member1
-        label: "Section 1: Dr Ong Yew Jin (Project Mentor)"
-        type: object
+      - { name: hero_image, label: Full Committee Group Photo, type: image }
+      - name: members
+        label: Sub-Committees & Members List
+        type: list
         fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
+          - { name: name, label: Committee / Member Name, type: string }
+          - { name: role, label: Role / Subtitle, type: string }
+          - { name: bio, label: Biography / Description, type: text }
           - { name: image, label: Photo, type: image }
-      - name: member2
-        label: "Section 2: Project Directors"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-      - name: member3
-        label: "Section 3: Medical Screening Committee"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-      - name: member4
-        label: "Section 4: Education Committee"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-      - name: member5
-        label: "Section 5: Development Committee"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-      - name: member6
-        label: "Section 6: Logistics Committee"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-      - name: member7
-        label: "Section 7: Sponsorship & Finance Committee"
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
-          - { name: bio, label: Bio, type: text }
-          - { name: image, label: Photo, type: image }
-
-  - name: donation
-    label: Donations Page
-    type: file
-    path: content/donation.json
-    fields:
-      - { name: page_title, label: Page Title, type: string }
-      - { name: intro_text, label: Intro Text, type: text }
-      - { name: paynow_title, label: PayNow Section Title, type: string }
-      - { name: paynow_instructions, label: PayNow Instructions, type: text }
-      - { name: qr_code_image, label: PayNow QR Code Image, type: image }
-      - { name: cheque_title, label: Cheque Section Title, type: string }
-      - { name: cheque_instructions, label: Cheque Instructions, type: text }
-      - { name: contact_email, label: Contact Email, type: string }
-
-  - name: reports
-    label: Post-Trip Reports Page
-    type: file
-    path: content/reports.json
-    fields:
-      - { name: page_title, label: Page Title, type: string }
-      - { name: intro_text, label: Intro Text, type: text }
-      - { name: report1_title, label: Report 1 Title, type: string }
-      - { name: report1_image, label: Report 1 Cover Image, type: image }
-      - { name: report1_pdf, label: Report 1 PDF Link, type: string }
-      - { name: report1_description, label: Report 1 Summary, type: text }
-      - { name: report2_title, label: Report 2 Title, type: string }
-      - { name: report2_image, label: Report 2 Cover Image, type: image }
-      - { name: report2_pdf, label: Report 2 PDF Link, type: string }
-      - { name: report2_description, label: Report 2 Summary, type: text }
-      - { name: report3_title, label: Report 3 Title, type: string }
-      - { name: report3_image, label: Report 3 Cover Image, type: image }
-      - { name: report3_pdf, label: Report 3 PDF Link, type: string }
-      - { name: report3_description, label: Report 3 Summary, type: text }
-      - { name: report4_title, label: Report 4 Title, type: string }
-      - { name: report4_image, label: Report 4 Cover Image, type: image }
-      - { name: report4_pdf, label: Report 4 PDF Link, type: string }
-      - { name: report4_description, label: Report 4 Summary, type: text }
-
-  - name: education
-    label: Education Outreach Page
-    type: file
-    path: content/education.json
-    fields:
-      - { name: page_title, label: Page Title, type: string }
-      - { name: intro_text, label: Intro Text, type: text }
-      - { name: prog1_title, label: Programme 1 Title, type: string }
-      - { name: prog1_description, label: Programme 1 Description, type: text }
-      - { name: prog1_image, label: Programme 1 Image, type: image }
-      - { name: prog2_title, label: Programme 2 Title, type: string }
-      - { name: prog2_description, label: Programme 2 Description, type: text }
-      - { name: prog2_image, label: Programme 2 Image, type: image }
-      - { name: prog3_title, label: Programme 3 Title, type: string }
-      - { name: prog3_description, label: Programme 3 Description, type: text }
-      - { name: prog3_image, label: Programme 3 Image, type: image }
 
   - name: support
     label: Health Screening Page
@@ -168,23 +68,34 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: stat1_label, label: Stat 1 Label, type: string }
-      - { name: stat1_value, label: Stat 1 Value, type: string }
-      - { name: stat2_label, label: Stat 2 Label, type: string }
-      - { name: stat2_value, label: Stat 2 Value, type: string }
-      - { name: stat3_label, label: Stat 3 Label, type: string }
-      - { name: stat3_value, label: Stat 3 Value, type: string }
-      - { name: stat4_label, label: Stat 4 Label, type: string }
-      - { name: stat4_value, label: Stat 4 Value, type: string }
-      - { name: area1_title, label: Area 1 Title, type: string }
-      - { name: area1_description, label: Area 1 Description, type: text }
-      - { name: area1_image, label: Area 1 Image, type: image }
-      - { name: area2_title, label: Area 2 Title, type: string }
-      - { name: area2_description, label: Area 2 Description, type: text }
-      - { name: area2_image, label: Area 2 Image, type: image }
-      - { name: area3_title, label: Area 3 Title, type: string }
-      - { name: area3_description, label: Area 3 Description, type: text }
-      - { name: area3_image, label: Area 3 Image, type: image }
+      - name: stats
+        label: Impact Statistics
+        type: list
+        fields:
+          - { name: label, label: Stat Label, type: string }
+          - { name: value, label: Stat Value, type: string }
+      - name: areas
+        label: Operational Areas
+        type: list
+        fields:
+          - { name: title, label: Area Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Area Image, type: image }
+
+  - name: education
+    label: Education Outreach Page
+    type: file
+    path: content/education.json
+    fields:
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - name: programmes
+        label: Education Programmes
+        type: list
+        fields:
+          - { name: title, label: Programme Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Image, type: image }
 
   - name: development
     label: Development Page
@@ -193,21 +104,36 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: hero_image, label: Hero Image, type: image }
-      - { name: proj1_title, label: Project 1 Title, type: string }
-      - { name: proj1_desc, label: Project 1 Description, type: text }
-      - { name: proj1_image, label: Project 1 Image, type: image }
-      - { name: proj2_title, label: Project 2 Title, type: string }
-      - { name: proj2_desc, label: Project 2 Description, type: text }
-      - { name: proj2_image, label: Project 2 Image, type: image }
-      - { name: proj3_title, label: Project 3 Title, type: string }
-      - { name: proj3_desc, label: Project 3 Description, type: text }
-      - { name: proj3_image, label: Project 3 Image, type: image }
-      - { name: proj4_title, label: Project 4 Title, type: string }
-      - { name: proj4_desc, label: Project 4 Description, type: text }
-      - { name: proj4_image, label: Project 4 Image, type: image }
-      - { name: future_title, label: Future Title, type: string }
-      - { name: future_desc, label: Future Description, type: text }
+      - { name: hero_image, label: Hero Banner Image, type: image }
+      - name: projects
+        label: Development Initiatives
+        type: list
+        fields:
+          - { name: title, label: Initiative Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Image, type: image }
+      - name: future_outlook
+        label: Future Outlook Section
+        type: object
+        fields:
+          - { name: title, label: Section Title, type: string }
+          - { name: description, label: Description, type: text }
+
+  - name: reports
+    label: Post-Trip Reports Page
+    type: file
+    path: content/reports.json
+    fields:
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - name: reports
+        label: Annual Trip Reports
+        type: list
+        fields:
+          - { name: title, label: Report Title, type: string }
+          - { name: summary, label: Summary, type: text }
+          - { name: image, label: Cover Image, type: image }
+          - { name: pdf, label: PDF / Link URL, type: string }
 
   - name: get_involved
     label: Get Involved Page
@@ -216,18 +142,36 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: card1_title, label: Card 1 Title, type: string }
-      - { name: card1_desc, label: Card 1 Description, type: text }
-      - { name: card1_button, label: Card 1 Button Text, type: string }
-      - { name: card1_link, label: Card 1 Link, type: string }
-      - { name: card2_title, label: Card 2 Title, type: string }
-      - { name: card2_desc, label: Card 2 Description, type: text }
-      - { name: card2_button, label: Card 2 Button Text, type: string }
-      - { name: card2_link, label: Card 2 Link, type: string }
-      - { name: card3_title, label: Card 3 Title, type: string }
-      - { name: card3_desc, label: Card 3 Description, type: text }
-      - { name: card3_button, label: Card 3 Button Text, type: string }
-      - { name: card3_link, label: Card 3 Link, type: string }
+      - name: opportunities
+        label: Involvement Opportunities
+        type: list
+        fields:
+          - { name: title, label: Opportunity Title, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: button_text, label: Button Text, type: string }
+          - { name: link, label: Button Link, type: string }
+
+  - name: donation
+    label: Donations Page
+    type: file
+    path: content/donation.json
+    fields:
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - name: paynow
+        label: PayNow Donation Section
+        type: object
+        fields:
+          - { name: title, label: Section Title, type: string }
+          - { name: instructions, label: Instructions, type: text }
+          - { name: qr_code_image, label: PayNow QR Code Image, type: image }
+      - name: cheque
+        label: Cheque Donation Section
+        type: object
+        fields:
+          - { name: title, label: Section Title, type: string }
+          - { name: instructions, label: Instructions, type: text }
+      - { name: contact_email, label: Contact Email, type: string }
 
   - name: header_footer
     label: Header & Footer

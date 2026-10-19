@@ -2,46 +2,48 @@
   "page_title": "Meet the Team",
   "intro_text": "Our committee comprises passionate medical students from NUS Yong Loo Lin School of Medicine, supported by healthcare advisors, doctors, and community partners.",
   "hero_image": "images/fd6b4f_cbbb014d5e194215995eb20575abc765~mv2.jpg",
-  "member1": {
-    "name": "Dr Ong Yew Jin",
-    "role": "Project Mentor (Since 2010)",
-    "bio": "Palliative Care Physician and former Medical Director of the Singapore Cancer Society. Dr Ong has mentored Project Battambang since its inception in 2010, advocating for holistic community support beyond medical aid.",
-    "image": "images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg"
-  },
-  "member2": {
-    "name": "Project Directors",
-    "role": "Executive Leadership (Yi Ming, Bianca)",
-    "bio": "Overseeing all sub-committees and spearheading the strategic direction, international partnerships, and logistical execution for Project Battambang.",
-    "image": "images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg"
-  },
-  "member3": {
-    "name": "Medical Screening Committee",
-    "role": "Clinical Operations (Benedict, Yi Ming, Henrietta)",
-    "bio": "Anchoring operational mass health screenings, clinical triage procedures, hospital referral pathways, pharmacy management, and volunteer physician coordination.",
-    "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg"
-  },
-  "member4": {
-    "name": "Education Committee",
-    "role": "Community Health Education (Shannen, Nicholas, Sid)",
-    "bio": "Delivering sustainable, year-round aid through health education modules, school hygiene projects, and the Light-A-Dream Scholarship.",
-    "image": "images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg"
-  },
-  "member5": {
-    "name": "Development Committee",
-    "role": "Sustainability & Research (Kevin, Damian, Yun Hui)",
-    "bio": "Planning long-term project sustainability, evaluating existing initiatives, and conducting on-ground surveys on villager health-seeking behaviors.",
-    "image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg"
-  },
-  "member6": {
-    "name": "Logistics Committee",
-    "role": "Operations & Pharmacy (Ritesh, David)",
-    "bio": "Managing facility bookings, transport logistics, inventory control, medication supply chains, and mobile pharmacy operations.",
-    "image": "images/fd6b4f_3b0ba32b0a554b9ca942eb73b99be359~mv2.jpg"
-  },
-  "member7": {
-    "name": "Sponsorship & Finance Committee",
-    "role": "Sponsorship & Publicity (Chinh, Bianca, Chloe)",
-    "bio": "Maintaining sponsor relations, fundraising, safe-keeping project funds, budgeting transparency, and managing project publicity.",
-    "image": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg"
-  }
+  "members": [
+    {
+      "name": "Dr Ong Yew Jin",
+      "role": "Project Mentor (Since 2010)",
+      "bio": "Palliative Care Physician and former Medical Director of the Singapore Cancer Society. Dr Ong has mentored Project Battambang since its inception in 2010, advocating for holistic community support beyond medical aid.",
+      "image": "images/fd6b4f_5903f2f5bf0445c3b814453181dcf698~mv2.jpg"
+    },
+    {
+      "name": "Project Directors",
+      "role": "Executive Leadership (Yi Ming, Bianca)",
+      "bio": "Overseeing all sub-committees and spearheading the strategic direction, international partnerships, and logistical execution for Project Battambang.",
+      "image": "images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg"
+    },
+    {
+      "name": "Medical Screening Committee",
+      "role": "Clinical Operations (Benedict, Yi Ming, Henrietta)",
+      "bio": "Anchoring operational mass health screenings, clinical triage procedures, hospital referral pathways, pharmacy management, and volunteer physician coordination.",
+      "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg"
+    },
+    {
+      "name": "Education Committee",
+      "role": "Community Health Education (Shannen, Nicholas, Sid)",
+      "bio": "Delivering sustainable, year-round aid through health education modules, school hygiene projects, and the Light-A-Dream Scholarship.",
+      "image": "images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg"
+    },
+    {
+      "name": "Development Committee",
+      "role": "Sustainability & Research (Kevin, Damian, Yun Hui)",
+      "bio": "Planning long-term project sustainability, evaluating existing initiatives, and conducting on-ground surveys on villager health-seeking behaviors.",
+      "image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg"
+    },
+    {
+      "name": "Logistics Committee",
+      "role": "Operations & Pharmacy (Ritesh, David)",
+      "bio": "Managing facility bookings, transport logistics, inventory control, medication supply chains, and mobile pharmacy operations.",
+      "image": "images/fd6b4f_3b0ba32b0a554b9ca942eb73b99be359~mv2.jpg"
+    },
+    {
+      "name": "Sponsorship & Finance Committee",
+      "role": "Sponsorship & Publicity (Chinh, Bianca, Chloe)",
+      "bio": "Maintaining sponsor relations, fundraising, safe-keeping project funds, budgeting transparency, and managing project publicity.",
+      "image": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg"
+    }
+  ]
 }

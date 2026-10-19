@@ -43,79 +43,51 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.hero_title) document.querySelector('.hero-title').textContent = data.hero_title;
-        if (data.hero_subtitle) document.querySelector('.hero-subtitle').textContent = data.hero_subtitle;
-        if (data.hero_description) document.querySelector('.hero-description').textContent = data.hero_description;
-        if (data.hero_button_text) document.querySelector('.hero-btn').textContent = data.hero_button_text;
-        if (data.who_we_are_title) {
-          const el = document.querySelector('.who-title');
-          if (el) el.textContent = data.who_we_are_title;
-        }
-        if (data.who_we_are_text) {
-          const el = document.querySelector('.who-text');
-          if (el) el.textContent = data.who_we_are_text;
-        }
-        if (data.vision_title) {
-          const el = document.querySelector('.vision-title');
-          if (el) el.textContent = data.vision_title;
-        }
-        if (data.vision_text) {
-          const el = document.querySelector('.vision-text');
-          if (el) el.textContent = data.vision_text;
-        }
-        if (data.mission_title) {
-          const el = document.querySelector('.mission-title');
-          if (el) el.textContent = data.mission_title;
-        }
-        if (data.mission_text) {
-          const el = document.querySelector('.mission-text');
-          if (el) el.textContent = data.mission_text;
-        }
-        if (data.values_title) {
-          const el = document.querySelector('.values-title');
-          if (el) el.textContent = data.values_title;
+
+        // Hero Section
+        if (data.hero) {
+          if (data.hero.title && document.querySelector('.hero-title')) document.querySelector('.hero-title').textContent = data.hero.title;
+          if (data.hero.subtitle && document.querySelector('.hero-subtitle')) document.querySelector('.hero-subtitle').textContent = data.hero.subtitle;
+          if (data.hero.description && document.querySelector('.hero-description')) document.querySelector('.hero-description').textContent = data.hero.description;
+          if (data.hero.button_text && document.querySelector('.hero-btn')) document.querySelector('.hero-btn').textContent = data.hero.button_text;
         }
 
-        const grid = document.querySelector('.initiatives-grid');
-        if (grid) {
-          const cards = [];
-          if (data.card1_title) {
-            cards.push(`
-              <div class="card">
-                <img src="${data.card1_image || 'images/logo_exact.png'}" alt="${data.card1_title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${data.card1_title}</h3>
-                  <p class="card-text">${data.card1_description || ''}</p>
-                  <a href="support-services.html" class="btn btn-outline" style="align-self: start;">Learn More</a>
-                </div>
+        // Roots Section
+        if (data.roots) {
+          if (data.roots.title && document.querySelector('.who-title')) document.querySelector('.who-title').textContent = data.roots.title;
+          if (data.roots.story && document.querySelector('.who-text')) document.querySelector('.who-text').textContent = data.roots.story;
+        }
+
+        // Vision & Mission
+        if (data.vision_mission) {
+          if (data.vision_mission.vision && document.querySelector('.vision-text')) document.querySelector('.vision-text').textContent = data.vision_mission.vision;
+          if (data.vision_mission.mission && document.querySelector('.mission-text')) document.querySelector('.mission-text').textContent = data.vision_mission.mission;
+        }
+
+        // Values Grid
+        const valuesGrid = document.querySelector('.values-grid');
+        if (valuesGrid && Array.isArray(data.values) && data.values.length > 0) {
+          valuesGrid.innerHTML = data.values.map(val => `
+            <div class="card value-card" style="padding: 1.5rem;">
+              <h3 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.15rem;">${val.name || ''}</h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">${val.description || ''}</p>
+            </div>
+          `).join('');
+        }
+
+        // Initiatives Grid
+        const initiativesGrid = document.querySelector('.initiatives-grid');
+        if (initiativesGrid && Array.isArray(data.initiatives) && data.initiatives.length > 0) {
+          initiativesGrid.innerHTML = data.initiatives.map(item => `
+            <div class="card">
+              <img src="${item.image || 'images/logo_exact.png'}" alt="${item.title || ''}" class="card-image" />
+              <div class="card-body">
+                <h3 class="card-title">${item.title || ''}</h3>
+                <p class="card-text">${item.description || ''}</p>
+                <a href="${item.link || '#'}" class="btn btn-outline" style="align-self: start;">Learn More</a>
               </div>
-            `);
-          }
-          if (data.card2_title) {
-            cards.push(`
-              <div class="card">
-                <img src="${data.card2_image || 'images/logo_exact.png'}" alt="${data.card2_title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${data.card2_title}</h3>
-                  <p class="card-text">${data.card2_description || ''}</p>
-                  <a href="education-outreach.html" class="btn btn-outline" style="align-self: start;">Learn More</a>
-                </div>
-              </div>
-            `);
-          }
-          if (data.card3_title) {
-            cards.push(`
-              <div class="card">
-                <img src="${data.card3_image || 'images/logo_exact.png'}" alt="${data.card3_title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${data.card3_title}</h3>
-                  <p class="card-text">${data.card3_description || ''}</p>
-                  <a href="post-trip-reports.html" class="btn btn-outline" style="align-self: start;">Learn More</a>
-                </div>
-              </div>
-            `);
-          }
-          if (cards.length > 0) grid.innerHTML = cards.join('');
+            </div>
+          `).join('');
         }
       });
   } else if (path.includes('meet-the-team')) {
@@ -123,152 +95,24 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
 
         const heroImg = document.getElementById('team-hero-img');
-        if (heroImg && data.hero_image) {
-          heroImg.src = data.hero_image;
-        }
-
-        const getMember = (key) => {
-          const val = data[key];
-          if (val && typeof val === 'object') {
-            return { name: val.name, role: val.role, bio: val.bio, image: val.image };
-          }
-          return {
-            name: data[`${key}_name`],
-            role: data[`${key}_role`],
-            bio: data[`${key}_bio`],
-            image: data[`${key}_image`]
-          };
-        };
+        if (heroImg && data.hero_image) heroImg.src = data.hero_image;
 
         const grid = document.querySelector('.team-grid');
-        if (grid) {
-          const members = [
-            getMember('member1'),
-            getMember('member2'),
-            getMember('member3'),
-            getMember('member4'),
-            getMember('member5'),
-            getMember('member6'),
-            getMember('member7')
-          ].filter(m => m && m.name);
-
-          if (members.length > 0) {
-            grid.innerHTML = members.map(m => `
-              <div class="card">
-                <img src="${m.image || 'images/logo_exact.png'}" alt="${m.name}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
-                <div class="card-body">
-                  <h3 class="card-title">${m.name}</h3>
-                  <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; display: block;">${m.role || ''}</span>
-                  <p class="card-text">${m.bio || ''}</p>
-                </div>
+        if (grid && Array.isArray(data.members) && data.members.length > 0) {
+          grid.innerHTML = data.members.map(m => `
+            <div class="card">
+              <img src="${m.image || 'images/logo_exact.png'}" alt="${m.name || ''}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
+              <div class="card-body">
+                <h3 class="card-title">${m.name || ''}</h3>
+                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; display: block;">${m.role || ''}</span>
+                <p class="card-text">${m.bio || ''}</p>
               </div>
-            `).join('');
-          }
-        }
-      });
-  } else if (path.includes('services-4')) {
-    fetch('content/donation.json')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (!data) return;
-        if (data.page_title) {
-          const pt = document.querySelector('.page-title');
-          if (pt) pt.textContent = data.page_title;
-        }
-        if (data.intro_text) {
-          const pi = document.querySelector('.page-intro');
-          if (pi) pi.textContent = data.intro_text;
-        }
-        if (data.paynow_title) {
-          const pnt = document.querySelector('.paynow-title');
-          if (pnt) pnt.textContent = data.paynow_title;
-        }
-        if (data.paynow_instructions) {
-          const pni = document.querySelector('.paynow-instructions');
-          if (pni) pni.textContent = data.paynow_instructions;
-        }
-        if (data.qr_code_image) {
-          const qr = document.querySelector('.qr-image');
-          if (qr) qr.src = data.qr_code_image;
-        }
-        if (data.cheque_title) {
-          const ct = document.querySelector('.cheque-title');
-          if (ct) ct.textContent = data.cheque_title;
-        }
-        if (data.cheque_instructions) {
-          const ci = document.querySelector('.cheque-instructions');
-          if (ci) ci.textContent = data.cheque_instructions;
-        }
-        if (data.contact_email) {
-          const ce = document.querySelectorAll('.contact-email');
-          ce.forEach(el => {
-            el.href = 'mailto:' + data.contact_email;
-            el.textContent = data.contact_email;
-          });
-        }
-      });
-  } else if (path.includes('post-trip-reports')) {
-    fetch('content/reports.json')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
-
-        const grid = document.querySelector('.reports-grid');
-        if (grid) {
-          const reports = [
-            { title: data.report1_title, image: data.report1_image, pdf: data.report1_pdf, desc: data.report1_description },
-            { title: data.report2_title, image: data.report2_image, pdf: data.report2_pdf, desc: data.report2_description },
-            { title: data.report3_title, image: data.report3_image, pdf: data.report3_pdf, desc: data.report3_description },
-            { title: data.report4_title, image: data.report4_image, pdf: data.report4_pdf, desc: data.report4_description }
-          ].filter(r => r && r.title);
-
-          if (reports.length > 0) {
-            grid.innerHTML = reports.map(r => `
-              <div class="card">
-                <img src="${r.image || 'images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg'}" alt="${r.title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${r.title}</h3>
-                  <p class="card-text">${r.desc || ''}</p>
-                  ${r.pdf ? `<a href="${r.pdf}" target="_blank" class="btn btn-primary" style="align-self: start;">Download Report (PDF)</a>` : ''}
-                </div>
-              </div>
-            `).join('');
-          }
-        }
-      });
-  } else if (path.includes('education-outreach') || path.includes('copy-of-education')) {
-    fetch('content/education.json')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
-
-        const grid = document.querySelector('.education-grid');
-        if (grid) {
-          const progs = [
-            { title: data.prog1_title, desc: data.prog1_description, image: data.prog1_image },
-            { title: data.prog2_title, desc: data.prog2_description, image: data.prog2_image },
-            { title: data.prog3_title, desc: data.prog3_description, image: data.prog3_image }
-          ].filter(p => p && p.title);
-
-          if (progs.length > 0) {
-            grid.innerHTML = progs.map(p => `
-              <div class="card">
-                <img src="${p.image || 'images/fd6b4f_128ce014b5d34a9e97833f8ccd8ce50a~mv2.jpeg'}" alt="${p.title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${p.title}</h3>
-                  <p class="card-text">${p.desc || ''}</p>
-                </div>
-              </div>
-            `).join('');
-          }
+            </div>
+          `).join('');
         }
       });
   } else if (path.includes('support-services')) {
@@ -276,47 +120,51 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
 
         const statsGrid = document.querySelector('.stats-grid');
-        if (statsGrid) {
-          const stats = [
-            { label: data.stat1_label, value: data.stat1_value },
-            { label: data.stat2_label, value: data.stat2_value },
-            { label: data.stat3_label, value: data.stat3_value },
-            { label: data.stat4_label, value: data.stat4_value }
-          ].filter(s => s && s.label && s.value);
-
-          if (stats.length > 0) {
-            statsGrid.innerHTML = stats.map(s => `
-              <div class="stat-box">
-                <div class="stat-value">${s.value}</div>
-                <div class="stat-label">${s.label}</div>
-              </div>
-            `).join('');
-          }
+        if (statsGrid && Array.isArray(data.stats) && data.stats.length > 0) {
+          statsGrid.innerHTML = data.stats.map(s => `
+            <div class="stat-card">
+              <div class="stat-value">${s.value || ''}</div>
+              <div class="stat-label">${s.label || ''}</div>
+            </div>
+          `).join('');
         }
 
-        const grid = document.querySelector('.support-grid');
-        if (grid) {
-          const areas = [
-            { title: data.area1_title, desc: data.area1_description, image: data.area1_image },
-            { title: data.area2_title, desc: data.area2_description, image: data.area2_image },
-            { title: data.area3_title, desc: data.area3_description, image: data.area3_image }
-          ].filter(a => a && a.title);
-
-          if (areas.length > 0) {
-            grid.innerHTML = areas.map(a => `
-              <div class="card">
-                <img src="${a.image || 'images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg'}" alt="${a.title}" class="card-image" />
-                <div class="card-body">
-                  <h3 class="card-title">${a.title}</h3>
-                  <p class="card-text">${a.desc || ''}</p>
-                </div>
+        const areasGrid = document.querySelector('.areas-grid');
+        if (areasGrid && Array.isArray(data.areas) && data.areas.length > 0) {
+          areasGrid.innerHTML = data.areas.map(a => `
+            <div class="card">
+              <img src="${a.image || 'images/logo_exact.png'}" alt="${a.title || ''}" class="card-image" />
+              <div class="card-body">
+                <h3 class="card-title">${a.title || ''}</h3>
+                <p class="card-text">${a.description || ''}</p>
               </div>
-            `).join('');
-          }
+            </div>
+          `).join('');
+        }
+      });
+  } else if (path.includes('education-outreach')) {
+    fetch('content/education.json')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data) return;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
+
+        const programmesGrid = document.querySelector('.programmes-grid');
+        if (programmesGrid && Array.isArray(data.programmes) && data.programmes.length > 0) {
+          programmesGrid.innerHTML = data.programmes.map(p => `
+            <div class="card">
+              <img src="${p.image || 'images/logo_exact.png'}" alt="${p.title || ''}" class="card-image" />
+              <div class="card-body">
+                <h3 class="card-title">${p.title || ''}</h3>
+                <p class="card-text">${p.description || ''}</p>
+              </div>
+            </div>
+          `).join('');
         }
       });
   } else if (path.includes('development')) {
@@ -324,37 +172,52 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
-        if (data.future_title) {
-          const ft = document.querySelector('.future-title');
-          if (ft) ft.textContent = data.future_title;
-        }
-        if (data.future_desc) {
-          const fd = document.querySelector('.future-desc');
-          if (fd) fd.textContent = data.future_desc;
-        }
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
 
-        const grid = document.querySelector('.dev-grid');
-        if (grid) {
-          const projs = [
-            { title: data.proj1_title, desc: data.proj1_desc, image: data.proj1_image },
-            { title: data.proj2_title, desc: data.proj2_desc, image: data.proj2_image },
-            { title: data.proj3_title, desc: data.proj3_desc, image: data.proj3_image },
-            { title: data.proj4_title, desc: data.proj4_desc, image: data.proj4_image }
-          ].filter(p => p && p.title);
+        const devHero = document.getElementById('dev-hero-img');
+        if (devHero && data.hero_image) devHero.src = data.hero_image;
 
-          if (projs.length > 0) {
-            grid.innerHTML = projs.map(p => `
-              <div class="card">
-                <img src="${p.image || 'images/logo_exact.png'}" alt="${p.title}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
-                <div class="card-body">
-                  <h3 class="card-title">${p.title}</h3>
-                  <p class="card-text">${p.desc || ''}</p>
-                </div>
+        const projectsGrid = document.querySelector('.projects-grid');
+        if (projectsGrid && Array.isArray(data.projects) && data.projects.length > 0) {
+          projectsGrid.innerHTML = data.projects.map(p => `
+            <div class="card">
+              <img src="${p.image || 'images/logo_exact.png'}" alt="${p.title || ''}" class="card-image" />
+              <div class="card-body">
+                <h3 class="card-title">${p.title || ''}</h3>
+                <p class="card-text">${p.description || ''}</p>
               </div>
-            `).join('');
-          }
+            </div>
+          `).join('');
+        }
+
+        if (data.future_outlook) {
+          const futureTitle = document.querySelector('.future-title');
+          const futureDesc = document.querySelector('.future-desc');
+          if (futureTitle && data.future_outlook.title) futureTitle.textContent = data.future_outlook.title;
+          if (futureDesc && data.future_outlook.description) futureDesc.textContent = data.future_outlook.description;
+        }
+      });
+  } else if (path.includes('post-trip-reports')) {
+    fetch('content/reports.json')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data) return;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
+
+        const reportsGrid = document.querySelector('.reports-grid');
+        if (reportsGrid && Array.isArray(data.reports) && data.reports.length > 0) {
+          reportsGrid.innerHTML = data.reports.map(r => `
+            <div class="card">
+              <img src="${r.image || 'images/logo_exact.png'}" alt="${r.title || ''}" class="card-image" />
+              <div class="card-body">
+                <h3 class="card-title">${r.title || ''}</h3>
+                <p class="card-text">${r.summary || ''}</p>
+                <a href="${r.pdf || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="align-self: start;">View Full Report (PDF)</a>
+              </div>
+            </div>
+          `).join('');
         }
       });
   } else if (path.includes('get-involved')) {
@@ -362,27 +225,51 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
 
-        const grid = document.querySelector('.get-involved-grid');
-        if (grid) {
-          const cards = [
-            { title: data.card1_title, desc: data.card1_desc, btn: data.card1_button, link: data.card1_link, isPrimary: true },
-            { title: data.card2_title, desc: data.card2_desc, btn: data.card2_button, link: data.card2_link, isPrimary: false },
-            { title: data.card3_title, desc: data.card3_desc, btn: data.card3_button, link: data.card3_link, isPrimary: false }
-          ].filter(c => c && c.title);
-
-          if (cards.length > 0) {
-            grid.innerHTML = cards.map(c => `
-              <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <h3 class="card-title" style="color: var(--color-primary); font-size: 1.35rem; margin-bottom: 0.75rem;">${c.title}</h3>
-                  <p class="card-text">${c.desc || ''}</p>
-                </div>
-                <a href="${c.link || '#'}" class="btn ${c.isPrimary ? 'btn-primary' : 'btn-outline'}" style="margin-top: 1.5rem; align-self: start;">${c.btn || 'Learn More'}</a>
+        const oppGrid = document.querySelector('.opportunities-grid');
+        if (oppGrid && Array.isArray(data.opportunities) && data.opportunities.length > 0) {
+          oppGrid.innerHTML = data.opportunities.map(o => `
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">${o.title || ''}</h3>
+                <p class="card-text">${o.description || ''}</p>
+                <a href="${o.link || '#'}" class="btn btn-primary" style="align-self: start;">${o.button_text || 'Get Involved'}</a>
               </div>
-            `).join('');
+            </div>
+          `).join('');
+        }
+      });
+  } else if (path.includes('services-4')) {
+    fetch('content/donation.json')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data) return;
+        if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text && document.querySelector('.page-intro')) document.querySelector('.page-intro').textContent = data.intro_text;
+
+        if (data.paynow) {
+          const paynowTitle = document.querySelector('.paynow-title');
+          const paynowInst = document.querySelector('.paynow-instructions');
+          const qrCodeImg = document.querySelector('.qr-code-img');
+          if (paynowTitle && data.paynow.title) paynowTitle.textContent = data.paynow.title;
+          if (paynowInst && data.paynow.instructions) paynowInst.textContent = data.paynow.instructions;
+          if (qrCodeImg && data.paynow.qr_code_image) qrCodeImg.src = data.paynow.qr_code_image;
+        }
+
+        if (data.cheque) {
+          const chequeTitle = document.querySelector('.cheque-title');
+          const chequeInst = document.querySelector('.cheque-instructions');
+          if (chequeTitle && data.cheque.title) chequeTitle.textContent = data.cheque.title;
+          if (chequeInst && data.cheque.instructions) chequeInst.textContent = data.cheque.instructions;
+        }
+
+        if (data.contact_email) {
+          const donationEmail = document.querySelector('.donation-email');
+          if (donationEmail) {
+            donationEmail.href = 'mailto:' + data.contact_email;
+            donationEmail.textContent = data.contact_email;
           }
         }
       });

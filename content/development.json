@@ -1,19 +1,31 @@
 {
   "page_title": "Development",
-  "intro_text": "Understanding community needs through ground-up epidemiological research, digital health innovation, and long-term sustainable projects.",
-  "hero_image": "images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2_d_6000_4000_s_4_2.jpg",
-  "proj1_title": "VEASNA - Offline Digital Screening System",
-  "proj1_desc": "Our team trialled a mobile screening initiative, 'Veasna', shifting away from written medical reports. This offline system enables seamless data collection, patient record tracking, and automatic generation of hospital referral forms without requiring internet connectivity.",
-  "proj1_image": "images/fd6b4f_f5098a2716504d348ed7ab707eb524b1~mv2.jpg",
-  "proj2_title": "Door-to-Door Community Surveys",
-  "proj2_desc": "Conducting door-to-door interviews with villagers to gain firsthand insight into health-seeking behaviors. We transitioned to offline digital spreadsheets with dropdown menus to streamline quantitative epidemiological analysis.",
-  "proj2_image": "images/fd6b4f_b54f6b328ef94db48fe6c31caced97eb~mv2_d_6000_4000_s_4_2.jpg",
-  "proj3_title": "Stories of Poipet",
-  "proj3_desc": "Embracing human-centric freeform home interviews and film photography to understand villagers as individuals. This culminated in the 'Stories of Poipet' photobook, complementing our quantitative screening data.",
-  "proj3_image": "images/fd6b4f_1c6ad1f3db174abc82341c487f0dcb61~mv2_d_5184_3456_s_4_2.jpg",
-  "proj4_title": "Clean Water Pump Project",
-  "proj4_desc": "In response to high rates of gastrointestinal illness, we partnered with Water for Cambodia to install a clean water pump at Love Without Boundaries Rangsei School, serving the school and nearby landfill residents of Toul Pang Ro Village.",
-  "proj4_image": "images/fd6b4f_4edbb130a76a4658af25845fd8ae4210~mv2_d_6000_4000_s_4_2.jpg",
-  "future_title": "Future Directions & Koh Dach Groundwork",
-  "future_desc": "Following our May 2026 recce trip, the Development Committee is exploring Koh Dach Island as a potential site for future health and education initiatives, ensuring ground-up planning guided by local Cambodian partners and community leaders."
+  "intro_text": "Driving sustainable infrastructure, community health research, and long-term capacity building in Battambang.",
+  "hero_image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg",
+  "projects": [
+    {
+      "title": "Community Health Research",
+      "description": "Conducting health-seeking behavior surveys to better understand rural healthcare access and barriers.",
+      "image": "images/fd6b4f_7fbbeedc33824a56a084fdd358712ca7~mv2.jpg"
+    },
+    {
+      "title": "Sanitation & Clean Water",
+      "description": "Evaluating local water supply safety and supporting sustainable sanitation infrastructure.",
+      "image": "images/fd6b4f_74951fccec43452aabb6f0b53296110c~mv2.jpg"
+    },
+    {
+      "title": "Local Partner Capacity Building",
+      "description": "Working closely with local Cambodian medical staff and community health centers.",
+      "image": "images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg"
+    },
+    {
+      "title": "Long-Term Impact Evaluation",
+      "description": "Systematically measuring healthcare outcomes year-over-year to refine project interventions.",
+      "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg"
+    }
+  ],
+  "future_outlook": {
+    "title": "Future Directions",
+    "description": "Expanding telemetry tracking, local healthcare worker training, and sustainable educational sponsorships."
+  }
 }

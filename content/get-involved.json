@@ -1,16 +1,24 @@
 {
   "page_title": "Get Involved",
-  "intro_text": "You can make a difference. Project Battambang continually appreciates the generosity, partnerships, and time of volunteers who help serve underserved communities in Cambodia.",
-  "card1_title": "Make a Donation",
-  "card1_desc": "Every contribution goes directly towards medical supplies, village health clinics, referral subsidies, and student scholarships.",
-  "card1_button": "Donate Now",
-  "card1_link": "services-4.html",
-  "card2_title": "Partner with Us",
-  "card2_desc": "Support our cause through material sponsorships, medical equipment donations, or corporate partnerships to pave the path for better community health.",
-  "card2_button": "Get in Touch",
-  "card2_link": "mailto:med.battambang@gmail.com",
-  "card3_title": "Volunteer Your Time",
-  "card3_desc": "Calling all healthcare professionals, doctors, and student volunteers keen on joining our upcoming December 2026 trip or local groundwork initiatives.",
-  "card3_button": "Join as Volunteer",
-  "card3_link": "mailto:med.battambang@gmail.com"
+  "intro_text": "Join us in bringing hope, health, and sustainable support to the people of Battambang.",
+  "opportunities": [
+    {
+      "title": "Healthcare Professionals & Doctors",
+      "description": "Volunteer as a medical mentor to guide students during screening trips and deliver clinical care.",
+      "button_text": "Email Us",
+      "link": "mailto:med.battambang@gmail.com"
+    },
+    {
+      "title": "Sponsors & Corporate Partners",
+      "description": "Partner with Project Battambang to fund essential medications, medical equipment, and student scholarships.",
+      "button_text": "Donate Now",
+      "link": "services-4.html"
+    },
+    {
+      "title": "Student Volunteers",
+      "description": "Join our committee or volunteer during annual trips to support health education, triage, and logistics.",
+      "button_text": "Learn More",
+      "link": "mailto:med.battambang@gmail.com"
+    }
+  ]
 }
