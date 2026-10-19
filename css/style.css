@@ -548,6 +548,17 @@ body {
     object-position: center 58% !important;
   }
 
+  /* On mobile: frame development hero image around child on swing (lower half) */
+  .development-hero-wrapper {
+    max-height: 480px !important;
+  }
+  #development-hero-img {
+    height: 480px !important;
+    object-fit: cover !important;
+    object-position: center 70% !important;
+  }
+
+
   /* On mobile: collapse future-box to 1 column so text and images stack cleanly */
   .future-box {
     grid-template-columns: 1fr !important;
