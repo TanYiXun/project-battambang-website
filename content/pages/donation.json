@@ -3,12 +3,12 @@
   "intro_text": "As Project Battambang ventures further, the project requires funding for our different initiatives. These initiatives are essential in allowing us to better serve the Cambodian Community. We would appreciate any amount of donations that would go to the project!",
   "paynow": {
     "title": "PayNow",
-    "instructions": "For a quick donation, you may Paynow using the QR code below! Do help to indicate 'BTB2026'",
-    "qr_code_image": "images/paynow-qr-code.jpg"
+    "instructions": "For a quick donation, you may PayNow using the QR code below! Do help to indicate reference 'BTB2026'",
+    "qr_code_image": "images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg"
   },
   "cheque": {
-    "title": "Cheque",
-    "instructions": "If you would like to make a cheque donation, do reach out to us for further arrangements!"
+    "title": "Cheque & General Inquiries",
+    "instructions": "If you would like to make a cheque donation, corporate sponsorship, or have questions about how your donation helps, please reach out to us!"
   },
   "contact_email": "med.battambang@gmail.com"
 }

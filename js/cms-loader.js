@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'education': 'images/logo.png',
     'development': 'images/logo.png',
     'reports': 'images/logo.png',
-    'paynow': 'images/logo.png',
+    'paynow': 'images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg',
 
     // Home Pillars (using authentic field photos from target pages)
     'Health Screening': 'images/logo.png',
