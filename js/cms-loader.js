@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(err => console.log('[Sanity] Visual Editing standalone script load:', err));
   }
 
-  const CMS_ENABLED = true;
+  const CMS_ENABLED = false;
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
@@ -441,7 +441,9 @@ document.addEventListener('DOMContentLoaded', function () {
               const em = el.querySelector('.contact-email') || el.querySelector('.donation-email');
               if (em) {
                 em.href = 'mailto:' + block.contactEmail;
-                em.textContent = block.contactEmail;
+                if (block.buttonText || block.button_text) {
+                  em.textContent = block.buttonText || block.button_text;
+                }
               }
             }
           }
