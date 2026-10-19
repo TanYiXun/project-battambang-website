@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: TanYiXun/project-battambang-website
+  branch: main
+  base_url: https://auth.sveltia.dev
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body Content", name: "body", widget: "markdown" }
+      - file: "meet-the-team.html"
+        label: "Meet the Team"
+        name: "team"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Team Members", name: "body", widget: "markdown" }
+      - file: "services-4.html"
+        label: "Donation Page"
+        name: "donation"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "PayNow / Bank Details", name: "body", widget: "markdown" }
+      - file: "post-trip-reports.html"
+        label: "Post-Trip Reports Page"
+        name: "reports_page"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Report Links & Description", name: "body", widget: "markdown" }
