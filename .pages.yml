@@ -3,26 +3,18 @@ media:
   output: /images
 
 content:
-  - name: header_footer
-    label: 📌 Header & Footer (Global)
+  - name: carousel
+    label: 🖼️ Homepage Gallery Carousel
     type: file
-    path: content/header_footer.json
+    path: data/carousel.json
+    list: true
     fields:
-      - name: site_name
-        label: Site Name / Title
+      - name: title
+        label: Slide Title / Caption
         type: string
-      - name: logo_image
-        label: Header Logo Photo (Drag & Drop)
+      - name: image
+        label: Slide Photo (Drag & Drop)
         type: image
-      - name: instagram_url
-        label: Instagram Profile URL
-        type: string
-      - name: contact_email
-        label: Contact Email Address
-        type: string
-      - name: footer_text
-        label: Footer Copyright Text
-        type: string
 
   - name: home_page
     label: 🏠 Home Page Content
@@ -31,7 +23,8 @@ content:
     fields:
       - name: hero_slides
         label: 🖼️ Hero Slideshow Photos (Drag & Drop)
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Slide Title / Caption
@@ -50,7 +43,8 @@ content:
 
       - name: initiatives
         label: Key Initiatives / Feature Cards
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Card Title
@@ -80,7 +74,8 @@ content:
 
       - name: committees
         label: Committees & Student Team Members
-        type: list
+        type: object
+        list: true
         fields:
           - name: name
             label: Committee / Team Name
@@ -118,7 +113,8 @@ content:
 
       - name: impact_points
         label: How Donations Help (Impact Cards)
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Impact Point Title
@@ -145,7 +141,8 @@ content:
 
       - name: reports
         label: Post-Trip Reports List
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Trip Report Title
@@ -178,7 +175,8 @@ content:
 
       - name: programs
         label: Education Workshops & Modules
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Module Title
@@ -205,7 +203,8 @@ content:
 
       - name: services
         label: Healthcare Support Services List
-        type: list
+        type: object
+        list: true
         fields:
           - name: title
             label: Service Title
@@ -216,3 +215,24 @@ content:
           - name: description
             label: Service Description
             type: text
+
+  - name: header_footer
+    label: 📌 Header & Footer (Global)
+    type: file
+    path: content/header_footer.json
+    fields:
+      - name: site_name
+        label: Site Name / Title
+        type: string
+      - name: logo_image
+        label: Header Logo Photo (Drag & Drop)
+        type: image
+      - name: instagram_url
+        label: Instagram Profile URL
+        type: string
+      - name: contact_email
+        label: Contact Email Address
+        type: string
+      - name: footer_text
+        label: Footer Copyright Text
+        type: string
