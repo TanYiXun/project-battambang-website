@@ -53,8 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
     'Community Engagement & Cultural Exchange': 'images/post-screening-health-education.jpg',
 
     // Development Projects
+    'VEASNA Mobile Screening System': 'images/veasna-mobile-screening-system.jpg',
+    'VEASNA': 'images/veasna-mobile-screening-system.jpg',
     'Door-To-Door Household Surveys': 'images/door-to-door-household-surveys.jpg',
+    'Door To Door Surveys': 'images/door-to-door-household-surveys.jpg',
     'School Upgrading & Infrastructure': 'images/school-upgrading-infrastructure.jpg',
+    'School Upgrading Initiatives': 'images/school-upgrading-infrastructure.jpg',
+    'Stories of Poipet': 'images/field-photo-community-2.jpg',
+    'Water Pump Initiative': 'images/cambodia-fieldwork-carousel-5.jpg',
     'Koh Dach Island & Groundwork': 'images/koh-dach-island-groundwork.jpg',
     'Koh Dach Island Development': 'images/door-to-door-household-surveys.jpg',
     'Health-Seeking Behavior Research': 'images/school-upgrading-infrastructure.jpg',
@@ -67,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Reports
     '2026 May Recce Post Trip Report': 'images/post-trip-reports-banner.jpg',
-    '2024 Post Trip Report': 'images/door-to-door-household-surveys.jpg',
+    '2024 Post Trip Report': 'images/post-trip-report-2024.jpg',
     '2023 Post Trip Report': 'images/post-trip-report-2023.jpg',
     '2022 Post Trip Report': 'images/post-trip-report-2022.png',
 
