@@ -109,9 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
     return null;
   }
 
-  // Helper to fetch content JSON from Sanity CDN (fetching drafts first for live preview) or fallback to local JSON
+  // Helper to fetch content JSON from Sanity CDN (fetching drafts first for live preview in Sanity Studio) or fallback to local JSON
   function fetchContent(filename, slug) {
-    if (slug && SANITY_PROJECT_ID) {
+    const isEmbeddedInStudio = (window.parent !== window);
+    if (isEmbeddedInStudio && slug && SANITY_PROJECT_ID) {
       // Query draft first if exists, otherwise published
       const groqQuery = `*[_type == "page" && slug.current == "${slug}"] | order(_updatedAt desc)[0]`;
       const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groqQuery)}`;
@@ -170,12 +171,119 @@ document.addEventListener('DOMContentLoaded', function () {
     if (data.title && document.querySelector('.page-title')) {
       document.querySelector('.page-title').textContent = data.title;
     }
+    if (data.page_title && document.querySelector('.page-title')) {
+      document.querySelector('.page-title').textContent = data.page_title;
+    }
     if (data.introText && document.querySelector('.page-intro')) {
       document.querySelector('.page-intro').textContent = data.introText;
+    }
+    if (data.intro_text && document.querySelector('.page-intro')) {
+      document.querySelector('.page-intro').textContent = data.intro_text;
     }
 
     const footer = document.querySelector('.site-footer');
     if (!footer) return;
+
+    // If sections array is missing or empty (e.g. from flat local JSON files), synthesize section blocks
+    if (!data.sections || !Array.isArray(data.sections) || data.sections.length === 0) {
+      data.sections = [];
+      if (data.hero) {
+        data.sections.push({
+          _type: 'heroBlock',
+          title: data.hero.title,
+          subtitle: data.hero.subtitle,
+          description: data.hero.description,
+          buttonText: data.hero.button_text || data.hero.buttonText
+        });
+      }
+      if (data.roots) {
+        data.sections.push({
+          _type: 'rootsBlock',
+          title: data.roots.title,
+          story: data.roots.story
+        });
+      }
+      if (data.vision_mission) {
+        data.sections.push({
+          _type: 'visionMissionBlock',
+          vision: data.vision_mission.vision,
+          mission: data.vision_mission.mission
+        });
+      }
+      if (data.values) {
+        data.sections.push({
+          _type: 'valuesBlock',
+          title: 'OUR VALUES (LIBRA)',
+          items: data.values
+        });
+      }
+      if (data.initiatives) {
+        data.sections.push({
+          _type: 'cardsGridBlock',
+          title: 'Our Key Initiatives',
+          items: data.initiatives
+        });
+      }
+      if (data.stats) {
+        data.sections.push({
+          _type: 'statsBannerBlock',
+          title: data.stats_title || 'SCREENING STATISTICS 2024',
+          stats: data.stats
+        });
+      }
+      if (data.areas) {
+        data.sections.push({
+          _type: 'cardsGridBlock',
+          items: data.areas
+        });
+      }
+      if (data.programmes) {
+        data.sections.push({
+          _type: 'cardsGridBlock',
+          items: data.programmes
+        });
+      }
+      if (data.projects) {
+        data.sections.push({
+          _type: 'cardsGridBlock',
+          items: data.projects
+        });
+      }
+      if (data.reports) {
+        data.sections.push({
+          _type: 'reportsGridBlock',
+          reports: data.reports
+        });
+      }
+      if (data.opportunities) {
+        data.sections.push({
+          _type: 'cardsGridBlock',
+          items: data.opportunities.map(o => ({
+            title: o.title,
+            description: o.description,
+            link: o.link,
+            buttonText: o.button_text || o.buttonText
+          }))
+        });
+      }
+      if (data.members) {
+        data.sections.push({
+          _type: 'teamGridBlock',
+          members: data.members
+        });
+      }
+      if (data.paynow || data.cheque) {
+        data.sections.push({
+          _type: 'donationBlock',
+          paynowTitle: data.paynow ? data.paynow.title : null,
+          paynowInstructions: data.paynow ? data.paynow.instructions : null,
+          qrCodeImage: data.paynow ? data.paynow.qr_code_image : null,
+          chequeTitle: data.cheque ? data.cheque.title : null,
+          chequeInstructions: data.cheque ? data.cheque.instructions : null,
+          contactEmail: data.contact_email
+        });
+      }
+    }
 
     if (Array.isArray(data.sections) && data.sections.length > 0) {
       const sectionElements = [];
