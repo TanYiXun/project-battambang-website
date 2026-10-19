@@ -12,8 +12,25 @@ content:
       - { name: hero_subtitle, label: Hero Subtitle, type: string }
       - { name: hero_description, label: Hero Description, type: text }
       - { name: hero_button_text, label: Hero Button Text, type: string }
-      - { name: who_we_are_title, label: Who We Are Section Title, type: string }
-      - { name: who_we_are_text, label: Who We Are Text, type: text }
+      - { name: who_we_are_title, label: Section Title (Our Roots), type: string }
+      - { name: who_we_are_text, label: Our Roots Story, type: text }
+      - { name: vision_title, label: Vision Title, type: string }
+      - { name: vision_text, label: Vision Text, type: text }
+      - { name: mission_title, label: Mission Title, type: string }
+      - { name: mission_text, label: Mission Text, type: text }
+      - { name: values_title, label: Values Section Title, type: string }
+      - { name: value1_name, label: Value 1 Name, type: string }
+      - { name: value1_desc, label: Value 1 Description, type: text }
+      - { name: value2_name, label: Value 2 Name, type: string }
+      - { name: value2_desc, label: Value 2 Description, type: text }
+      - { name: value3_name, label: Value 3 Name, type: string }
+      - { name: value3_desc, label: Value 3 Description, type: text }
+      - { name: value4_name, label: Value 4 Name, type: string }
+      - { name: value4_desc, label: Value 4 Description, type: text }
+      - { name: value5_name, label: Value 5 Name, type: string }
+      - { name: value5_desc, label: Value 5 Description, type: text }
+      - { name: value6_name, label: Value 6 Name, type: string }
+      - { name: value6_desc, label: Value 6 Description, type: text }
       - { name: card1_title, label: Initiative 1 Title, type: string }
       - { name: card1_description, label: Initiative 1 Description, type: text }
       - { name: card1_image, label: Initiative 1 Image, type: image }
@@ -47,6 +64,18 @@ content:
       - { name: member4_role, label: Member 4 Role, type: string }
       - { name: member4_bio, label: Member 4 Bio, type: text }
       - { name: member4_image, label: Member 4 Photo, type: image }
+      - { name: member5_name, label: Member 5 Title / Name, type: string }
+      - { name: member5_role, label: Member 5 Role, type: string }
+      - { name: member5_bio, label: Member 5 Bio, type: text }
+      - { name: member5_image, label: Member 5 Photo, type: image }
+      - { name: member6_name, label: Member 6 Title / Name, type: string }
+      - { name: member6_role, label: Member 6 Role, type: string }
+      - { name: member6_bio, label: Member 6 Bio, type: text }
+      - { name: member6_image, label: Member 6 Photo, type: image }
+      - { name: member7_name, label: Member 7 Title / Name, type: string }
+      - { name: member7_role, label: Member 7 Role, type: string }
+      - { name: member7_bio, label: Member 7 Bio, type: text }
+      - { name: member7_image, label: Member 7 Photo, type: image }
 
   - name: donation
     label: Donations Page

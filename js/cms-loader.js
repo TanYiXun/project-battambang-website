@@ -47,8 +47,34 @@ document.addEventListener('DOMContentLoaded', function () {
         if (data.hero_subtitle) document.querySelector('.hero-subtitle').textContent = data.hero_subtitle;
         if (data.hero_description) document.querySelector('.hero-description').textContent = data.hero_description;
         if (data.hero_button_text) document.querySelector('.hero-btn').textContent = data.hero_button_text;
-        if (data.who_we_are_title) document.querySelector('.who-title').textContent = data.who_we_are_title;
-        if (data.who_we_are_text) document.querySelector('.who-text').textContent = data.who_we_are_text;
+        if (data.who_we_are_title) {
+          const el = document.querySelector('.who-title');
+          if (el) el.textContent = data.who_we_are_title;
+        }
+        if (data.who_we_are_text) {
+          const el = document.querySelector('.who-text');
+          if (el) el.textContent = data.who_we_are_text;
+        }
+        if (data.vision_title) {
+          const el = document.querySelector('.vision-title');
+          if (el) el.textContent = data.vision_title;
+        }
+        if (data.vision_text) {
+          const el = document.querySelector('.vision-text');
+          if (el) el.textContent = data.vision_text;
+        }
+        if (data.mission_title) {
+          const el = document.querySelector('.mission-title');
+          if (el) el.textContent = data.mission_title;
+        }
+        if (data.mission_text) {
+          const el = document.querySelector('.mission-text');
+          if (el) el.textContent = data.mission_text;
+        }
+        if (data.values_title) {
+          const el = document.querySelector('.values-title');
+          if (el) el.textContent = data.values_title;
+        }
 
         const grid = document.querySelector('.initiatives-grid');
         if (grid) {
@@ -106,13 +132,16 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: data.member1_name, role: data.member1_role, bio: data.member1_bio, image: data.member1_image },
             { name: data.member2_name, role: data.member2_role, bio: data.member2_bio, image: data.member2_image },
             { name: data.member3_name, role: data.member3_role, bio: data.member3_bio, image: data.member3_image },
-            { name: data.member4_name, role: data.member4_role, bio: data.member4_bio, image: data.member4_image }
+            { name: data.member4_name, role: data.member4_role, bio: data.member4_bio, image: data.member4_image },
+            { name: data.member5_name, role: data.member5_role, bio: data.member5_bio, image: data.member5_image },
+            { name: data.member6_name, role: data.member6_role, bio: data.member6_bio, image: data.member6_image },
+            { name: data.member7_name, role: data.member7_role, bio: data.member7_bio, image: data.member7_image }
           ].filter(m => m && m.name);
 
           if (members.length > 0) {
             grid.innerHTML = members.map(m => `
               <div class="card">
-                <img src="${m.image || 'images/fd6b4f_b5fcae01ec1e44c7b500ec2c5c296f04~mv2.png'}" alt="${m.name}" class="card-image" style="object-fit: contain; padding: 1.5rem; background-color: var(--color-bg-subtle);" />
+                <img src="${m.image || 'images/logo_exact.png'}" alt="${m.name}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
                 <div class="card-body">
                   <h3 class="card-title">${m.name}</h3>
                   <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; display: block;">${m.role || ''}</span>
