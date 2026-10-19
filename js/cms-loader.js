@@ -8,8 +8,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Helper to fetch content JSON from content/pages/ or fallback to content/
-  function fetchContent(filename) {
+  const SANITY_PROJECT_ID = 'zebgjkan';
+  const SANITY_DATASET = 'production';
+
+  // Helper to fetch content JSON from Sanity CDN or fallback to content/pages/ or content/
+  function fetchContent(filename, slug) {
+    if (slug && SANITY_PROJECT_ID) {
+      const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=*[_type == "page" && slug.current == "${slug}"][0]`;
+      return fetch(sanityUrl)
+        .then(res => res.ok ? res.json() : null)
+        .then(sanityRes => {
+          if (sanityRes && sanityRes.result) {
+            return sanityRes.result;
+          }
+          return fetchLocal(filename);
+        })
+        .catch(() => fetchLocal(filename));
+    }
+    return fetchLocal(filename);
+  }
+
+  function fetchLocal(filename) {
     return fetch('content/pages/' + filename)
       .then(res => res.ok ? res.json() : fetch('content/' + filename).then(r => r.ok ? r.json() : null))
       .catch(() => fetch('content/' + filename).then(r => r.ok ? r.json() : null));
@@ -45,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Page Specific Content Loaders
   if (path === '' || path === 'index.html') {
-    fetchContent('home.json')
+    fetchContent('home.json', 'home')
       .then(data => {
         if (!data) return;
 
@@ -96,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('meet-the-team')) {
-    fetchContent('team.json')
+    fetchContent('team.json', 'team')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -120,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('support-services')) {
-    fetchContent('support.json')
+    fetchContent('support.json', 'support')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -167,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('education-outreach')) {
-    fetchContent('education.json')
+    fetchContent('education.json', 'education')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -187,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('development')) {
-    fetchContent('development.json')
+    fetchContent('development.json', 'development')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -217,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('post-trip-reports')) {
-    fetchContent('reports.json')
+    fetchContent('reports.json', 'reports')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -238,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('get-involved')) {
-    fetchContent('get-involved.json')
+    fetchContent('get-involved.json', 'get-involved')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -258,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('services-4')) {
-    fetchContent('donation.json')
+    fetchContent('donation.json', 'donation')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
