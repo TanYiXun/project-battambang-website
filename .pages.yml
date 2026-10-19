@@ -157,6 +157,49 @@ content:
       - { name: area3_description, label: Area 3 Description, type: text }
       - { name: area3_image, label: Area 3 Image, type: image }
 
+  - name: development
+    label: Development Page
+    type: file
+    path: content/development.json
+    fields:
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: hero_image, label: Hero Image, type: image }
+      - { name: proj1_title, label: Project 1 Title, type: string }
+      - { name: proj1_desc, label: Project 1 Description, type: text }
+      - { name: proj1_image, label: Project 1 Image, type: image }
+      - { name: proj2_title, label: Project 2 Title, type: string }
+      - { name: proj2_desc, label: Project 2 Description, type: text }
+      - { name: proj2_image, label: Project 2 Image, type: image }
+      - { name: proj3_title, label: Project 3 Title, type: string }
+      - { name: proj3_desc, label: Project 3 Description, type: text }
+      - { name: proj3_image, label: Project 3 Image, type: image }
+      - { name: proj4_title, label: Project 4 Title, type: string }
+      - { name: proj4_desc, label: Project 4 Description, type: text }
+      - { name: proj4_image, label: Project 4 Image, type: image }
+      - { name: future_title, label: Future Title, type: string }
+      - { name: future_desc, label: Future Description, type: text }
+
+  - name: get_involved
+    label: Get Involved Page
+    type: file
+    path: content/get-involved.json
+    fields:
+      - { name: page_title, label: Page Title, type: string }
+      - { name: intro_text, label: Intro Text, type: text }
+      - { name: card1_title, label: Card 1 Title, type: string }
+      - { name: card1_desc, label: Card 1 Description, type: text }
+      - { name: card1_button, label: Card 1 Button Text, type: string }
+      - { name: card1_link, label: Card 1 Link, type: string }
+      - { name: card2_title, label: Card 2 Title, type: string }
+      - { name: card2_desc, label: Card 2 Description, type: text }
+      - { name: card2_button, label: Card 2 Button Text, type: string }
+      - { name: card2_link, label: Card 2 Link, type: string }
+      - { name: card3_title, label: Card 3 Title, type: string }
+      - { name: card3_desc, label: Card 3 Description, type: text }
+      - { name: card3_button, label: Card 3 Button Text, type: string }
+      - { name: card3_link, label: Card 3 Link, type: string }
+
   - name: header_footer
     label: Header & Footer
     type: file

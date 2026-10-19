@@ -301,5 +301,72 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       });
+  } else if (path.includes('development')) {
+    fetch('content/development.json')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data) return;
+        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
+        if (data.future_title) {
+          const ft = document.querySelector('.future-title');
+          if (ft) ft.textContent = data.future_title;
+        }
+        if (data.future_desc) {
+          const fd = document.querySelector('.future-desc');
+          if (fd) fd.textContent = data.future_desc;
+        }
+
+        const grid = document.querySelector('.dev-grid');
+        if (grid) {
+          const projs = [
+            { title: data.proj1_title, desc: data.proj1_desc, image: data.proj1_image },
+            { title: data.proj2_title, desc: data.proj2_desc, image: data.proj2_image },
+            { title: data.proj3_title, desc: data.proj3_desc, image: data.proj3_image },
+            { title: data.proj4_title, desc: data.proj4_desc, image: data.proj4_image }
+          ].filter(p => p && p.title);
+
+          if (projs.length > 0) {
+            grid.innerHTML = projs.map(p => `
+              <div class="card">
+                <img src="${p.image || 'images/logo_exact.png'}" alt="${p.title}" class="card-image" style="object-fit: cover; height: 220px; width: 100%; border-radius: 8px 8px 0 0;" />
+                <div class="card-body">
+                  <h3 class="card-title">${p.title}</h3>
+                  <p class="card-text">${p.desc || ''}</p>
+                </div>
+              </div>
+            `).join('');
+          }
+        }
+      });
+  } else if (path.includes('get-involved')) {
+    fetch('content/get-involved.json')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data) return;
+        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
+        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
+
+        const grid = document.querySelector('.get-involved-grid');
+        if (grid) {
+          const cards = [
+            { title: data.card1_title, desc: data.card1_desc, btn: data.card1_button, link: data.card1_link, isPrimary: true },
+            { title: data.card2_title, desc: data.card2_desc, btn: data.card2_button, link: data.card2_link, isPrimary: false },
+            { title: data.card3_title, desc: data.card3_desc, btn: data.card3_button, link: data.card3_link, isPrimary: false }
+          ].filter(c => c && c.title);
+
+          if (cards.length > 0) {
+            grid.innerHTML = cards.map(c => `
+              <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <h3 class="card-title" style="color: var(--color-primary); font-size: 1.35rem; margin-bottom: 0.75rem;">${c.title}</h3>
+                  <p class="card-text">${c.desc || ''}</p>
+                </div>
+                <a href="${c.link || '#'}" class="btn ${c.isPrimary ? 'btn-primary' : 'btn-outline'}" style="margin-top: 1.5rem; align-self: start;">${c.btn || 'Learn More'}</a>
+              </div>
+            `).join('');
+          }
+        }
+      });
   }
 });
