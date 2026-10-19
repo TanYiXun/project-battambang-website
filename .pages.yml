@@ -55,17 +55,12 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: paynow_title, label: Payment Box Title, type: string }
+      - { name: paynow_title, label: PayNow Section Title, type: string }
+      - { name: paynow_instructions, label: PayNow Instructions, type: text }
       - { name: qr_code_image, label: PayNow QR Code Image, type: image }
-      - { name: bank_details, label: Bank & UEN Details, type: text }
-      - { name: tier1_title, label: Tier 1 Amount, type: string }
-      - { name: tier1_description, label: Tier 1 Description, type: text }
-      - { name: tier2_title, label: Tier 2 Amount, type: string }
-      - { name: tier2_description, label: Tier 2 Description, type: text }
-      - { name: tier3_title, label: Tier 3 Amount, type: string }
-      - { name: tier3_description, label: Tier 3 Description, type: text }
-      - { name: tier4_title, label: Tier 4 Amount, type: string }
-      - { name: tier4_description, label: Tier 4 Description, type: text }
+      - { name: cheque_title, label: Cheque Section Title, type: string }
+      - { name: cheque_instructions, label: Cheque Instructions, type: text }
+      - { name: contact_email, label: Contact Email, type: string }
 
   - name: reports
     label: Post-Trip Reports Page

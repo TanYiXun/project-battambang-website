@@ -128,29 +128,40 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
-        if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
-        if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
-        if (data.paynow_title) document.querySelector('.paynow-title').textContent = data.paynow_title;
-        if (data.qr_code_image) document.querySelector('.qr-image').src = data.qr_code_image;
-        if (data.bank_details) document.querySelector('.bank-details').textContent = data.bank_details;
-
-        const grid = document.querySelector('.impact-grid');
-        if (grid) {
-          const tiers = [
-            { title: data.tier1_title, desc: data.tier1_description },
-            { title: data.tier2_title, desc: data.tier2_description },
-            { title: data.tier3_title, desc: data.tier3_description },
-            { title: data.tier4_title, desc: data.tier4_description }
-          ].filter(t => t && t.title);
-
-          if (tiers.length > 0) {
-            grid.innerHTML = tiers.map(t => `
-              <div class="card" style="padding: 1.5rem;">
-                <h3 class="card-title" style="color: var(--color-accent); font-size: 1.35rem; margin-bottom: 0.5rem;">${t.title}</h3>
-                <p class="card-text">${t.desc || ''}</p>
-              </div>
-            `).join('');
-          }
+        if (data.page_title) {
+          const pt = document.querySelector('.page-title');
+          if (pt) pt.textContent = data.page_title;
+        }
+        if (data.intro_text) {
+          const pi = document.querySelector('.page-intro');
+          if (pi) pi.textContent = data.intro_text;
+        }
+        if (data.paynow_title) {
+          const pnt = document.querySelector('.paynow-title');
+          if (pnt) pnt.textContent = data.paynow_title;
+        }
+        if (data.paynow_instructions) {
+          const pni = document.querySelector('.paynow-instructions');
+          if (pni) pni.textContent = data.paynow_instructions;
+        }
+        if (data.qr_code_image) {
+          const qr = document.querySelector('.qr-image');
+          if (qr) qr.src = data.qr_code_image;
+        }
+        if (data.cheque_title) {
+          const ct = document.querySelector('.cheque-title');
+          if (ct) ct.textContent = data.cheque_title;
+        }
+        if (data.cheque_instructions) {
+          const ci = document.querySelector('.cheque-instructions');
+          if (ci) ci.textContent = data.cheque_instructions;
+        }
+        if (data.contact_email) {
+          const ce = document.querySelectorAll('.contact-email');
+          ce.forEach(el => {
+            el.href = 'mailto:' + data.contact_email;
+            el.textContent = data.contact_email;
+          });
         }
       });
   } else if (path.includes('post-trip-reports')) {

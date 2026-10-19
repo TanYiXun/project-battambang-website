@@ -1,15 +1,10 @@
 {
-  "page_title": "Donation & Support",
-  "intro_text": "Your generous donations directly fund medical supplies, village health clinics, referral subsidies, and student scholarships in Cambodia.",
-  "paynow_title": "Donate via PayNow / Bank Transfer",
-  "qr_code_image": "images/fd6b4f_13fa10a043a94768b8c762e0e7788b37~mv2.jpg",
-  "bank_details": "Bank: DBS Bank Ltd\nAccount Name: NUS Medical Society - Project Battambang\nAccount Number: 003-902144-8\nUEN: S87SS0064J\n(Please indicate 'PB Donation' in the reference field)",
-  "tier1_title": "$20 Contribution",
-  "tier1_description": "Provides essential acute and chronic medications for 5 villagers during mass screening clinics.",
-  "tier2_title": "$50 Contribution",
-  "tier2_description": "Supplies hygiene kits, toothbrushes, and school learning materials for 1 primary school student for a year.",
-  "tier3_title": "$150 Contribution",
-  "tier3_description": "Sponsors 1 full year of the Light-A-Dream Scholarship for a secondary school student in Battambang.",
-  "tier4_title": "$500 Contribution",
-  "tier4_description": "Funds vital hospital diagnostic referrals and subsidized follow-up treatments for patients in need."
+  "page_title": "Donations",
+  "intro_text": "As Project Battambang ventures further, the project requires funding for our different initiatives. These initiatives are essential in allowing us to better serve the Cambodian Community. We would appreciate any amount of donations that would go to the project!",
+  "paynow_title": "PayNow Donation",
+  "paynow_instructions": "For a quick donation, you may Paynow using the QR code below! Do help to indicate 'BTB2026'",
+  "qr_code_image": "images/fd6b4f_df866b26580e49a99e6019cc6bcc5cc6~mv2.jpg",
+  "cheque_title": "Cheque Donation",
+  "cheque_instructions": "If you would like to make a cheque donation, do reach out to us for further arrangements!",
+  "contact_email": "med.battambang@gmail.com"
 }
