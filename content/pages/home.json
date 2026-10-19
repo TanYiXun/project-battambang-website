@@ -16,28 +16,34 @@
   },
   "values": [
     {
-      "name": "Love Above All Else",
-      "description": "Driven by genuine care, empathy, and compassion in every interaction with the community."
+      "name": "Love",
+      "letter": "L",
+      "description": "Serving with empathy and genuine care for the communities we meet."
     },
     {
-      "name": "Integrity & Transparency",
-      "description": "Upholding high ethical standards, stewardship of funds, and clear accountability."
+      "name": "Integrity",
+      "letter": "I",
+      "description": "Upholding ethical standards, transparency, and accountability in all operations."
     },
     {
-      "name": "Belief in Local Systems",
-      "description": "Working alongside Cambodian doctors, local health centers, and community leaders to ensure long-term sustainability."
+      "name": "Beneficence",
+      "letter": "B",
+      "description": "Prioritizing the well-being and long-term health of our beneficiaries."
     },
     {
-      "name": "Respect & Humility",
-      "description": "Listening to villagers' needs, honoring local culture, and learning from the community."
+      "name": "Respect",
+      "letter": "R",
+      "description": "Listening closely to local needs and honoring Cambodian culture and partnerships."
     },
     {
-      "name": "Advocacy for Health",
-      "description": "Empowering communities through preventive health education, hygiene, and accessible primary care."
+      "name": "Accountability",
+      "letter": "A",
+      "description": "Maintaining strict financial, clinical, and operational transparency."
     },
     {
       "name": "Sustainability",
-      "description": "Building capacity, supporting education, and measuring long-term impact for self-reliance."
+      "letter": "S",
+      "description": "Building enduring healthcare pathways and educational opportunities."
     }
   ],
   "initiatives": [

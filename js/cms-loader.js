@@ -247,17 +247,22 @@ document.addEventListener('DOMContentLoaded', function () {
           const valGrid = document.querySelector('.values-grid');
           if (valGrid) el = valGrid.closest('section');
           if (el) {
-            if (block.title) {
+            if (block.title && !block.title.toLowerCase().includes('core values')) {
               const vt = el.querySelector('.values-title');
               if (vt) vt.textContent = block.title;
             }
             if (valGrid && Array.isArray(block.items) && block.items.length > 0) {
-              valGrid.innerHTML = block.items.map(v => `
-                <div class="card value-card" style="padding: 1.5rem;">
-                  <h3 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.15rem;">${v.name || v.title || ''}</h3>
-                  <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">${v.description || ''}</p>
-                </div>
-              `).join('');
+              valGrid.innerHTML = block.items.map(v => {
+                const nameStr = v.name || v.title || '';
+                const letter = v.letter || nameStr.charAt(0);
+                const restName = v.letter ? nameStr : (nameStr.startsWith(letter) ? nameStr.slice(1) : nameStr);
+                return `
+                  <div class="card" style="padding: 1.5rem; text-align: center;">
+                    <h4 style="color: var(--color-accent); font-size: 1.2rem; margin-bottom: 0.5rem;"><strong style="font-size: 1.5rem; color: var(--color-primary);">${letter}</strong>${restName}</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">${v.description || ''}</p>
+                  </div>
+                `;
+              }).join('');
             }
           }
         } else if (type === 'cardsGridBlock') {
