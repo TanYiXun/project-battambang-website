@@ -3,32 +3,74 @@ media:
   output: /images
 
 content:
-  - name: home
-    label: Home Page
+  - name: carousel
+    label: 🖼️ Homepage Gallery Carousel
     type: file
-    path: index.html
+    path: data/carousel.json
+    list: true
+    fields:
+      - name: title
+        label: Slide Title / Caption
+        type: string
+      - name: image
+        label: Slide Photo (Drag & Drop)
+        type: image
 
   - name: team
-    label: Meet the Team
+    label: 👥 Meet the Team
     type: file
-    path: meet-the-team.html
-
-  - name: donation
-    label: Donation Page
-    type: file
-    path: services-4.html
+    path: data/team.json
+    list: true
+    fields:
+      - name: name
+        label: Committee / Member Title
+        type: string
+      - name: members
+        label: Member Names (e.g. Ritesh, David)
+        type: string
+      - name: photo
+        label: Photo (Drag & Drop)
+        type: image
+      - name: bio
+        label: Description / Bio
+        type: text
 
   - name: reports
-    label: Post-Trip Reports
+    label: 📰 Post-Trip Reports
     type: file
-    path: post-trip-reports.html
+    path: data/reports.json
+    list: true
+    fields:
+      - name: title
+        label: Report Title
+        type: string
+      - name: year
+        label: Year / Date
+        type: string
+      - name: cover
+        label: Cover Photo (Drag & Drop)
+        type: image
+      - name: pdf_link
+        label: PDF Link or Document
+        type: string
+      - name: description
+        label: Summary / Details
+        type: text
 
-  - name: education
-    label: Education Outreach
+  - name: site_info
+    label: ⚙️ Website Details & Contact
     type: file
-    path: education-outreach.html
-
-  - name: support
-    label: Support Services
-    type: file
-    path: support-services.html
+    path: data/site_info.json
+    fields:
+      - name: site_title
+        label: Site Title
+        type: string
+      - name: contact_email
+        label: Contact Email
+        type: string
+      - name: instagram_handle
+        label: Instagram Handle
+        type: string
+      - name: footer_copyright
+        label: Footer Copyright Text
+        type: string
