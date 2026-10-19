@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Initialize Sanity Visual Editing if embedded in Sanity Studio iframe
+  if (window.parent !== window) {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://esm.sh/@sanity/visual-editing-standalone@2/styles.css';
+    document.head.appendChild(css);
+
+    import('https://esm.sh/@sanity/visual-editing-standalone@2')
+      .then(mod => {
+        if (mod && typeof mod.enableVisualEditing === 'function') {
+          mod.enableVisualEditing();
+          console.log('[Sanity] Visual Editing enabled');
+        }
+      })
+      .catch(err => console.log('[Sanity] Visual Editing standalone script load:', err));
+  }
+
   // Mobile Nav Toggle
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
