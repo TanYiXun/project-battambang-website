@@ -1,0 +1,34 @@
+{
+  "page_title": "Health Screening",
+  "intro_text": "Access to affordable healthcare remains a key concern for many of the communities Project Battambang serves. Over the years, our health screening initiatives have aimed to bring basic healthcare closer to villagers through mass village screenings, door-to-door screenings, health education and follow-up referrals.",
+  "hero_image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg",
+  "stats_title": "SCREENING STATISTICS 2024",
+  "stats": [
+    { "label": "DAYS", "value": "4", "icon": "calendar" },
+    { "label": "LOCATIONS", "value": "3", "icon": "location" },
+    { "label": "VILLAGERS SCREENED", "value": "1068", "icon": "people" },
+    { "label": "REFERRALS", "value": "284", "icon": "bandage" }
+  ],
+  "areas": [
+    {
+      "title": "Mass Village & Door-to-Door Clinics",
+      "description": "During our main trip in December 2024, we conducted mass health clinics across three locations in Poipet: Kbal Koh, Tum Nub Kor Phram and Mother of Peace Kindergarten. Over four days, our team screened a total of 1,068 villagers and students for acute illnesses, chronic hypertension, and diabetes.",
+      "image": "images/fd6b4f_a7855784021d4c7eaa20451d8f6ed1e0~mv2_d_3456_5184_s_4_2.jpg"
+    },
+    {
+      "title": "Subsidised Referrals & Follow-Up Care",
+      "description": "A key part of Project Battambang's health screening model is ensuring that care does not end at the screening site. Villagers with chronic conditions or complex medical concerns are referred to local healthcare institutions for further assessment, follow-up consultations, and subsidised medication.",
+      "image": "images/fd6b4f_9f44eb17f17942c2a1e0a8ab0b2a0249~mv2.jpg"
+    },
+    {
+      "title": "Multidisciplinary Healthcare Team",
+      "description": "Our team includes doctors, medical students, and allied health volunteers, providing comprehensive support across vision care, hearing concerns, physiotherapy needs, chronic disease management, dental consults, vaccinations, and preventive health education.",
+      "image": "images/fd6b4f_1b6393589efd403ea6aaa2675ab2f891~mv2_d_3456_2304_s_2.jpg"
+    },
+    {
+      "title": "Future Plans & Groundwork",
+      "description": "Following our May 2026 recce trip, our Screening Committee is preparing for December screenings in close consultation with our Cambodian Committee and local partners to build reliable follow-up care and hospital referral continuity.",
+      "image": "images/fd6b4f_735810e1693447399f05d7c631c221ed~mv2_d_6000_4000_s_4_2.jpg"
+    }
+  ]
+}

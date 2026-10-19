@@ -1,0 +1,63 @@
+{
+  "page_title": "Project Battambang",
+  "hero": {
+    "title": "PROJECT BATTAMBANG",
+    "subtitle": "~ love above all else ~",
+    "description": "An overseas community service project organized by medical students from the Yong Loo Lin School of Medicine, National University of Singapore.",
+    "button_text": "Our Initiatives"
+  },
+  "roots": {
+    "title": "Our Roots",
+    "story": "At the heart of Project Battambang is a belief in sustainable, locally grounded service. Beyond providing short-term support, we aim to listen closely, build lasting relationships, and strengthen existing community systems."
+  },
+  "vision_mission": {
+    "vision": "We envision an independent community where everyone has the liberty and means to hope for and achieve a better future together.",
+    "mission": "To serve the people of Battambang with heart and humility, while nurturing empathetic healthcare leaders for tomorrow."
+  },
+  "values": [
+    {
+      "name": "Love Above All Else",
+      "description": "Driven by genuine care, empathy, and compassion in every interaction with the community."
+    },
+    {
+      "name": "Integrity & Transparency",
+      "description": "Upholding high ethical standards, stewardship of funds, and clear accountability."
+    },
+    {
+      "name": "Belief in Local Systems",
+      "description": "Working alongside Cambodian doctors, local health centers, and community leaders to ensure long-term sustainability."
+    },
+    {
+      "name": "Respect & Humility",
+      "description": "Listening to villagers' needs, honoring local culture, and learning from the community."
+    },
+    {
+      "name": "Advocacy for Health",
+      "description": "Empowering communities through preventive health education, hygiene, and accessible primary care."
+    },
+    {
+      "name": "Sustainability",
+      "description": "Building capacity, supporting education, and measuring long-term impact for self-reliance."
+    }
+  ],
+  "initiatives": [
+    {
+      "title": "Health Screening",
+      "description": "Comprehensive clinical triage, doctor consultations, chronic disease monitoring, and pharmacy dispensary.",
+      "image": "images/fd6b4f_51b6f9e2026f4252a4488715cd114e59~mv2.jpg",
+      "link": "support-services.html"
+    },
+    {
+      "title": "Education Outreach",
+      "description": "Hygiene workshops, preventive health modules, school outreach, and student scholarships.",
+      "image": "images/fd6b4f_870ded152cbd4e9c955d1bf0ce8c5090~mv2.jpg",
+      "link": "education-outreach.html"
+    },
+    {
+      "title": "Post-Trip Reports",
+      "description": "Transparently documenting our annual trip findings, clinical statistics, financial statements, and community impact.",
+      "image": "images/fd6b4f_efe55caf23244a65b05524a3c7abf9e6~mv2.jpg",
+      "link": "post-trip-reports.html"
+    }
+  ]
+}

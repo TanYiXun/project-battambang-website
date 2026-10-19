@@ -8,12 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Helper to fetch content JSON from content/pages/ or fallback to content/
+  function fetchContent(filename) {
+    return fetch('content/pages/' + filename)
+      .then(res => res.ok ? res.json() : fetch('content/' + filename).then(r => r.ok ? r.json() : null))
+      .catch(() => fetch('content/' + filename).then(r => r.ok ? r.json() : null));
+  }
+
   // Determine current page JSON path
   const path = window.location.pathname.split('/').pop() || 'index.html';
 
   // Load Header / Footer Content
-  fetch('content/header_footer.json')
-    .then(res => res.ok ? res.json() : null)
+  fetchContent('header_footer.json')
     .then(data => {
       if (!data) return;
 
@@ -39,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Page Specific Content Loaders
   if (path === '' || path === 'index.html') {
-    fetch('content/home.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('home.json')
       .then(data => {
         if (!data) return;
 
@@ -91,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('meet-the-team')) {
-    fetch('content/team.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('team.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -116,8 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('support-services')) {
-    fetch('content/support.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('support.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -164,8 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('education-outreach')) {
-    fetch('content/education.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('education.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -185,8 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('development')) {
-    fetch('content/development.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('development.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -216,8 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('post-trip-reports')) {
-    fetch('content/reports.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('reports.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -238,8 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('get-involved')) {
-    fetch('content/get-involved.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('get-involved.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
@@ -259,8 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
   } else if (path.includes('services-4')) {
-    fetch('content/donation.json')
-      .then(res => res.ok ? res.json() : null)
+    fetchContent('donation.json')
       .then(data => {
         if (!data) return;
         if (data.page_title && document.querySelector('.page-title')) document.querySelector('.page-title').textContent = data.page_title;
