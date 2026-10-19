@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(err => console.log('[Sanity] Visual Editing standalone script load:', err));
   }
 
-  const CMS_ENABLED = false; // Set to false to disable CMS overwrites during manual image review
+  const CMS_ENABLED = true; // Enabled Sanity CMS dynamic loading and visual editing
 
   const SANITY_PROJECT_ID = 'zebgjkan';
   const SANITY_DATASET = 'production';
 
   const DEFAULT_IMAGE_MAP = {
-    // Pages / Hero Defaults (home has no hero background image)
-    'home': null,
+    // Pages / Hero Defaults
+    'home': 'images/fd6b4f_06cdfddfa152491c957e8bdd253a05cf~mv2.jpg',
     'team': 'images/logo.png',
     'support': 'images/logo.png',
     'education': 'images/logo.png',
@@ -167,8 +167,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function fetchContent(filename, slug) {
     const isEmbeddedInStudio = (window.parent !== window);
     if (isEmbeddedInStudio && slug && SANITY_PROJECT_ID) {
-      // Query draft first if exists, otherwise published
+      // Query draft first if exists in Studio, otherwise published
       const groqQuery = `*[_type == "page" && slug.current == "${slug}"] | order(_updatedAt desc)[0]`;
+      const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groqQuery)}`;
+      return fetch(sanityUrl)
+        .then(res => res.ok ? res.json() : null)
+        .then(sanityRes => {
+          if (sanityRes && sanityRes.result) {
+            return sanityRes.result;
+          }
+          return fetchLocal(filename);
+        })
+        .catch(() => fetchLocal(filename));
+    } else if (CMS_ENABLED && slug && SANITY_PROJECT_ID) {
+      // Query published document from Sanity CDN
+      const groqQuery = `*[_type == "page" && slug.current == "${slug}"][0]`;
       const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-01-01/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groqQuery)}`;
       return fetch(sanityUrl)
         .then(res => res.ok ? res.json() : null)
