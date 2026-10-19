@@ -32,6 +32,9 @@
   "future_outlook": {
     "title": "Future Directions",
     "description": "As Project Battambang enters a new phase, the Development Committee will continue to guide the project through careful needs assessment, community engagement and ground-up planning. Following our May 2026 recce trip, our focus is on better understanding the communities we may serve, while ensuring that future initiatives remain realistic, locally grounded and responsive to actual needs.\n\nOur May recce highlighted Koh Dach Island as a potential site for further exploration and future initiatives. Moving forward, we hope to deepen our understanding of the community through continued engagement with residents, village chiefs, local organisations and Cambodian partners. These conversations will help us identify specific gaps that Project Battambang can appropriately support through health, education and community-based initiatives.\n\nBeyond site exploration, the Development Committee also hopes to strengthen the way we collect and use community data. Future surveys will aim to be more focused, representative and informed by local context. We also hope to involve our Cambodian counterparts earlier in survey planning, allowing their knowledge and perspectives to shape how we understand and respond to community needs.\n\nThrough these efforts, Development hopes to ensure that Project Battambang’s future direction is guided not by assumptions, but by listening, evidence and partnership.",
-    "image": "images/dev_future_koh_dach.jpg"
+    "images": [
+      "images/dev_future_site_exploration.jpg",
+      "images/dev_future_koh_dach.jpg"
+    ]
   }
 }
