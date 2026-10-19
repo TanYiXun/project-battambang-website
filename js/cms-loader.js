@@ -294,6 +294,14 @@ document.addEventListener('DOMContentLoaded', function () {
           contactEmail: data.contact_email
         });
       }
+      if (data.future_outlook) {
+        data.sections.push({
+          _type: 'futureOutlookBlock',
+          title: data.future_outlook.title,
+          description: data.future_outlook.description,
+          images: data.future_outlook.images
+        });
+      }
     }
 
     if (Array.isArray(data.sections) && data.sections.length > 0) {
@@ -525,6 +533,32 @@ document.addEventListener('DOMContentLoaded', function () {
               if (em) {
                 em.href = 'mailto:' + block.contactEmail;
                 em.textContent = block.contactEmail;
+              }
+            }
+          }
+        } else if (type === 'futureOutlookBlock') {
+          const futureEl = document.querySelector('.future-box');
+          if (futureEl) el = futureEl;
+          if (futureEl) {
+            if (block.title) {
+              const ft = futureEl.querySelector('.future-title');
+              if (ft) ft.textContent = block.title;
+            }
+            if (block.description) {
+              const fd = futureEl.querySelector('.future-desc');
+              if (fd) fd.textContent = block.description;
+            }
+            if (Array.isArray(block.images) && block.images.length > 0) {
+              const imgContainer = futureEl.querySelector('.future-images');
+              if (imgContainer) {
+                imgContainer.innerHTML = block.images.map((img, idx) => {
+                  const imgSrc = getSanityImageUrl(img, `future_${idx}`);
+                  return `
+                    <div class="future-img-wrapper">
+                      <img src="${imgSrc}" alt="${block.title || 'Future Directions'} photo ${idx + 1}" />
+                    </div>
+                  `;
+                }).join('');
               }
             }
           }

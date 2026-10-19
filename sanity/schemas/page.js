@@ -218,6 +218,23 @@ export default {
             { name: 'contactEmail', title: 'Contact Email', type: 'string' },
           ],
         },
+
+        // Future Directions Block
+        {
+          type: 'object',
+          name: 'futureOutlookBlock',
+          title: 'Future Directions Section',
+          fields: [
+            { name: 'title', title: 'Section Title', type: 'string' },
+            { name: 'description', title: 'Description Content', type: 'text' },
+            {
+              name: 'images',
+              title: 'Gallery Images',
+              type: 'array',
+              of: [{ type: 'image' }],
+            },
+          ],
+        },
       ],
     },
   ],

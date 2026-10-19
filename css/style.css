@@ -547,7 +547,78 @@ body {
     object-fit: cover !important;
     object-position: center 58% !important;
   }
+
+  /* On mobile: collapse future-box to 1 column so text and images stack cleanly */
+  .future-box {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .future-images {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
 }
+
+@media (max-width: 480px) {
+  .future-images {
+    grid-template-columns: 1fr !important;
+  }
+
+  .future-img-wrapper img {
+    height: 220px !important;
+  }
+}
+
+/* ==========================================================================
+   Future Directions Box Styles
+   ========================================================================== */
+.future-box {
+  margin-top: 3.5rem;
+  background: var(--color-bg-subtle);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.future-title {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.future-desc {
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 1rem;
+  white-space: pre-line;
+}
+
+.future-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.future-img-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.future-img-wrapper img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
 
 
 
