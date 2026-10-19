@@ -48,34 +48,63 @@ content:
     fields:
       - { name: page_title, label: Page Title, type: string }
       - { name: intro_text, label: Intro Text, type: text }
-      - { name: member1_name, label: Member 1 Title / Name, type: string }
-      - { name: member1_role, label: Member 1 Role, type: string }
-      - { name: member1_bio, label: Member 1 Bio, type: text }
-      - { name: member1_image, label: Member 1 Photo, type: image }
-      - { name: member2_name, label: Member 2 Title / Name, type: string }
-      - { name: member2_role, label: Member 2 Role, type: string }
-      - { name: member2_bio, label: Member 2 Bio, type: text }
-      - { name: member2_image, label: Member 2 Photo, type: image }
-      - { name: member3_name, label: Member 3 Title / Name, type: string }
-      - { name: member3_role, label: Member 3 Role, type: string }
-      - { name: member3_bio, label: Member 3 Bio, type: text }
-      - { name: member3_image, label: Member 3 Photo, type: image }
-      - { name: member4_name, label: Member 4 Title / Name, type: string }
-      - { name: member4_role, label: Member 4 Role, type: string }
-      - { name: member4_bio, label: Member 4 Bio, type: text }
-      - { name: member4_image, label: Member 4 Photo, type: image }
-      - { name: member5_name, label: Member 5 Title / Name, type: string }
-      - { name: member5_role, label: Member 5 Role, type: string }
-      - { name: member5_bio, label: Member 5 Bio, type: text }
-      - { name: member5_image, label: Member 5 Photo, type: image }
-      - { name: member6_name, label: Member 6 Title / Name, type: string }
-      - { name: member6_role, label: Member 6 Role, type: string }
-      - { name: member6_bio, label: Member 6 Bio, type: text }
-      - { name: member6_image, label: Member 6 Photo, type: image }
-      - { name: member7_name, label: Member 7 Title / Name, type: string }
-      - { name: member7_role, label: Member 7 Role, type: string }
-      - { name: member7_bio, label: Member 7 Bio, type: text }
-      - { name: member7_image, label: Member 7 Photo, type: image }
+      - { name: hero_image, label: Main Committee Photo (Hero Banner), type: image }
+      - name: member1
+        label: "Section 1: Dr Ong Yew Jin (Project Mentor)"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member2
+        label: "Section 2: Project Directors"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member3
+        label: "Section 3: Medical Screening Committee"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member4
+        label: "Section 4: Education Committee"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member5
+        label: "Section 5: Development Committee"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member6
+        label: "Section 6: Logistics Committee"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
+      - name: member7
+        label: "Section 7: Sponsorship & Finance Committee"
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: bio, label: Bio, type: text }
+          - { name: image, label: Photo, type: image }
 
   - name: donation
     label: Donations Page

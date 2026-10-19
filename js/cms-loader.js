@@ -126,16 +126,34 @@ document.addEventListener('DOMContentLoaded', function () {
         if (data.page_title) document.querySelector('.page-title').textContent = data.page_title;
         if (data.intro_text) document.querySelector('.page-intro').textContent = data.intro_text;
 
+        const heroImg = document.getElementById('team-hero-img');
+        if (heroImg && data.hero_image) {
+          heroImg.src = data.hero_image;
+        }
+
+        const getMember = (key) => {
+          const val = data[key];
+          if (val && typeof val === 'object') {
+            return { name: val.name, role: val.role, bio: val.bio, image: val.image };
+          }
+          return {
+            name: data[`${key}_name`],
+            role: data[`${key}_role`],
+            bio: data[`${key}_bio`],
+            image: data[`${key}_image`]
+          };
+        };
+
         const grid = document.querySelector('.team-grid');
         if (grid) {
           const members = [
-            { name: data.member1_name, role: data.member1_role, bio: data.member1_bio, image: data.member1_image },
-            { name: data.member2_name, role: data.member2_role, bio: data.member2_bio, image: data.member2_image },
-            { name: data.member3_name, role: data.member3_role, bio: data.member3_bio, image: data.member3_image },
-            { name: data.member4_name, role: data.member4_role, bio: data.member4_bio, image: data.member4_image },
-            { name: data.member5_name, role: data.member5_role, bio: data.member5_bio, image: data.member5_image },
-            { name: data.member6_name, role: data.member6_role, bio: data.member6_bio, image: data.member6_image },
-            { name: data.member7_name, role: data.member7_role, bio: data.member7_bio, image: data.member7_image }
+            getMember('member1'),
+            getMember('member2'),
+            getMember('member3'),
+            getMember('member4'),
+            getMember('member5'),
+            getMember('member6'),
+            getMember('member7')
           ].filter(m => m && m.name);
 
           if (members.length > 0) {
