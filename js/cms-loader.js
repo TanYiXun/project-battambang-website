@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
     'Future Plans & Groundwork': 'images/logo.png',
 
     // Reports
-    '2026 May Recce Post Trip Report': 'images/logo.png',
-    '2024 Post Trip Report': 'images/logo.png',
-    '2023 Post Trip Report': 'images/logo.png',
-    '2022 Post Trip Report': 'images/logo.png',
+    '2026 May Recce Post Trip Report': 'images/report_2026.jpg',
+    '2024 Post Trip Report': 'images/report_2024.jpg',
+    '2023 Post Trip Report': 'images/report_2023.jpg',
+    '2022 Post Trip Report': 'images/report_2022.jpg',
 
     // Team Members
     'Dr Ong Yew Jin': 'images/logo.png',
