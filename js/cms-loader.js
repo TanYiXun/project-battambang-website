@@ -221,7 +221,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (block.story) {
               const s = el.querySelector('.who-text');
-              if (s) s.textContent = block.story;
+              if (s) {
+                // Do not overwrite with legacy short 2-sentence snippet from initial Sanity seed
+                const isLegacyShortSnippet = block.story.length < 300 && block.story.includes('At the heart of Project Battambang');
+                if (!isLegacyShortSnippet) {
+                  s.textContent = block.story;
+                }
+              }
             }
           }
         } else if (type === 'visionMissionBlock') {
