@@ -10,3 +10,7 @@ sanity/**
 images_backup.zip
 pdfs/originals_backup
 pdfs/originals_backup/**
+.wrangler
+.wrangler/**
+wrangler.jsonc
+.gitignore
